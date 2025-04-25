@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class TransactionRequest {
 
     private String status;
+    private String transactionNumber;
     private Double amountCoin;
     private Double amountMoney;
     private Double exchangeRate;

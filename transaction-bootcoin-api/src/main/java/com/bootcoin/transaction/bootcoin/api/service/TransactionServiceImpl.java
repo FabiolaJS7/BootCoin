@@ -2,6 +2,7 @@ package com.bootcoin.transaction.bootcoin.api.service;
 
 import com.bootcoin.transaction.bootcoin.api.bean.TransactionRequest;
 import com.bootcoin.transaction.bootcoin.api.bean.TransactionResponse;
+import com.bootcoin.transaction.bootcoin.api.bean.TransactionUpdateRequest;
 import com.bootcoin.transaction.bootcoin.api.mapper.TransactionMapper;
 import com.bootcoin.transaction.bootcoin.api.repository.DaoTransactionFactory;
 import com.bootcoin.transaction.bootcoin.api.util.JsonTransferUtil;
@@ -49,5 +50,24 @@ public class TransactionServiceImpl implements TransactionService{
                 .switchIfEmpty(Flux.just(new TransactionResponse()))
                 .doOnError(throwable -> log.error("Error transactions get {}", throwable.getMessage()));
 
+    }
+
+    @Override
+    public Mono<TransactionResponse> updateTransaction(Mono<TransactionUpdateRequest> transactionUpdateRequest) {
+        return transactionUpdateRequest
+                .doOnNext(rq -> log.info("Init update transaction {}, {}", rq.getTransactionNumber(),
+                        JsonTransferUtil.objectToJson(rq)))
+                .flatMap(rq -> daoTransactionFactory.getTransactionRepository().findTransactionModelByTransactionNumber(rq.getTransactionNumber())
+                        .flatMap(transactionModelFound -> {
+                            transactionModelFound.setStatus(rq.getStatus());
+                            transactionModelFound.setUpdatedAt(LocalDate.now());
+                            return Mono.just(transactionModelFound)
+                                    .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model))
+                                    .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel);
+                        }))
+                .switchIfEmpty(Mono.just(new TransactionResponse()))
+                .doOnSuccess(transactionResponse -> log.info("Transactions updated {}",
+                        JsonTransferUtil.objectToJson(transactionResponse)))
+                .doOnError(throwable -> log.error("Error transactions updated {}", throwable.getMessage()));
     }
 }

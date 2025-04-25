@@ -2,6 +2,7 @@ package com.bootcoin.transaction.bootcoin.api.service;
 
 import com.bootcoin.transaction.bootcoin.api.bean.TransactionRequest;
 import com.bootcoin.transaction.bootcoin.api.bean.TransactionResponse;
+import com.bootcoin.transaction.bootcoin.api.bean.TransactionUpdateRequest;
 import com.bootcoin.transaction.bootcoin.api.model.TransactionModel;
 import com.bootcoin.transaction.bootcoin.api.repository.DaoTransactionFactory;
 import com.bootcoin.transaction.bootcoin.api.repository.TransactionRepository;
@@ -89,5 +90,32 @@ class TransactionServiceImplTest {
                 .verifyComplete();
 
 
+    }
+
+    @Test
+    void updateTransaction() {
+
+        TransactionUpdateRequest transactionUpdateRequest = new TransactionUpdateRequest();
+        transactionUpdateRequest.setStatus("REJECT");
+        transactionUpdateRequest.setTransactionNumber("1234567");
+
+        TransactionModel transactionModel = new TransactionModel();
+        transactionModel.setTransactionNumber("1234567");
+        transactionModel.setWalletAccountFrom("WALLET-01");
+        transactionModel.setAmountCoin(5.0);
+        transactionModel.setAmountMoney(50.0);
+        transactionModel.setExchangeRate(10.0);
+        transactionModel.setStatus("PENDING");
+
+        Mockito.when(daoTransactionFactory.getTransactionRepository()).thenReturn(transactionRepository);
+        Mockito.when(transactionRepository.findTransactionModelByTransactionNumber("1234567")).thenReturn(Mono.just(transactionModel));
+        Mockito.when(transactionRepository.save(any(TransactionModel.class))).thenReturn(Mono.just(transactionModel));
+
+        Mono<TransactionResponse> transactionResponse = transactionService.updateTransaction(Mono.just(transactionUpdateRequest));
+
+        StepVerifier.create(transactionResponse)
+                .expectNextMatches(response ->
+                        response.getStatus().equals("REJECT") && response.getTransactionNumber().equals("1234567"))
+                .verifyComplete();
     }
 }
