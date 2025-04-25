@@ -20,10 +20,17 @@
         <module name="wallet-bootcoin-api" />
         <module name="exchange-bootcoin-api" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bootcoin-commons" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bootcoin-commons" options="-parameters" />
       <module name="exchange-bootcoin-api" options="-parameters" />
       <module name="order-bootcoin-api" options="-parameters" />
       <module name="p2p-bootcoin-service" options="-parameters" />

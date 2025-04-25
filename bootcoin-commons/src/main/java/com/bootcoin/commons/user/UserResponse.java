@@ -1,4 +1,4 @@
-package com.bootcoin.user_bootcoin_api.bean;
+package com.bootcoin.commons.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRequest {
+public class UserResponse {
 
     private String name;
     private String lastName;
