@@ -67,11 +67,6 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.bootcoin</groupId>
-			<artifactId>bootcoin-commons</artifactId>
-			<version>0.0.1</version>
-		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
