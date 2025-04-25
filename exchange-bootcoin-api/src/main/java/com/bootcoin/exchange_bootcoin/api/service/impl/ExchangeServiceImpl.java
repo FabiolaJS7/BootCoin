@@ -7,6 +7,7 @@ import com.bootcoin.exchange_bootcoin.api.repository.DaoExchangeFactory;
 import com.bootcoin.exchange_bootcoin.api.service.ExchangeService;
 import com.bootcoin.exchange_bootcoin.api.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 @Slf4j
 public class ExchangeServiceImpl implements ExchangeService {
 
+    @Autowired
     DaoExchangeFactory daoExchangeFactory;
 
     @Override
