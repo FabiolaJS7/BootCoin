@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for exchange-bootcoin-api" enabled="true">
+      <profile name="Annotation profile for wallet-bootcoin-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,8 +17,8 @@
         <module name="p2p-bootcoin-service" />
         <module name="order-bootcoin-api" />
         <module name="user-bootcoin-api" />
-        <module name="exchange-bootcoin-api" />
         <module name="wallet-bootcoin-api" />
+        <module name="exchange-bootcoin-api" />
       </profile>
     </annotationProcessing>
   </component>
