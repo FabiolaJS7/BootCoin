@@ -52,4 +52,22 @@ class ExchangeServiceImplTest {
                 .expectNextMatches(response -> response.getPriceBuy().equals(exchangeRequest.getPriceBuy()))
                 .verifyComplete();
     }
+
+    @Test
+    void getTodayExchange() {
+        ExchangeModel exchangeModel = new ExchangeModel();
+        exchangeModel.setId("11111111");
+        exchangeModel.setDay(LocalDate.now());
+        exchangeModel.setPriceBuy(Double.valueOf(10.00));
+        exchangeModel.setPriceSell(Double.valueOf(12.00));
+
+        Mockito.when(daoExchangeFactory.getExchangeRepository()).thenReturn(exchangeRepository);
+        Mockito.when(exchangeRepository.getExchangeModelByDay(any())).thenReturn(Mono.just(exchangeModel));
+
+        Mono<ExchangeResponse> exchangeResponse = exchangeService.getTodayExchange();
+
+        StepVerifier.create(exchangeResponse)
+                .expectNextMatches(response -> response.getDay().equals(exchangeModel.getDay()))
+                .verifyComplete();
+    }
 }

@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class ExchangeRequest {
 
     private LocalDate day;
+    private String action;
     private Double priceSell;
     private Double priceBuy;
 }

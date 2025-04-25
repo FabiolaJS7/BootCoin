@@ -7,4 +7,5 @@ import reactor.core.publisher.Mono;
 public interface ExchangeService {
 
     Mono<ExchangeResponse> createExchange(Mono<ExchangeRequest> exchangeRequest);
+    Mono<ExchangeResponse> getTodayExchange();
 }

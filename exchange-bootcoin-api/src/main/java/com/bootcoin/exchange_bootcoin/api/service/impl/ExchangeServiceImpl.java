@@ -34,4 +34,17 @@ public class ExchangeServiceImpl implements ExchangeService {
                 .doOnSuccess(exchangeResponse -> log.info("Exchange created {}", JsonTransferUtil.objectToJson(exchangeResponse)))
                 .doOnError(throwable -> log.error("Exchange creation failed {}", throwable.getMessage()));
     }
+
+    @Override
+    public Mono<ExchangeResponse> getTodayExchange() {
+        log.info("Init get today exchange {}", LocalDate.now());
+        return daoExchangeFactory.getExchangeRepository().getExchangeModelByDay(LocalDate.now())
+                .map(ExchangeMapper.INSTANCE::getExchangeResponseFromExchangeModel)
+                .flatMap(Mono::just)
+                .doOnSuccess(exchangeResponse -> log.info("Exchange get today {}",
+                        JsonTransferUtil.objectToJson(exchangeResponse)))
+                .doOnError(throwable -> log.error("Exchange get today failed {}", throwable.getMessage()));
+    }
+
+
 }
