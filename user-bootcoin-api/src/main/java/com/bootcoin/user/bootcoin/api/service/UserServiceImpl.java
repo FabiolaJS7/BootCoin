@@ -1,11 +1,10 @@
-package com.bootcoin.user_bootcoin_api.service;
+package com.bootcoin.user.bootcoin.api.service;
 
-import com.bootcoin.user_bootcoin_api.bean.UserRequest;
-import com.bootcoin.user_bootcoin_api.bean.UserResponse;
-import com.bootcoin.user_bootcoin_api.mapper.UserMapper;
-import com.bootcoin.user_bootcoin_api.repository.DaoUserFactory;
-import com.bootcoin.user_bootcoin_api.util.JsonTransferUtil;
-import lombok.AllArgsConstructor;
+import com.bootcoin.user.bootcoin.api.bean.UserRequest;
+import com.bootcoin.user.bootcoin.api.bean.UserResponse;
+import com.bootcoin.user.bootcoin.api.mapper.UserMapper;
+import com.bootcoin.user.bootcoin.api.repository.DaoUserFactory;
+import com.bootcoin.user.bootcoin.api.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import java.time.LocalDate;
 
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     DaoUserFactory daoUserFactory;

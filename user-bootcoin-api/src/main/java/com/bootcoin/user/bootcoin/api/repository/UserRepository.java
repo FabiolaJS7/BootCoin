@@ -1,6 +1,6 @@
-package com.bootcoin.user_bootcoin_api.repository;
+package com.bootcoin.user.bootcoin.api.repository;
 
-import com.bootcoin.user_bootcoin_api.model.UserModel;
+import com.bootcoin.user.bootcoin.api.model.UserModel;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

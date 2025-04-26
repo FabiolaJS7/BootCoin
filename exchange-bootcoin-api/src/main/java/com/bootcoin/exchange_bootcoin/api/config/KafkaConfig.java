@@ -1,4 +1,4 @@
-package com.bootcoin.p2p.bootcoin.service.config;
+package com.bootcoin.exchange_bootcoin.api.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -7,6 +7,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.listener.ContainerProperties;
@@ -33,15 +34,10 @@ public class KafkaConfig {
     @Bean
     public ConcurrentMessageListenerContainer<String, String> repliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        // Configura las propiedades del contenedor
         ContainerProperties containerProperties = new ContainerProperties(replyTopic);
         containerProperties.setGroupId("user_group");
 
-        // Crea el contenedor con las propiedades configuradas
-        ConcurrentMessageListenerContainer<String, String> container =
-                new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-
-        return container;
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }
 
     @Bean
@@ -65,5 +61,13 @@ public class KafkaConfig {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory());
+        return factory;
     }
 }

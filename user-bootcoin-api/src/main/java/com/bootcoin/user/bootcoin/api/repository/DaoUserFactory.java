@@ -1,4 +1,4 @@
-package com.bootcoin.user_bootcoin_api.repository;
+package com.bootcoin.user.bootcoin.api.repository;
 
 import org.springframework.stereotype.Component;
 

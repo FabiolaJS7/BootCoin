@@ -1,4 +1,4 @@
-package com.bootcoin.user_bootcoin_api.model;
+package com.bootcoin.user.bootcoin.api.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

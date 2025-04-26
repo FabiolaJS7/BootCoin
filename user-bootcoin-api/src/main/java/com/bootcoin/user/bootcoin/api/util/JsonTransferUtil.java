@@ -1,4 +1,4 @@
-package com.bootcoin.user_bootcoin_api.util;
+package com.bootcoin.user.bootcoin.api.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;

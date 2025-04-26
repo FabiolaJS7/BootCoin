@@ -20,12 +20,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public Mono<Void> createUser(Mono<UserRequest> userRequest) {
         log.info("-> Init create user RQ: {}", JsonTransferUtil.objectToJson(userRequest));
-        return userRequest
-                .map(rq -> {
-                    kafkaProducer.sendMessage(USER_REQUEST, JsonTransferUtil.objectToJson(userRequest));
-                    return "Mensaje enviado al topic " + USER_REQUEST;
-                })
-                .doOnSuccess(log::info)
-                .then();
+        return null;
     }
 }

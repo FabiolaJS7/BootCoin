@@ -1,18 +1,34 @@
 package com.bootcoin.p2p.bootcoin.service.producer;
 
-import org.springframework.kafka.core.KafkaTemplate;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class KafkaProducer {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate;
 
-    public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
+
+
+
+
+    public KafkaProducer(ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate) {
+        this.replyingKafkaTemplate = replyingKafkaTemplate;
     }
 
-    public void sendMessage(String topic, String message) {
-        kafkaTemplate.send(topic, message);
+    public String sendAndReceive(String message, String requestTopic, String replyTopic) throws Exception {
+        ProducerRecord<String, String> record = new ProducerRecord<>(requestTopic, null, null, message);
+        record.headers().add("kafka_replyTopic", replyTopic.getBytes());
+
+        CompletableFuture<String> future = replyingKafkaTemplate.sendAndReceive(record)
+                .toCompletableFuture()
+                .thenApply(consumerRecord -> consumerRecord.value());
+
+        return future.get(); // Espera la respuesta del consumidor
     }
 }

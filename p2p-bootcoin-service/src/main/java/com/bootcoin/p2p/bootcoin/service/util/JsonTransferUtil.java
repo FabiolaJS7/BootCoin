@@ -11,8 +11,12 @@ import java.io.IOException;
 
 public class JsonTransferUtil {
 
-        private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+    static {
+        // Registra el módulo para manejar Java 8 Date/Time (como LocalDate)
+        OBJECT_MAPPER.registerModule(new JavaTimeModule());
+    }
     public static String objectToJson(Object object) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);

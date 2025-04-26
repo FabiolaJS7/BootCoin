@@ -5,10 +5,10 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copia el archivo JAR generado al contenedor
-COPY target/p2p-bootcoin-service-0.0.1-SNAPSHOT.jar app.jar
+COPY target/user-bootcoin-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Expone el puerto en el que tu aplicación escucha (por ejemplo, 8080)
-EXPOSE 8803
+EXPOSE 8914
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
