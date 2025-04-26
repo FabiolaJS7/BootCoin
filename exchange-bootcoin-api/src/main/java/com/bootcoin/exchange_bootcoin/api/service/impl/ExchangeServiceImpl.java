@@ -24,16 +24,31 @@ public class ExchangeServiceImpl implements ExchangeService {
     public Mono<ExchangeResponse> createExchange(Mono<ExchangeRequest> exchangeRequest) {
         return exchangeRequest
                 .doOnNext(rq -> log.info("Init createExchange {}", JsonTransferUtil.objectToJson(rq)))
-                .map(ExchangeMapper.INSTANCE::getExchangeModelFromExchangeRequest)
-                .flatMap(exchangeModel -> {
-                    exchangeModel.setCreatedAt(LocalDate.now());
-                    exchangeModel.setUpdatedAt(LocalDate.now());
-                    return Mono.just(exchangeModel)
-                            .doOnNext(model -> log.info("Exchange creating {}", JsonTransferUtil.objectToJson(model)))
-                            .flatMap(model -> daoExchangeFactory.getExchangeRepository().save(model))
-                            .map(ExchangeMapper.INSTANCE::getExchangeResponseFromExchangeModel);
-                })
-                .doOnSuccess(exchangeResponse -> log.info("Exchange created {}", JsonTransferUtil.objectToJson(exchangeResponse)))
+                .flatMap(rq -> daoExchangeFactory.getExchangeRepository().getExchangeModelByDay(rq.getDay())
+                        .flatMap(modelFound -> {
+                            modelFound.setPriceSell(rq.getPriceSell());
+                            modelFound.setPriceBuy(rq.getPriceBuy());
+                            modelFound.setUpdatedAt(LocalDate.now());
+                            return Mono.just(modelFound)
+                                    .doOnSuccess(model -> log.info("Exchange found updating {}",
+                                            JsonTransferUtil.objectToJson(model)));
+                        }))
+                .switchIfEmpty(
+                        exchangeRequest
+                                .map(ExchangeMapper.INSTANCE::getExchangeModelFromExchangeRequest)
+                                .flatMap(exchangeModel -> {
+                                    exchangeModel.setCreatedAt(LocalDate.now());
+                                    exchangeModel.setUpdatedAt(LocalDate.now());
+                                    return Mono.just(exchangeModel)
+                                            .doOnSuccess(model -> log.info("Exchange new creating {}",
+                                                    JsonTransferUtil.objectToJson(model)));
+                                })
+                )
+                .flatMap(model -> daoExchangeFactory.getExchangeRepository().save(model))
+                .doOnNext(rq -> log.info("Exchange saved {}", JsonTransferUtil.objectToJson(rq)))
+                .map(ExchangeMapper.INSTANCE::getExchangeResponseFromExchangeModel)
+                .doOnSuccess(exchangeResponse -> log.info("Exchange created or updated {}",
+                        JsonTransferUtil.objectToJson(exchangeResponse)))
                 .doOnError(throwable -> log.error("Exchange creation failed {}", throwable.getMessage()));
     }
 

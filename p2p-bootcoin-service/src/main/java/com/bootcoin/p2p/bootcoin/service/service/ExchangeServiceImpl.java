@@ -15,9 +15,11 @@ import reactor.core.publisher.Mono;
 public class ExchangeServiceImpl implements ExchangeService{
 
     @Value("${topic.request.exchange}")
-    private String requestTopic;
+    private String topicExchangeRequest;
     @Value("${topic.reply.exchange}")
-    private String replyTopic;
+    private String topicExchangeReply;
+    @Value("${topic.rate.exchange}")
+    private String topicExchangeRate;
     @Autowired
     KafkaProducer kafkaProducer;
 
@@ -26,16 +28,25 @@ public class ExchangeServiceImpl implements ExchangeService{
         log.info("-> Init exchange day RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
         return exchangeRequest
                 .flatMap(rq -> {
-                    try {
-                         String s = kafkaProducer.sendAndReceive(JsonTransferUtil.objectToJson(rq), requestTopic, replyTopic);
-                        log.info("Response from exchange: {}", s);
-                        return Mono.just(s);
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
+                    String s = kafkaProducer.sendAndReceive(JsonTransferUtil.objectToJson(rq), topicExchangeRequest, topicExchangeReply);
+                    log.info("Response from exchange: {}", s);
+                    return Mono.just(s);
                 })
                 .map(s -> JsonTransferUtil.jsonToObject(s, ExchangeResponse.class))
                 .doOnSuccess(exchangeResponse -> log.info("-> Exchange day RS: {}",
                         JsonTransferUtil.objectToJson(exchangeResponse)));
+    }
+
+    @Override
+    public Mono<Void> createExchangeRate(Mono<ExchangeRequest> exchangeRequest) {
+        log.info("-> Init create exchange rate RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
+        return exchangeRequest
+                .flatMap(rq -> {
+                    kafkaProducer.sendMessage(JsonTransferUtil.objectToJson(rq), topicExchangeRate);
+                    log.info("Response from createExchangeRate: {}", JsonTransferUtil.objectToJson(rq));
+                    return Mono.just("Exchange rate created");
+                })
+                .doOnSuccess(s -> log.info(s))
+                .then();
     }
 }

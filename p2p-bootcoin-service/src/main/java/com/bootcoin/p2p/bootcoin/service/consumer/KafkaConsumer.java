@@ -22,7 +22,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = "${topic.reply.exchange}", groupId = "${spring.kafka.consumer.group-id}")
     public void consume(String message) {
         log.info("Consume message: {}", message);
-        System.out.println("Message received: " + message);
+        log.info("Message received: {}", message);
 
         // Procesa el mensaje
         String response = "Processed: " + message;

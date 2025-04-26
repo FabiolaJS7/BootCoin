@@ -32,15 +32,20 @@ public class ExchangeController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<ExchangeResponse>> getDayExchange(@RequestBody ExchangeRequest exchangeRequest) {
         log.info("-> Init create user RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
-        return exchangeService.getDayExchange(Mono.just(exchangeRequest))
-                .map(exchangeResponse -> {
-                    log.info("Exchange day successfully: {}", JsonTransferUtil.objectToJson(exchangeResponse));
-                    return ResponseEntity.ok(exchangeResponse);
-                })
-                .onErrorResume(e -> {
-                    log.error("Error exchange day: {}", e.getMessage());
-                    return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                            .body(null));
-                });
+        if (exchangeRequest.getAction().equalsIgnoreCase("GET_EXCHANGE")) {
+            return exchangeService.getDayExchange(Mono.just(exchangeRequest))
+                    .map(exchangeResponse -> {
+                        log.info("Exchange day successfully: {}", JsonTransferUtil.objectToJson(exchangeResponse));
+                        return ResponseEntity.ok(exchangeResponse);
+                    })
+                    .onErrorResume(e -> {
+                        log.error("Error exchange day: {}", e.getMessage());
+                        return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                .body(null));
+                    });
+        } else {
+            return exchangeService.createExchangeRate(Mono.just(exchangeRequest))
+                    .then(Mono.fromCallable(() -> new ResponseEntity<>(HttpStatus.CREATED)));
+        }
     }
 }
