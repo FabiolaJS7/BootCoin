@@ -17,15 +17,12 @@ public class UserConsumer {
     @Autowired
     UserService userService;
 
-    @KafkaListener(topics = "bootcoin-user-request", groupId = "user_group")
+    @KafkaListener(topics = "bootcoin-user-create", groupId = "user_group")
     public void createUser(String message) {
-        log.info("User recibido: {}", message);
+        log.info("-> Init create user: {}", message);
         UserRequest userRequest = JsonTransferUtil.jsonToObject(message, UserRequest.class);
-
          userService.createUser(Mono.just(userRequest))
-                 .doOnSuccess(userResponse -> log.info("User created: {}",
-                         JsonTransferUtil.objectToJson(userResponse)))
+                 .doOnSuccess(userResponse -> log.info("End create user"))
                  .subscribe();
-
     }
 }

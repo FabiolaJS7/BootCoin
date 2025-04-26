@@ -18,7 +18,7 @@
         </processorPath>
         <module name="p2p-bootcoin-service" />
       </profile>
-      <profile name="Annotation profile for exchange-bootcoin-api" enabled="true">
+      <profile name="Annotation profile for user-bootcoin-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
