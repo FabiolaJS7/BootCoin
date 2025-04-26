@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService {
                     userModel.setUpdatedAt(LocalDate.now());
                     return Mono.just(userModel)
                             .doOnNext(model -> log.info("User creating {}", JsonTransferUtil.objectToJson(model)))
-                            .flatMap(model -> daoUserFactory.getUserRepository().save(model))
-                            .map(UserMapper.INSTANCE::getUserResponseFromUserModel);
+                            .flatMap(model -> daoUserFactory.getUserRepository().save(model));
                 })
-                .doOnSuccess(userResponse -> log.info("User created: {}", JsonTransferUtil.objectToJson(userResponse)))
+                .map(UserMapper.INSTANCE::getUserResponseFromUserModel)
+                .doOnSuccess(userResponse -> log.info("User created {}", JsonTransferUtil.objectToJson(userResponse)))
                 .doOnError(throwable -> log.error("User creation failed {}", throwable.getMessage()));
     }
 }

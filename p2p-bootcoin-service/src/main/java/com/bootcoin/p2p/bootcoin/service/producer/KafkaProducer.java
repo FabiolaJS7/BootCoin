@@ -5,40 +5,80 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 @Slf4j
 public class KafkaProducer {
 
-    private final ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public KafkaProducer(ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate,
+    public KafkaProducer(ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate,
                          KafkaTemplate<String, String> kafkaTemplate) {
-        this.replyingKafkaTemplate = replyingKafkaTemplate;
+        this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;
+        this.userReplyingKafkaTemplate = userReplyingKafkaTemplate;
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public String sendAndReceive(String message, String requestTopic, String replyTopic) {
+    public String sendAndReceiveExchange(String message) {
         try {
-            ProducerRecord<String, String> record = new ProducerRecord<>(requestTopic, null, null, message);
-            record.headers().add("kafka_replyTopic", replyTopic.getBytes());
+            ProducerRecord<String, String> record = new ProducerRecord<>("exchange-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "exchange-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
 
-            return replyingKafkaTemplate.sendAndReceive(record)
+            log.info("Sending exchange - Topic: {}, Key: {}, Value: {}, Headers: {}",
+                    record.topic(),
+                    record.key(),
+                    record.value(),
+                    record.headers());
+
+            return exchangeReplyingKafkaTemplate.sendAndReceive(record)
                     .toCompletableFuture()
                     .thenApply(ConsumerRecord::value)
-                    .get(); //espera respuesta del consumer
-
+                    .get();
         } catch (Exception e) {
-            log.info("Exception while sending and receiving record: {}", e.getMessage());
-            throw new RuntimeException(e);
+            log.error("Error while sending and receiving message for exchange-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for exchange-request", e);
+        }
+    }
+
+    public String sendAndReceiveUser(String message) {
+        try {
+            ProducerRecord<String, String> record = new ProducerRecord<>("user-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "user-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+
+            // Log del ProducerRecord
+            log.info("Sending user - Topic: {}, Key: {}, Value: {}, Headers: {}",
+                    record.topic(),
+                    record.key(),
+                    record.value(),
+                    record.headers());
+
+            return userReplyingKafkaTemplate.sendAndReceive(record)
+                    .toCompletableFuture()
+                    .thenApply(ConsumerRecord::value)
+                    .get();
+        } catch (Exception e) {
+            log.error("Error while sending and receiving message for user-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for user-request", e);
         }
     }
 
 
-    // Nuevo método para enviar mensajes sin esperar respuesta
-    public void sendMessage(String message, String topic) {
-        kafkaTemplate.send(topic, message);
+    public void sendMessage(String topic, String message) {
+        try {
+            kafkaTemplate.send(topic, message);
+            log.info("Message sent to topic {}: {}", topic, message);
+        } catch (Exception e) {
+            log.error("Error while sending message to topic {}: {}", topic, e.getMessage(), e);
+            throw new RuntimeException("Failed to send message to topic " + topic, e);
+        }
     }
 }

@@ -23,12 +23,43 @@ public class KafkaConfig {
 
 
     @Bean
+    public ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate(
+            ProducerFactory<String, String> producerFactory,
+            ConcurrentMessageListenerContainer<String, String> repliesContainer) {
+        return new ReplyingKafkaTemplate<>(producerFactory, repliesContainer);
+    }
+
+    @Bean
+    public ConcurrentMessageListenerContainer<String, String> repliesContainer(
+            ConsumerFactory<String, String> consumerFactory) {
+        ContainerProperties containerProperties = new ContainerProperties("user-response");
+        containerProperties.setGroupId("bootcoin-user-group");
+
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
+    }
+
+    @Bean
+    public ProducerFactory<String, String> producerFactory() {
+        Map<String, Object> configProps = new HashMap<>();
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        return new DefaultKafkaProducerFactory<>(configProps);
+    }
+
+    @Bean
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        configProps.put(ConsumerConfig.GROUP_ID_CONFIG, "bootcoin-user-group");
         return new DefaultKafkaConsumerFactory<>(configProps);
+    }
+
+    @Bean
+    public KafkaTemplate<String, String> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
     }
 
     @Bean

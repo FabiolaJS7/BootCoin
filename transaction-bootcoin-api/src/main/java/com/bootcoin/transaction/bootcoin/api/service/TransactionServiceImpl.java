@@ -8,6 +8,7 @@ import com.bootcoin.transaction.bootcoin.api.repository.DaoTransactionFactory;
 import com.bootcoin.transaction.bootcoin.api.util.JsonTransferUtil;
 import com.bootcoin.transaction.bootcoin.api.util.NumberRandomUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -18,6 +19,7 @@ import java.time.LocalDate;
 @Slf4j
 public class TransactionServiceImpl implements TransactionService{
 
+    @Autowired
     DaoTransactionFactory daoTransactionFactory;
 
     @Override
@@ -28,6 +30,7 @@ public class TransactionServiceImpl implements TransactionService{
                 .flatMap(transactionModel -> {
                     return NumberRandomUtil.generateOrderAccount()
                             .flatMap(s -> {
+                                transactionModel.setStatus("PENDING");
                                 transactionModel.setTransactionNumber(s);
                                 transactionModel.setCreatedAt(LocalDate.now());
                                 transactionModel.setUpdatedAt(LocalDate.now());

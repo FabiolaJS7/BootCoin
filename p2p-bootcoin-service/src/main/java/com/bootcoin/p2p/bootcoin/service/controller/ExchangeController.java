@@ -2,10 +2,7 @@ package com.bootcoin.p2p.bootcoin.service.controller;
 
 import com.bootcoin.p2p.bootcoin.service.bean.exchange.ExchangeRequest;
 import com.bootcoin.p2p.bootcoin.service.bean.exchange.ExchangeResponse;
-import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
-import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.service.ExchangeService;
-import com.bootcoin.p2p.bootcoin.service.service.UserService;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +20,6 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class ExchangeController {
 
-    @Autowired
-    KafkaProducer kafkaProducer;
     @Autowired
     ExchangeService exchangeService;
 

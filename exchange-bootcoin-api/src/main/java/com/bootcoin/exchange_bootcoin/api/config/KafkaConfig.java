@@ -21,9 +21,6 @@ public class KafkaConfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-    @Value("${topic.reply}")
-    private String replyTopic;
-
     @Bean
     public ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate(
             ProducerFactory<String, String> producerFactory,
@@ -34,8 +31,8 @@ public class KafkaConfig {
     @Bean
     public ConcurrentMessageListenerContainer<String, String> repliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties(replyTopic);
-        containerProperties.setGroupId("user_group");
+        ContainerProperties containerProperties = new ContainerProperties("exchange-response");
+        containerProperties.setGroupId("exchange-group");
 
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }
@@ -55,6 +52,7 @@ public class KafkaConfig {
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        configProps.put(ConsumerConfig.GROUP_ID_CONFIG, "exchange-group");
         return new DefaultKafkaConsumerFactory<>(configProps);
     }
 

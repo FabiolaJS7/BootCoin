@@ -8,11 +8,11 @@ import java.util.stream.IntStream;
 
 public class NumberRandomUtil {
 
-    private static final int ORIGIN_SERIES_RAMD_LENGTH = 100000000;
-    private static final int END_SERIES_RAMD_LENGTH = 999999999;
+    private static final int ORIGIN_SERIES_RAMD_LENGTH = 1000000;
+    private static final int END_SERIES_RAMD_LENGTH = 9999999;
 
     private static final int RANGE_0 = 0;
-    private static final int QUANTITY_RANGE = 1;
+    private static final int QUANTITY_RANGE = 3;
 
 
     public static Mono<String> generateOrderAccount() {

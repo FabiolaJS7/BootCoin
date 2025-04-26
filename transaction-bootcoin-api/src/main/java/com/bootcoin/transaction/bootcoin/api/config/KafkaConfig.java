@@ -1,4 +1,4 @@
-package com.bootcoin.p2p.bootcoin.service.config;
+package com.bootcoin.transaction.bootcoin.api.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -7,57 +7,35 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.listener.ContainerProperties;
 import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
 public class KafkaConfig {
-
-    public static final long THIRTY_SECONDS = 30;
-
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
     @Bean
-    public ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate(
+    public ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate(
             ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> exchangeRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, exchangeRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS)); // Aumenta el tiempo de espera
-        return template;
+            ConcurrentMessageListenerContainer<String, String> repliesContainer) {
+        return new ReplyingKafkaTemplate<>(producerFactory, repliesContainer);
     }
 
     @Bean
-    public ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> userRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, userRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS)); // Aumenta el tiempo de espera
-        return template;
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> exchangeRepliesContainer(
+    public ConcurrentMessageListenerContainer<String, String> repliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("exchange-response");
-        containerProperties.setGroupId("exchange-group");
+        ContainerProperties containerProperties = new ContainerProperties("transaction-response");
+        containerProperties.setGroupId("transaction-group");
+
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> userRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("user-response");
-        containerProperties.setGroupId("bootcoin-user-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
@@ -74,11 +52,20 @@ public class KafkaConfig {
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        configProps.put(ConsumerConfig.GROUP_ID_CONFIG, "transaction-group");
         return new DefaultKafkaConsumerFactory<>(configProps);
     }
 
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory());
+        return factory;
     }
 }

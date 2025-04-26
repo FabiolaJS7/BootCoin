@@ -27,8 +27,8 @@ public class ExchangeConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "exchange-rate", groupId = "user_group")
-    public void createUser(String message) {
+    @KafkaListener(topics = "exchange-rate", groupId = "exchange-group")
+    public void createExchange(String message) {
         log.info("Exchange recibido: {}", message);
         ExchangeRequest exchangeRequest= JsonTransferUtil.jsonToObject(message, ExchangeRequest.class);
 
@@ -39,21 +39,24 @@ public class ExchangeConsumer {
 
     }
 
-    @KafkaListener(topics = "exchange-request", groupId = "user_group")
-    public void consume(ConsumerRecord<String, String> message,
+    @KafkaListener(topics = "exchange-request", groupId = "exchange-group")
+    public void getExchange(ConsumerRecord<String, String> message,
                         @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                         @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId){
-        log.info("Init request exchange day: {}, replyTopic: {}, correlationId: {}", message.value().toString(), replyTopic, correlationId);
+        log.info("Init request exchange day: {}, replyTopic: {}, correlationId: {}", message.value(),
+                replyTopic, correlationId);
         exchangeService.getTodayExchange()
                 .doOnNext(exchangeResponse -> log.info("Exchange day: {}",
                         JsonTransferUtil.objectToJson(exchangeResponse)))
                 .flatMap(exchangeResponse -> {
-                    ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic, JsonTransferUtil.objectToJson(exchangeResponse));
+                    log.info("Sending as response {}", JsonTransferUtil.objectToJson(exchangeResponse));
+                    ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
+                            JsonTransferUtil.objectToJson(exchangeResponse));
                     responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId); // Incluye el correlationId
                     kafkaTemplate.send(responseRecord);
                     return Mono.just("Mensaje enviado al topic " + EXCHANGE_RESPONSE);
                 })
-                .doOnNext(s -> log.info("Successfully: {}", s))
+                .doOnSuccess(s -> log.info("Successfully: {}", s))
                 .subscribe();
 
     }

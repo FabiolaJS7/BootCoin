@@ -6,20 +6,13 @@ import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
 @Slf4j
-public class ExchangeServiceImpl implements ExchangeService{
+public class ExchangeServiceImpl implements ExchangeService {
 
-    @Value("${topic.request.exchange}")
-    private String topicExchangeRequest;
-    @Value("${topic.reply.exchange}")
-    private String topicExchangeReply;
-    @Value("${topic.rate.exchange}")
-    private String topicExchangeRate;
     @Autowired
     KafkaProducer kafkaProducer;
 
@@ -28,7 +21,7 @@ public class ExchangeServiceImpl implements ExchangeService{
         log.info("-> Init exchange day RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
         return exchangeRequest
                 .flatMap(rq -> {
-                    String s = kafkaProducer.sendAndReceive(JsonTransferUtil.objectToJson(rq), topicExchangeRequest, topicExchangeReply);
+                    String s = kafkaProducer.sendAndReceiveExchange(JsonTransferUtil.objectToJson(rq));
                     log.info("Response from exchange: {}", s);
                     return Mono.just(s);
                 })
@@ -42,7 +35,7 @@ public class ExchangeServiceImpl implements ExchangeService{
         log.info("-> Init create exchange rate RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
         return exchangeRequest
                 .flatMap(rq -> {
-                    kafkaProducer.sendMessage(JsonTransferUtil.objectToJson(rq), topicExchangeRate);
+                    kafkaProducer.sendMessage(JsonTransferUtil.objectToJson(rq), "exchange-rate");
                     log.info("Response from createExchangeRate: {}", JsonTransferUtil.objectToJson(rq));
                     return Mono.just("Exchange rate created");
                 })

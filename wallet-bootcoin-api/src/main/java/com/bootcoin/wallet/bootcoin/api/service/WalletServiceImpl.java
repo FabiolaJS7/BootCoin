@@ -1,14 +1,15 @@
 package com.bootcoin.wallet.bootcoin.api.service;
 
 import com.bootcoin.wallet.bootcoin.api.ActionUpdateConstants;
-import com.bootcoin.wallet.bootcoin.api.bean.WalletRequest;
 import com.bootcoin.wallet.bootcoin.api.bean.WalletResponse;
 import com.bootcoin.wallet.bootcoin.api.bean.WalletUpdateRequest;
 import com.bootcoin.wallet.bootcoin.api.mapper.WalletMapper;
+import com.bootcoin.wallet.bootcoin.api.model.WalletModel;
 import com.bootcoin.wallet.bootcoin.api.repository.DaoWalletFactory;
 import com.bootcoin.wallet.bootcoin.api.util.JsonTransferUtil;
 import com.bootcoin.wallet.bootcoin.api.util.NumberRandomUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -19,29 +20,35 @@ import java.time.LocalDate;
 @Slf4j
 public class WalletServiceImpl implements WalletService {
 
+    @Autowired
     DaoWalletFactory daoWalletFactory;
 
     @Override
-    public Mono<WalletResponse> createWallet(Mono<WalletRequest> walletRequest) {
-        return walletRequest
-                .doOnNext(rq -> log.info("Init create wallet {}", JsonTransferUtil.objectToJson(rq)))
-                .map(WalletMapper.INSTANCE::getWalletModelFromWalletRequest)
-                .flatMap(walletModel -> {
-                    return NumberRandomUtil.generateWalletAccount()
-                            .flatMap(s -> {
-                                walletModel.setAmountCoin(0.00);
-                                walletModel.setWalletAccount(s);
-                                walletModel.setCreatedAt(LocalDate.now());
-                                walletModel.setUpdatedAt(LocalDate.now());
-                                return Mono.just(walletModel);
-                            });
-                })
-                .flatMap(model -> {
-                    log.info("Wallet creating {}", JsonTransferUtil.objectToJson(model));
-                    return daoWalletFactory.getWalletRepository().save(model)
-                            .map(WalletMapper.INSTANCE::getWalletResponseFromWalletModel);
-                })
-                .doOnSuccess(walletResponse -> log.info("Wallet created {}", JsonTransferUtil.objectToJson(walletResponse)))
+    public Mono<String> createWallet(String userId) {
+        log.info("Init create wallet to user {}", userId);
+
+        return daoWalletFactory.getWalletRepository().findWalletModelByUserId(userId)
+                .map(WalletModel::getWalletAccount)
+                .doOnNext(s -> log.info("UserId have wallet yet"))
+                .switchIfEmpty(
+                        NumberRandomUtil.generateWalletAccount()
+                                .flatMap(s -> {
+                                    WalletModel walletModel = new WalletModel();
+                                    walletModel.setAmountCoin(0.00);
+                                    walletModel.setWalletAccount(s);
+                                    walletModel.setCreatedAt(LocalDate.now());
+                                    walletModel.setUpdatedAt(LocalDate.now());
+                                    walletModel.setUserId(userId);
+
+                                    log.info("Creating new wallet for user {}: {}", userId,
+                                            JsonTransferUtil.objectToJson(walletModel));
+                                    return daoWalletFactory.getWalletRepository()
+                                            .save(walletModel)
+                                            .map(WalletModel::getWalletAccount);
+                                })
+                )
+                .doOnSuccess(walletAccount -> log.info("Wallet created successfully {} for userId {}",
+                        walletAccount, userId))
                 .doOnError(throwable -> log.error("Wallet created error {}", throwable.getMessage()));
     }
 

@@ -1,6 +1,7 @@
 package com.bootcoin.p2p.bootcoin.service.service;
 
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -12,14 +13,22 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
-    private static final String USER_REQUEST = "bootcoin-user-request";
-
     @Autowired
     KafkaProducer kafkaProducer;
 
     @Override
     public Mono<Void> createUser(Mono<UserRequest> userRequest) {
         log.info("-> Init create user RQ: {}", JsonTransferUtil.objectToJson(userRequest));
-        return null;
+        return userRequest
+                .map(rq -> {
+                    String s = kafkaProducer.sendAndReceiveUser(JsonTransferUtil.objectToJson(rq));
+                    log.info("Response from user api: {}", s);
+                    UserResponse userResponse = JsonTransferUtil.jsonToObject(s, UserResponse.class);
+                    log.info("UserId. {}", userResponse.getId());
+                    return Mono.just(userResponse.getId());
+                })
+                .doOnSuccess(exchangeResponse -> log.info("-> Exchange day RS: {}",
+                        JsonTransferUtil.objectToJson(exchangeResponse)))
+                .then();
     }
 }
