@@ -16,13 +16,16 @@ public class KafkaProducer {
 
     private final ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate;
     private final ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public KafkaProducer(ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate,
                          KafkaTemplate<String, String> kafkaTemplate) {
         this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;
         this.userReplyingKafkaTemplate = userReplyingKafkaTemplate;
+        this.transactionReplyingKafkaTemplate = transactionReplyingKafkaTemplate;
         this.kafkaTemplate = kafkaTemplate;
     }
 
@@ -62,6 +65,29 @@ public class KafkaProducer {
                     record.headers());
 
             return userReplyingKafkaTemplate.sendAndReceive(record)
+                    .toCompletableFuture()
+                    .thenApply(ConsumerRecord::value)
+                    .get();
+        } catch (Exception e) {
+            log.error("Error while sending and receiving message for user-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for user-request", e);
+        }
+    }
+
+    public String sendAndReceiveTransaction(String message) {
+        try {
+            ProducerRecord<String, String> record = new ProducerRecord<>("transaction-list-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "transaction-list-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+
+            // Log del ProducerRecord
+            log.info("Sending transaction list - Topic: {}, Key: {}, Value: {}, Headers: {}",
+                    record.topic(),
+                    record.key(),
+                    record.value(),
+                    record.headers());
+
+            return transactionReplyingKafkaTemplate.sendAndReceive(record)
                     .toCompletableFuture()
                     .thenApply(ConsumerRecord::value)
                     .get();

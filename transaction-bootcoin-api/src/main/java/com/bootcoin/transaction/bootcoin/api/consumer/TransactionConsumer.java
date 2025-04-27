@@ -4,8 +4,13 @@ import com.bootcoin.transaction.bootcoin.api.bean.TransactionRequest;
 import com.bootcoin.transaction.bootcoin.api.service.TransactionService;
 import com.bootcoin.transaction.bootcoin.api.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -15,6 +20,8 @@ public class TransactionConsumer {
 
     @Autowired
     TransactionService transactionService;
+    @Autowired
+    KafkaTemplate<String, String> kafkaTemplate;
 
     @KafkaListener(topics = "transaction-request", groupId = "transaction-group")
     public void createTransaction(String message) {
@@ -25,5 +32,30 @@ public class TransactionConsumer {
                 .doOnNext(transaction -> log.info("Transaction created: {}",
                         JsonTransferUtil.objectToJson(transaction)))
                 .subscribe();
+    }
+
+    @KafkaListener(topics = "transaction-list-request", groupId = "transaction-group")
+    public void getTransactionListByWallet(ConsumerRecord<String, String> message,
+                                           @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
+                                           @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId){
+        log.info("-> Get transaction list request of walletId: {}", message.value());
+        transactionService.getTransactions(message.value())
+                .collectList().doOnNext(transactions -> {
+                    log.info("Transactions found of walletId: {}, {}", message.value(),
+                            JsonTransferUtil.objectToJson(transactions));
+                    ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
+                            JsonTransferUtil.objectToJson(transactions));
+                    responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId); // Incluye el correlationId
+                    kafkaTemplate.send(responseRecord);
+                    log.info("Response sent to topic: {}, Key: {}, Value: {}, Headers: {}",
+                            responseRecord.topic(),
+                            responseRecord.key(),
+                            responseRecord.value(),
+                            responseRecord.headers());
+                })
+                .doOnNext(record -> log.info("Transactions found: {}",
+                        JsonTransferUtil.objectToJson(record)))
+                .subscribe();
+
     }
 }
