@@ -24,7 +24,7 @@ public class TransactionConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "transaction-request", groupId = "transaction-group")
+    @KafkaListener(topics = "transaction-create", groupId = "transaction-group")
     public void createTransaction(String message) {
         log.info("Message to create transaction: {}", message);
         TransactionRequest transactionRequest = JsonTransferUtil.jsonToObject(message, TransactionRequest.class);

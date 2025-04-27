@@ -28,16 +28,12 @@ public class TransactionServiceImpl implements TransactionService{
                 .doOnNext(rq -> log.info("Init create transaction {}", JsonTransferUtil.objectToJson(rq)))
                 .map(TransactionMapper.INSTANCE::getTransactionModelFromTransactionRequest)
                 .flatMap(transactionModel -> {
-                    return NumberRandomUtil.generateOrderAccount()
-                            .flatMap(s -> {
-                                transactionModel.setStatus("PENDING");
-                                transactionModel.setTransactionNumber(s);
-                                transactionModel.setCreatedAt(LocalDate.now());
-                                transactionModel.setUpdatedAt(LocalDate.now());
-                                return Mono.just(transactionModel)
-                                        .doOnNext(model -> log.info("Creating transaction {}", JsonTransferUtil.objectToJson(model)))
-                                        .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model));
-                            });
+                    transactionModel.setStatus("PENDING");
+                    transactionModel.setCreatedAt(LocalDate.now());
+                    transactionModel.setUpdatedAt(LocalDate.now());
+                    return Mono.just(transactionModel)
+                            .doOnNext(model -> log.info("Creating transaction {}", JsonTransferUtil.objectToJson(model)))
+                            .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model));
                 })
                 .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel)
                 .doOnSuccess(transactionResponse -> log.info("Transaction created {}", JsonTransferUtil.objectToJson(transactionResponse)))
@@ -62,11 +58,15 @@ public class TransactionServiceImpl implements TransactionService{
                         JsonTransferUtil.objectToJson(rq)))
                 .flatMap(rq -> daoTransactionFactory.getTransactionRepository().findTransactionModelByTransactionNumber(rq.getTransactionNumber())
                         .flatMap(transactionModelFound -> {
-                            transactionModelFound.setStatus(rq.getStatus());
-                            transactionModelFound.setUpdatedAt(LocalDate.now());
-                            return Mono.just(transactionModelFound)
-                                    .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model))
-                                    .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel);
+                           return NumberRandomUtil.generateOrderAccount()
+                                   .flatMap(s -> {
+                                       transactionModelFound.setStatus(rq.getStatus());
+                                       transactionModelFound.setUpdatedAt(LocalDate.now());
+                                       transactionModelFound.setTransactionNumber(rq.getStatus().equalsIgnoreCase("ACCEPTED") ? s : null);
+                                       return Mono.just(transactionModelFound)
+                                               .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model))
+                                               .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel);
+                                   });
                         }))
                 .switchIfEmpty(Mono.just(new TransactionResponse()))
                 .doOnSuccess(transactionResponse -> log.info("Transactions updated {}",

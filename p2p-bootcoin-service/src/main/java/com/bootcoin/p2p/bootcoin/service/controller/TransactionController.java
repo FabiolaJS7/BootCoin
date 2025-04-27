@@ -34,4 +34,11 @@ public class TransactionController {
         return transactionService.updateTransaction(Mono.just(transactionRequest))
                 .then(Mono.fromCallable(() -> new ResponseEntity<>(HttpStatus.CREATED)));
     }
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<String>> createTransaction(@RequestBody TransactionRequest transactionRequest) {
+        log.info("-> Create transaction {}", JsonTransferUtil.objectToJson(transactionRequest));
+        return transactionService.createTransaction(Mono.just(transactionRequest))
+                .then(Mono.fromCallable(() -> new ResponseEntity<>(HttpStatus.CREATED)));
+    }
 }

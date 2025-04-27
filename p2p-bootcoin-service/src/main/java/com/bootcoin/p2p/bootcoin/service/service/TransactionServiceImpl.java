@@ -1,5 +1,6 @@
 package com.bootcoin.p2p.bootcoin.service.service;
 
+import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionRequest;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionUpdateRequest;
 import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
@@ -40,6 +41,17 @@ public class TransactionServiceImpl implements TransactionService {
                 .doOnNext(rq -> {
                     kafkaProducer.sendMessage("transaction-update", JsonTransferUtil.objectToJson(rq));
                     log.info("Transaction update sent: {}", JsonTransferUtil.objectToJson(rq));
+                })
+                .then();
+    }
+
+    @Override
+    public Mono<Void> createTransaction(Mono<TransactionRequest> transactionRequest) {
+        log.info("-> Init create transaction {}", JsonTransferUtil.objectToJson(transactionRequest));
+        return transactionRequest
+                .doOnNext(rq -> {
+                    kafkaProducer.sendMessage("transaction-create", JsonTransferUtil.objectToJson(rq));
+                    log.info("Transaction create sent: {}", JsonTransferUtil.objectToJson(rq));
                 })
                 .then();
     }
