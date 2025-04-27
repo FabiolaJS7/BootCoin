@@ -1,6 +1,7 @@
 package com.bootcoin.transaction.bootcoin.api.consumer;
 
 import com.bootcoin.transaction.bootcoin.api.bean.TransactionRequest;
+import com.bootcoin.transaction.bootcoin.api.bean.TransactionUpdateRequest;
 import com.bootcoin.transaction.bootcoin.api.service.TransactionService;
 import com.bootcoin.transaction.bootcoin.api.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ public class TransactionConsumer {
     @KafkaListener(topics = "transaction-request", groupId = "transaction-group")
     public void createTransaction(String message) {
         log.info("Message to create transaction: {}", message);
-        TransactionRequest transactionRequest= JsonTransferUtil.jsonToObject(message, TransactionRequest.class);
+        TransactionRequest transactionRequest = JsonTransferUtil.jsonToObject(message, TransactionRequest.class);
 
         transactionService.createTransaction(Mono.just(transactionRequest))
                 .doOnNext(transaction -> log.info("Transaction created: {}",
@@ -57,5 +58,18 @@ public class TransactionConsumer {
                         JsonTransferUtil.objectToJson(record)))
                 .subscribe();
 
+    }
+
+    @KafkaListener(topics = "transaction-update", groupId = "transaction-group")
+    public void updateTransactionStatus(String message) {
+        log.info("Message to update status of transaction: {}", message);
+
+        TransactionUpdateRequest transactionUpdate = JsonTransferUtil.jsonToObject(message,
+                TransactionUpdateRequest.class);
+
+        transactionService.updateTransaction(Mono.just(transactionUpdate))
+                .doOnNext(transaction -> log.info("Transaction status updated {}",
+                        JsonTransferUtil.objectToJson(transaction)))
+                .subscribe();
     }
 }

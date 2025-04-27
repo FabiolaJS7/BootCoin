@@ -35,7 +35,7 @@ public class ExchangeServiceImpl implements ExchangeService {
         log.info("-> Init create exchange rate RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
         return exchangeRequest
                 .flatMap(rq -> {
-                    kafkaProducer.sendMessage(JsonTransferUtil.objectToJson(rq), "exchange-rate");
+                    kafkaProducer.sendMessage("exchange-rate", JsonTransferUtil.objectToJson(rq));
                     log.info("Response from createExchangeRate: {}", JsonTransferUtil.objectToJson(rq));
                     return Mono.just("Exchange rate created");
                 })

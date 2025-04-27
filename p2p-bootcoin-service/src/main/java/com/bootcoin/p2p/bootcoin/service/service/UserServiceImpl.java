@@ -17,18 +17,17 @@ public class UserServiceImpl implements UserService {
     KafkaProducer kafkaProducer;
 
     @Override
-    public Mono<Void> createUser(Mono<UserRequest> userRequest) {
+    public Mono<String> createUser(Mono<UserRequest> userRequest) {
         log.info("-> Init create user RQ: {}", JsonTransferUtil.objectToJson(userRequest));
         return userRequest
                 .map(rq -> {
                     String s = kafkaProducer.sendAndReceiveUser(JsonTransferUtil.objectToJson(rq));
                     log.info("Response from user api: {}", s);
-                    UserResponse userResponse = JsonTransferUtil.jsonToObject(s, UserResponse.class);
-                    log.info("UserId. {}", userResponse.getId());
-                    return Mono.just(userResponse.getId());
+                    //UserResponse userResponse = JsonTransferUtil.jsonToObject(s, UserResponse.class);
+                    //log.info("UserId. {}", userResponse.getId());
+                    return "VACIO";
                 })
                 .doOnSuccess(exchangeResponse -> log.info("-> Exchange day RS: {}",
-                        JsonTransferUtil.objectToJson(exchangeResponse)))
-                .then();
+                        JsonTransferUtil.objectToJson(exchangeResponse)));
     }
 }

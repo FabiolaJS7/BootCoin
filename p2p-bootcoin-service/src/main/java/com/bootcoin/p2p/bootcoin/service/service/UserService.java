@@ -5,5 +5,5 @@ import reactor.core.publisher.Mono;
 
 public interface UserService {
 
-    Mono<Void> createUser(Mono<UserRequest> userRequest);
+    Mono<String> createUser(Mono<UserRequest> userRequest);
 }

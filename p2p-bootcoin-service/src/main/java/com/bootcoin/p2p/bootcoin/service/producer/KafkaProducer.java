@@ -15,17 +15,17 @@ import java.util.UUID;
 public class KafkaProducer {
 
     private final ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate;
     private final ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public KafkaProducer(ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate,
                          KafkaTemplate<String, String> kafkaTemplate) {
         this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;
-        this.userReplyingKafkaTemplate = userReplyingKafkaTemplate;
         this.transactionReplyingKafkaTemplate = transactionReplyingKafkaTemplate;
+        this.userReplyingKafkaTemplate = userReplyingKafkaTemplate;
         this.kafkaTemplate = kafkaTemplate;
     }
 
