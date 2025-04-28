@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>KafkaConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bootcoin-user-api</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.user.api.config</a> &gt; <span class="el_source">KafkaConfig.java</span></div><h1>KafkaConfig.java</h1><pre class="source lang-java linenums">package com.bootcoin.user.api.config;
+
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.core.*;
+import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
+import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Configuration
+<span class="fc" id="L20">public class KafkaConfig {</span>
+    @Value(&quot;${spring.kafka.bootstrap-servers}&quot;)
+    private String bootstrapServers;
+
+    @Bean
+    public ReplyingKafkaTemplate&lt;String, String, String&gt; replyingKafkaTemplate(
+            ProducerFactory&lt;String, String&gt; producerFactory,
+            ConcurrentMessageListenerContainer&lt;String, String&gt; repliesContainer) {
+<span class="fc" id="L28">        return new ReplyingKafkaTemplate&lt;&gt;(producerFactory, repliesContainer);</span>
+    }
+
+    @Bean
+    public ConcurrentMessageListenerContainer&lt;String, String&gt; repliesContainer(
+            ConsumerFactory&lt;String, String&gt; consumerFactory) {
+<span class="fc" id="L34">        ContainerProperties containerProperties = new ContainerProperties(&quot;bootuser-response&quot;);</span>
+<span class="fc" id="L35">        containerProperties.setGroupId(&quot;bootuser-group&quot;);</span>
+
+<span class="fc" id="L37">        return new ConcurrentMessageListenerContainer&lt;&gt;(consumerFactory, containerProperties);</span>
+    }
+
+    @Bean
+    public ProducerFactory&lt;String, String&gt; producerFactory() {
+<span class="fc" id="L42">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L43">        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
+<span class="fc" id="L44">        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
+<span class="fc" id="L45">        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
+<span class="fc" id="L46">        return new DefaultKafkaProducerFactory&lt;&gt;(configProps);</span>
+    }
+
+    @Bean
+    public ConsumerFactory&lt;String, String&gt; consumerFactory() {
+<span class="fc" id="L51">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L52">        configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
+<span class="fc" id="L53">        configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
+<span class="fc" id="L54">        configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
+<span class="fc" id="L55">        return new DefaultKafkaConsumerFactory&lt;&gt;(configProps);</span>
+    }
+
+    @Bean
+    public KafkaTemplate&lt;String, String&gt; kafkaTemplate() {
+<span class="fc" id="L60">        return new KafkaTemplate&lt;&gt;(producerFactory());</span>
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory&lt;String, String&gt; kafkaListenerContainerFactory() {
+<span class="fc" id="L65">        ConcurrentKafkaListenerContainerFactory&lt;String, String&gt; factory =</span>
+                new ConcurrentKafkaListenerContainerFactory&lt;&gt;();
+<span class="fc" id="L67">        factory.setConsumerFactory(consumerFactory());</span>
+<span class="fc" id="L68">        return factory;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

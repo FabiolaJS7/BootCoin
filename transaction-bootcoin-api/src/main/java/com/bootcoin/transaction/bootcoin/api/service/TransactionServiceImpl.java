@@ -17,7 +17,7 @@ import java.time.LocalDate;
 
 @Service
 @Slf4j
-public class TransactionServiceImpl implements TransactionService{
+public class TransactionServiceImpl implements TransactionService {
 
     @Autowired
     DaoTransactionFactory daoTransactionFactory;

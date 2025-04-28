@@ -88,7 +88,7 @@ public class KafkaConfig {
     @Bean
     public ConcurrentMessageListenerContainer<String, String> walletRepliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("wallet-response");
+        ContainerProperties containerProperties = new ContainerProperties("wallet-bootcoin-response");
         containerProperties.setGroupId("wallet-group");
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }

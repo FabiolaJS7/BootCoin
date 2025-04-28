@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JsonTransferUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">p2p-bootcoin-service</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.p2p.bootcoin.service.util</a> &gt; <span class="el_source">JsonTransferUtil.java</span></div><h1>JsonTransferUtil.java</h1><pre class="source lang-java linenums">package com.bootcoin.p2p.bootcoin.service.util;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import java.io.File;
+import java.io.IOException;
+
+<span class="nc" id="L12">public class JsonTransferUtil {</span>
+
+<span class="nc" id="L14">    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();</span>
+
+    static {
+        // Registra el módulo para manejar Java 8 Date/Time (como LocalDate)
+<span class="nc" id="L18">        OBJECT_MAPPER.registerModule(new JavaTimeModule());</span>
+<span class="nc" id="L19">    }</span>
+    public static String objectToJson(Object object) {
+<span class="nc" id="L21">        ObjectMapper mapper = new ObjectMapper();</span>
+<span class="nc" id="L22">        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);</span>
+<span class="nc" id="L23">        mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);</span>
+
+        // Registrar el módulo para soportar Java 8 LocalDate y otros tipos de fecha/hora
+<span class="nc" id="L26">        mapper.registerModule(new JavaTimeModule());</span>
+
+<span class="nc" id="L28">        String jsonString = null;</span>
+        try {
+<span class="nc" id="L30">            jsonString = mapper.writeValueAsString(object);</span>
+<span class="nc" id="L31">        } catch (JsonProcessingException e) {</span>
+<span class="nc" id="L32">            e.printStackTrace();</span>
+<span class="nc" id="L33">        }</span>
+<span class="nc" id="L34">        return jsonString;</span>
+    }
+
+    public static &lt;T&gt; T getObjectFromJSONFile(Class&lt;T&gt; type, String filePath) {
+<span class="nc" id="L38">        ClassLoader classLoader = type.getClassLoader();</span>
+<span class="nc" id="L39">        File file = new File(classLoader.getResource(filePath).getFile());</span>
+<span class="nc" id="L40">        ObjectMapper mapper = new ObjectMapper()</span>
+<span class="nc" id="L41">                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span>
+<span class="nc" id="L42">        T object = null;</span>
+
+        try {
+<span class="nc" id="L45">            object = mapper.readValue(file, type);</span>
+
+<span class="nc" id="L47">        } catch (IOException e) {</span>
+<span class="nc" id="L48">            e.printStackTrace();</span>
+<span class="nc" id="L49">        }</span>
+
+<span class="nc" id="L51">        return object;</span>
+    }
+
+    public static &lt;T&gt; T jsonToObject(String json, Class&lt;T&gt; clazz) {
+        try {
+<span class="nc" id="L56">            return OBJECT_MAPPER.readValue(json, clazz);</span>
+<span class="nc" id="L57">        } catch (Exception e) {</span>
+<span class="nc" id="L58">            throw new RuntimeException(&quot;Error converting JSON to object: &quot; + e.getMessage(), e);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -30,7 +30,7 @@ public class ExchangeConsumer {
     @KafkaListener(topics = "exchange-rate", groupId = "exchange-group")
     public void createExchange(String message) {
         log.info("Exchange to create: {}", message);
-        ExchangeRequest exchangeRequest= JsonTransferUtil.jsonToObject(message, ExchangeRequest.class);
+        ExchangeRequest exchangeRequest = JsonTransferUtil.jsonToObject(message, ExchangeRequest.class);
 
         exchangeService.createExchange(Mono.just(exchangeRequest))
                 .doOnSuccess(exchangeResponse -> log.info("Exchange created: {}",
@@ -42,7 +42,7 @@ public class ExchangeConsumer {
     @KafkaListener(topics = "exchange-request", groupId = "exchange-group")
     public void getExchange(ConsumerRecord<String, String> message,
                         @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
-                        @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId){
+                        @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
         log.info("Init request exchange day: {}, replyTopic: {}, correlationId: {}", message.value(),
                 replyTopic, correlationId);
         exchangeService.getTodayExchange()

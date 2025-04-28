@@ -38,7 +38,7 @@ public class TransactionConsumer {
     @KafkaListener(topics = "transaction-list-request", groupId = "transaction-group")
     public void getTransactionListByWallet(ConsumerRecord<String, String> message,
                                            @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
-                                           @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId){
+                                           @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
         log.info("-> Get transaction list request of walletId: {}", message.value());
         transactionService.getTransactions(message.value())
                 .collectList().doOnNext(transactions -> {

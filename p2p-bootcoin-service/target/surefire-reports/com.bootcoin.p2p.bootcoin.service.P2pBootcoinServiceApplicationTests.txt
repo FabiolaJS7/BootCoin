@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 13.90 s -- in com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests

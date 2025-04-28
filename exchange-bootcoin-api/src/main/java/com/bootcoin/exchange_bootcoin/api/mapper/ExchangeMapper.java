@@ -9,7 +9,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface ExchangeMapper {
 
-    public ExchangeMapper INSTANCE = Mappers.getMapper(ExchangeMapper.class);
+    ExchangeMapper INSTANCE = Mappers.getMapper(ExchangeMapper.class);
 
     ExchangeModel getExchangeModelFromExchangeRequest(ExchangeRequest exchangeRequest);
     ExchangeResponse getExchangeResponseFromExchangeModel(ExchangeModel exchangeModel);

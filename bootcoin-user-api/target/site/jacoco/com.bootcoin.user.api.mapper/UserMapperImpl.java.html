@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bootcoin-user-api</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.user.api.mapper</a> &gt; <span class="el_source">UserMapperImpl.java</span></div><h1>UserMapperImpl.java</h1><pre class="source lang-java linenums">package com.bootcoin.user.api.mapper;
+
+import com.bootcoin.user.api.bean.UserRequest;
+import com.bootcoin.user.api.bean.UserResponse;
+import com.bootcoin.user.api.model.UserModel;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-04-28T09:51:01-0500&quot;,
+    comments = &quot;version: 1.6.0, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)&quot;
+)
+<span class="nc" id="L13">public class UserMapperImpl implements UserMapper {</span>
+
+    @Override
+    public UserModel getUserModelFromUserRequest(UserRequest userRequest) {
+<span class="nc bnc" id="L17" title="All 2 branches missed.">        if ( userRequest == null ) {</span>
+<span class="nc" id="L18">            return null;</span>
+        }
+
+<span class="nc" id="L21">        UserModel userModel = new UserModel();</span>
+
+<span class="nc" id="L23">        userModel.setName( userRequest.getName() );</span>
+<span class="nc" id="L24">        userModel.setLastName( userRequest.getLastName() );</span>
+<span class="nc" id="L25">        userModel.setIdentificationType( userRequest.getIdentificationType() );</span>
+<span class="nc" id="L26">        userModel.setIdentificationNumber( userRequest.getIdentificationNumber() );</span>
+<span class="nc" id="L27">        userModel.setPhoneNumber( userRequest.getPhoneNumber() );</span>
+<span class="nc" id="L28">        userModel.setEmail( userRequest.getEmail() );</span>
+
+<span class="nc" id="L30">        return userModel;</span>
+    }
+
+    @Override
+    public UserResponse getUserResponseFromUserModel(UserModel userModel) {
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if ( userModel == null ) {</span>
+<span class="nc" id="L36">            return null;</span>
+        }
+
+<span class="nc" id="L39">        UserResponse userResponse = new UserResponse();</span>
+
+<span class="nc" id="L41">        userResponse.setId( userModel.getId() );</span>
+<span class="nc" id="L42">        userResponse.setName( userModel.getName() );</span>
+<span class="nc" id="L43">        userResponse.setLastName( userModel.getLastName() );</span>
+<span class="nc" id="L44">        userResponse.setIdentificationType( userModel.getIdentificationType() );</span>
+<span class="nc" id="L45">        userResponse.setIdentificationNumber( userModel.getIdentificationNumber() );</span>
+<span class="nc" id="L46">        userResponse.setPhoneNumber( userModel.getPhoneNumber() );</span>
+<span class="nc" id="L47">        userResponse.setEmail( userModel.getEmail() );</span>
+
+<span class="nc" id="L49">        return userResponse;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,6 +1,6 @@
 package com.bootcoin.wallet.bootcoin.api.service;
 
-import com.bootcoin.wallet.bootcoin.api.ActionUpdateConstants;
+import com.bootcoin.wallet.bootcoin.api.constants.ActionUpdateConstants;
 import com.bootcoin.wallet.bootcoin.api.bean.WalletResponse;
 import com.bootcoin.wallet.bootcoin.api.bean.WalletUpdateRequest;
 import com.bootcoin.wallet.bootcoin.api.mapper.WalletMapper;

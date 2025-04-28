@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TransactionController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">p2p-bootcoin-service</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.p2p.bootcoin.service.controller</a> &gt; <span class="el_source">TransactionController.java</span></div><h1>TransactionController.java</h1><pre class="source lang-java linenums">package com.bootcoin.p2p.bootcoin.service.controller;
+
+import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionResponse;
+import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionUpdateRequest;
+import com.bootcoin.p2p.bootcoin.service.service.TransactionService;
+import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@RestController
+@RequestMapping(&quot;/bootcoin/transactions&quot;)
+<span class="fc" id="L19">@Slf4j</span>
+<span class="fc" id="L20">public class TransactionController {</span>
+
+    @Autowired
+    TransactionService transactionService;
+
+    @GetMapping(value = &quot;/{walletId}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Flux&lt;TransactionResponse&gt; getTransactionsByWallet(@PathVariable (&quot;walletId&quot;) String walletId) {
+<span class="nc" id="L27">        log.info(&quot;-&gt; Init transactions by wallet {}&quot;, walletId);</span>
+<span class="nc" id="L28">        return transactionService.getTransactionsByWallet(walletId);</span>
+    }
+
+    @PostMapping(value = &quot;/action&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono&lt;ResponseEntity&lt;String&gt;&gt; updateStatusTransaction(@RequestBody TransactionUpdateRequest transactionRequest) {
+<span class="nc" id="L33">        log.info(&quot;-&gt; Update transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
+<span class="nc" id="L34">        return transactionService.updateTransaction(Mono.just(transactionRequest))</span>
+<span class="nc" id="L35">                .then(Mono.fromCallable(() -&gt; new ResponseEntity&lt;&gt;(HttpStatus.CREATED)));</span>
+    }
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono&lt;ResponseEntity&lt;String&gt;&gt; createTransaction(@RequestBody TransactionRequest transactionRequest) {
+<span class="nc" id="L40">        log.info(&quot;-&gt; Create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
+<span class="nc" id="L41">        return transactionService.createTransaction(Mono.just(transactionRequest))</span>
+<span class="nc" id="L42">                .then(Mono.fromCallable(() -&gt; new ResponseEntity&lt;&gt;(HttpStatus.CREATED)));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

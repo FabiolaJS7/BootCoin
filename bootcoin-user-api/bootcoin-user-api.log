@@ -1,0 +1,915 @@
+2025-04-28 03:58:03-685 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcoin.user.api.BootcoinUserApiApplicationTests]: BootcoinUserApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 03:58:04-023 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcoin.user.api.BootcoinUserApiApplication for test class com.bootcoin.user.api.BootcoinUserApiApplicationTests 
+2025-04-28 03:58:08-084 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - Starting BootcoinUserApiApplicationTests using Java 17.0.12 with PID 10516 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api) 
+2025-04-28 03:58:08-087 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - The following 1 profile is active: "dev" 
+2025-04-28 03:58:08-164 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 03:58:08-165 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 03:58:08-165 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7ea039b4 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 03:58:08-165 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 03:58:08-165 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 03:58:08-166 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@70d7a49b uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 03:58:08-166 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 03:58:08-166 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 03:58:08-166 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@4509b7 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 03:58:10-602 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 03:58:11-470 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 855 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 03:58:12-057 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=38fdc953-25ca-3510-8aa0-db7918657eca 
+2025-04-28 03:58:13-605 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@3ac5a623, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@60c7726b], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@69b9a61, com.mongodb.Jep395RecordCodecProvider@bb832f0, com.mongodb.KotlinCodecProvider@1cdb691a]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@475414c0], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 03:58:14-004 [cluster-ClusterId{value='680f432516cc5841a9fe8686', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=206091900, minRoundTripTimeNanos=0} 
+2025-04-28 03:58:15-778 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 03:58:19-105 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 03:58:20-521 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 03:58:20-647 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 03:58:20-936 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 03:58:21-101 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 03:58:21-463 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 03:58:21-468 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 03:58:21-469 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745830701460 
+2025-04-28 03:58:21-484 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Subscribed to topic(s): bootuser-response 
+2025-04-28 03:58:21-553 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 03:58:21-609 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 03:58:21-618 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 03:58:21-651 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 03:58:21-652 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 03:58:21-652 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 03:58:21-652 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 03:58:21-654 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 03:58:21-654 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 03:58:21-654 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 03:58:22-401 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 03:58:22-405 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 03:58:22-410 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 03:58:22-414 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745830702413 with initial instances count: 1 
+2025-04-28 03:58:22-420 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 03:58:22-422 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745830702422, current=UP, previous=STARTING] 
+2025-04-28 03:58:22-426 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 03:58:22-428 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 03:58:22-430 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 03:58:22-451 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 03:58:22-452 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 03:58:22-452 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745830702451 
+2025-04-28 03:58:22-453 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Subscribed to topic(s): user-request 
+2025-04-28 03:58:22-461 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 03:58:22-463 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 03:58:22-487 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 03:58:22-488 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 03:58:22-488 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745830702487 
+2025-04-28 03:58:22-489 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Subscribed to topic(s): bootuser-request 
+2025-04-28 03:58:22-575 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - Started BootcoinUserApiApplicationTests in 17.775 seconds (process running for 22.174) 
+2025-04-28 03:58:22-608 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 03:58:22-680 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Cluster ID: eM8hw9H_Q8WFdJx99fFtRA 
+2025-04-28 03:58:22-680 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Cluster ID: eM8hw9H_Q8WFdJx99fFtRA 
+2025-04-28 03:58:22-681 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Cluster ID: eM8hw9H_Q8WFdJx99fFtRA 
+2025-04-28 03:58:22-682 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 03:58:22-682 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 03:58:22-682 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 03:58:22-691 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-691 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-701 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-752 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: need to re-join with the given member-id: consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee 
+2025-04-28 03:58:22-754 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-754 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: need to re-join with the given member-id: consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a 
+2025-04-28 03:58:22-756 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-763 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: need to re-join with the given member-id: consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855 
+2025-04-28 03:58:22-766 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-769 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=21, memberId='consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a', protocol='range'} 
+2025-04-28 03:58:22-770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=21, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:22-787 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=21, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:22-788 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException) 
+2025-04-28 03:58:22-788 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-821 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Finished assignment for group at generation 21: {consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a=Assignment(partitions=[bootuser-response-0]), consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee=Assignment(partitions=[user-request-0])} 
+2025-04-28 03:58:22-835 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=21, memberId='consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a', protocol='range'} 
+2025-04-28 03:58:22-836 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException) 
+2025-04-28 03:58:22-837 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:22-844 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=22, memberId='consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855', protocol='range'} 
+2025-04-28 03:58:22-844 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=22, memberId='consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a', protocol='range'} 
+2025-04-28 03:58:22-844 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=22, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:22-850 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Finished assignment for group at generation 22: {consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a=Assignment(partitions=[bootuser-response-0]), consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855=Assignment(partitions=[bootuser-request-0]), consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee=Assignment(partitions=[user-request-0])} 
+2025-04-28 03:58:22-856 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Successfully synced group in generation Generation{generationId=22, memberId='consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855', protocol='range'} 
+2025-04-28 03:58:22-856 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Successfully synced group in generation Generation{generationId=22, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:22-858 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Notifying assignor about the new Assignment(partitions=[bootuser-request-0]) 
+2025-04-28 03:58:22-859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Notifying assignor about the new Assignment(partitions=[user-request-0]) 
+2025-04-28 03:58:22-859 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Successfully synced group in generation Generation{generationId=22, memberId='consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a', protocol='range'} 
+2025-04-28 03:58:22-860 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Notifying assignor about the new Assignment(partitions=[bootuser-response-0]) 
+2025-04-28 03:58:22-868 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Adding newly assigned partitions: bootuser-response-0 
+2025-04-28 03:58:22-868 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Adding newly assigned partitions: bootuser-request-0 
+2025-04-28 03:58:22-868 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Adding newly assigned partitions: user-request-0 
+2025-04-28 03:58:22-899 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 03:58:22-899 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition bootuser-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 03:58:22-899 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition bootuser-request-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 03:58:22-904 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions assigned: [bootuser-request-0] 
+2025-04-28 03:58:22-904 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions assigned: [user-request-0] 
+2025-04-28 03:58:22-904 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootuser-group: partitions assigned: [bootuser-response-0] 
+2025-04-28 03:58:24-806 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 03:58:24-806 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745830704806, current=DOWN, previous=UP] 
+2025-04-28 03:58:24-807 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 03:58:24-828 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 03:58:25-617 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Revoke previously assigned partitions bootuser-response-0 
+2025-04-28 03:58:25-619 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootuser-group: partitions revoked: [bootuser-response-0] 
+2025-04-28 03:58:25-620 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Member consumer-bootuser-group-1-905ab8ce-38af-46ad-b94a-fa8856596c8a sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 03:58:25-621 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:25-622 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:25-622 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 03:58:25-624 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:25-624 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:25-862 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: group is already rebalancing 
+2025-04-28 03:58:25-862 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: group is already rebalancing 
+2025-04-28 03:58:25-864 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Revoke previously assigned partitions user-request-0 
+2025-04-28 03:58:25-864 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Revoke previously assigned partitions bootuser-request-0 
+2025-04-28 03:58:25-865 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions revoked: [user-request-0] 
+2025-04-28 03:58:25-865 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions revoked: [bootuser-request-0] 
+2025-04-28 03:58:25-866 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:25-866 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] (Re-)joining group 
+2025-04-28 03:58:25-875 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=23, memberId='consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855', protocol='range'} 
+2025-04-28 03:58:25-875 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Successfully joined group with generation Generation{generationId=23, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:26-008 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Finished assignment for group at generation 23: {consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855=Assignment(partitions=[bootuser-request-0]), consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee=Assignment(partitions=[user-request-0])} 
+2025-04-28 03:58:26-013 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 03:58:26-014 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 03:58:26-014 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 03:58:26-015 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 03:58:26-024 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Successfully synced group in generation Generation{generationId=23, memberId='consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee', protocol='range'} 
+2025-04-28 03:58:26-024 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Successfully synced group in generation Generation{generationId=23, memberId='consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855', protocol='range'} 
+2025-04-28 03:58:26-024 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Notifying assignor about the new Assignment(partitions=[user-request-0]) 
+2025-04-28 03:58:26-025 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Notifying assignor about the new Assignment(partitions=[bootuser-request-0]) 
+2025-04-28 03:58:26-026 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Adding newly assigned partitions: user-request-0 
+2025-04-28 03:58:26-027 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Adding newly assigned partitions: bootuser-request-0 
+2025-04-28 03:58:26-040 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-1 unregistered 
+2025-04-28 03:58:26-041 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 03:58:26-041 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition bootuser-request-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 03:58:26-042 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 03:58:26-043 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions assigned: [user-request-0] 
+2025-04-28 03:58:26-044 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions assigned: [bootuser-request-0] 
+2025-04-28 03:58:26-052 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Revoke previously assigned partitions bootuser-request-0 
+2025-04-28 03:58:26-052 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Revoke previously assigned partitions user-request-0 
+2025-04-28 03:58:26-055 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions revoked: [bootuser-request-0] 
+2025-04-28 03:58:26-055 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: partitions revoked: [user-request-0] 
+2025-04-28 03:58:26-056 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Member consumer-bootuser-group-2-b9d4bba8-0e66-40ba-b259-fb18450364ee sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 03:58:26-056 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Member consumer-bootuser-group-3-dc9e4348-38d1-4bfa-99f7-c7ecbc540855 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 03:58:26-057 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-058 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-058 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-058 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-058 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 03:58:26-058 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 03:58:26-059 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-059 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-059 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-060 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 03:58:26-556 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 03:58:26-556 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 03:58:26-557 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 03:58:26-557 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 03:58:26-558 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 03:58:26-558 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 03:58:26-558 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 03:58:26-558 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 03:58:26-573 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-3 unregistered 
+2025-04-28 03:58:26-574 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 03:58:26-574 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-2 unregistered 
+2025-04-28 03:58:26-575 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 03:58:28-219 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 03:58:31-229 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 03:58:31-253 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 03:58:31-254 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 09:51:08-460 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcoin.user.api.BootcoinUserApiApplicationTests]: BootcoinUserApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 09:51:08-850 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcoin.user.api.BootcoinUserApiApplication for test class com.bootcoin.user.api.BootcoinUserApiApplicationTests 
+2025-04-28 09:51:13-382 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - Starting BootcoinUserApiApplicationTests using Java 17.0.12 with PID 22020 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api) 
+2025-04-28 09:51:13-384 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - The following 1 profile is active: "dev" 
+2025-04-28 09:51:13-464 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 09:51:13-465 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 09:51:13-465 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@3e1897d uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 09:51:13-465 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 09:51:13-465 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 09:51:13-465 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@53d2f0ec uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 09:51:13-466 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 09:51:13-466 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 09:51:13-466 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@560be8c0 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 09:51:15-768 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 09:51:16-512 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 716 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 09:51:17-073 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=38fdc953-25ca-3510-8aa0-db7918657eca 
+2025-04-28 09:51:18-512 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@3479e14e, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4aa037e6], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1abd92c6, com.mongodb.Jep395RecordCodecProvider@7c44c38b, com.mongodb.KotlinCodecProvider@74c2edc]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4c9836d4], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 09:51:18-980 [cluster-ClusterId{value='680f95e6ce586b219482d89f', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=192594900, minRoundTripTimeNanos=0} 
+2025-04-28 09:51:20-807 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 09:51:22-927 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 09:51:23-908 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 09:51:24-015 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 09:51:24-286 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 09:51:24-409 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 09:51:24-640 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 09:51:24-642 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 09:51:24-642 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745851884637 
+2025-04-28 09:51:24-648 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Subscribed to topic(s): bootuser-response 
+2025-04-28 09:51:24-695 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 09:51:24-749 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 09:51:24-763 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 09:51:24-782 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 09:51:24-783 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 09:51:25-315 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-318 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-318 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-420 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-421 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-422 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-424 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 09:51:25-429 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 09:51:25-434 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 09:51:25-438 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745851885437 with initial instances count: 6 
+2025-04-28 09:51:25-443 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 09:51:25-444 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745851885444, current=UP, previous=STARTING] 
+2025-04-28 09:51:25-448 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 09:51:25-448 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 09:51:25-449 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 09:51:25-471 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 09:51:25-472 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 09:51:25-472 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745851885471 
+2025-04-28 09:51:25-473 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Subscribed to topic(s): bootuser-request 
+2025-04-28 09:51:25-479 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 09:51:25-481 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 09:51:25-482 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-482 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-483 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-495 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 09:51:25-496 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 09:51:25-496 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745851885495 
+2025-04-28 09:51:25-497 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Subscribed to topic(s): user-request 
+2025-04-28 09:51:25-503 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-504 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-504 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-531 [main] INFO  c.b.u.a.BootcoinUserApiApplicationTests - Started BootcoinUserApiApplicationTests in 15.8 seconds (process running for 19.847) 
+2025-04-28 09:51:25-549 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-551 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-551 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-565 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 09:51:25-579 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-580 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-581 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-593 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-594 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-594 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-719 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-720 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-720 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-749 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-750 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-750 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-750 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-750 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-751 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-966 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-966 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:25-966 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-966 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:25-966 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:25-967 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:26-198 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:26-199 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:26-199 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:26-338 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:26-339 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:26-339 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:26-463 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:26-464 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:26-464 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:26-992 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 09:51:26-993 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745851886993, current=DOWN, previous=UP] 
+2025-04-28 09:51:26-994 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 09:51:27-005 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 09:51:27-125 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:27-125 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:27-126 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:27-159 [repliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:27-159 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:27-159 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:27-225 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 09:51:27-225 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 09:51:27-226 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 09:51:27-690 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-691 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-691 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 09:51:27-694 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-694 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-1, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-699 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 09:51:27-699 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 09:51:27-700 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 09:51:27-700 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 09:51:27-705 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-1 unregistered 
+2025-04-28 09:51:27-706 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 09:51:27-709 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-709 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-709 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-2, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-710 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 09:51:27-711 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 09:51:27-712 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 09:51:27-717 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-2 unregistered 
+2025-04-28 09:51:27-718 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 09:51:27-718 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-3 unregistered 
+2025-04-28 09:51:27-719 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 09:51:29-858 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 09:51:32-862 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 09:51:32-885 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 09:51:32-885 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 

@@ -58,7 +58,7 @@ public class ExchangeServiceImpl implements ExchangeService {
         return daoExchangeFactory.getExchangeRepository().getExchangeModelByDay(LocalDate.now())
                 .map(ExchangeMapper.INSTANCE::getExchangeResponseFromExchangeModel)
                 .flatMap(Mono::just)
-                .switchIfEmpty(Mono.just(new ExchangeResponse(null, LocalDate.now(), 0.00,0.00)))
+                .switchIfEmpty(Mono.just(new ExchangeResponse(null, LocalDate.now(), 0.00, 0.00)))
                 .doOnSuccess(exchangeResponse -> log.info("Exchange get today {}",
                         JsonTransferUtil.objectToJson(exchangeResponse)))
                 .doOnError(throwable -> log.error("Exchange get today failed {}", throwable.getMessage()));

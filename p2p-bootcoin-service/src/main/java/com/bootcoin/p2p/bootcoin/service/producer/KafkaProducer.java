@@ -8,7 +8,6 @@ import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Service;
 
-import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @Service
@@ -102,8 +101,8 @@ public class KafkaProducer {
 
     public String sendAndReceiveWallet(String message) {
         try {
-            ProducerRecord<String, String> record = new ProducerRecord<>("wallet-request", message);
-            record.headers().add(KafkaHeaders.REPLY_TOPIC, "wallet-response".getBytes());
+            ProducerRecord<String, String> record = new ProducerRecord<>("wallet-bootcoin-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "wallet-bootcoin-response".getBytes());
             record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
 
             log.info("CorrelationId wallet: {}", new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));

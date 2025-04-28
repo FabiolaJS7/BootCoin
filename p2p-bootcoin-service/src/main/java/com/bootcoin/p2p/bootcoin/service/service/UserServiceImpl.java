@@ -1,6 +1,5 @@
 package com.bootcoin.p2p.bootcoin.service.service;
 
-import com.bootcoin.p2p.bootcoin.service.bean.exchange.ExchangeResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletRequest;

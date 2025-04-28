@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\exchange\ExchangeRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\exchange\ExchangeResponse.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\transaction\TransactionRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\transaction\TransactionResponse.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\transaction\TransactionUpdateRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\user\UserRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\user\UserResponse.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletResponse.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletUpdateRequest.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\config\KafkaConfig.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\ExchangeController.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\TransactionController.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\UserController.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\WalletController.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\P2pBootcoinServiceApplication.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\producer\KafkaProducer.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\ExchangeService.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\ExchangeServiceImpl.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\TransactionService.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\TransactionServiceImpl.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\UserService.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\UserServiceImpl.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\WalletService.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\service\WalletServiceImpl.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\util\JsonTransferUtil.java">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\resources\application-dev.properties">
+</file>
+<file name="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\resources\application.properties">
+</file>
+</checkstyle>

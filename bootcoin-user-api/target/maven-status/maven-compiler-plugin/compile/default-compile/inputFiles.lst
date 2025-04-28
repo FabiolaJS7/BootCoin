@@ -1,0 +1,14 @@
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\bean\UserRequest.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\bean\UserResponse.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\BootcoinUserApiApplication.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\config\KafkaConfig.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\consumer\UserConsumer.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\mapper\UserMapper.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\model\UserModel.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\package-info.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\producer\KafkaProducer.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\repository\DaoUserFactory.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\repository\UserRepository.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\service\UserService.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\service\UserServiceImpl.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\src\main\java\com\bootcoin\user\api\util\JsonTransferUtil.java

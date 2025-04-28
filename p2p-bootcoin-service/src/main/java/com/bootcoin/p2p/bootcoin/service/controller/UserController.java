@@ -1,7 +1,6 @@
 package com.bootcoin.p2p.bootcoin.service.controller;
 
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
-import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletResponse;
 import com.bootcoin.p2p.bootcoin.service.service.UserService;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;

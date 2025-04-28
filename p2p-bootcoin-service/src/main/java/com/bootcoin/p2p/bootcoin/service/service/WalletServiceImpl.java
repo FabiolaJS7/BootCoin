@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Slf4j
-public class WalletServiceImpl implements WalletService{
+public class WalletServiceImpl implements WalletService {
 
     @Autowired
     KafkaProducer kafkaProducer;

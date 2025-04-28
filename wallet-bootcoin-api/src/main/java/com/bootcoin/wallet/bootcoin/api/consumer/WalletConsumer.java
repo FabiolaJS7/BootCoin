@@ -25,7 +25,7 @@ public class WalletConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "wallet-request", groupId = "wallet-group")
+    @KafkaListener(topics = "wallet-bootcoin-request", groupId = "wallet-group")
     public void createWalletWithResponse(ConsumerRecord<String, String> message,
                              @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                              @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
@@ -44,6 +44,7 @@ public class WalletConsumer {
                     ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
                             JsonTransferUtil.objectToJson(walletResponse));
                     responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);
+                    responseRecord.headers().add("Content-Type", "application/json".getBytes());
                     kafkaTemplate.send(responseRecord);
                     return Mono.just("Mensaje enviado al topic " + "wallet-response");
                 })
