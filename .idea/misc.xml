@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/exchange-bootcoin-api/pom.xml" />
         <option value="$PROJECT_DIR$/transaction-bootcoin-api/pom.xml" />
         <option value="$PROJECT_DIR$/bootcoin-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/bootcoin-user-api/pom.xml" />
       </list>
     </option>
   </component>

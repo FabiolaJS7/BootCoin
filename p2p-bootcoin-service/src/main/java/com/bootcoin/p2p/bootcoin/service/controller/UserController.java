@@ -1,6 +1,8 @@
 package com.bootcoin.p2p.bootcoin.service.controller;
 
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
+import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletResponse;
 import com.bootcoin.p2p.bootcoin.service.service.UserService;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -23,15 +25,32 @@ public class UserController {
     UserService userService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<String>> createUser(@RequestBody UserRequest userRequest) {
+    public Mono<ResponseEntity<WalletResponse>> createUser(@RequestBody UserRequest userRequest) {
         log.info("-> Init create user RQ: {}", JsonTransferUtil.objectToJson(userRequest));
         return userService.createUser(Mono.just(userRequest))
-                .doOnSuccess(s -> log.info("User created successfully."))
-                .thenReturn(ResponseEntity.ok("User created successfully."))
+                .map(walletResponse -> {
+                    log.info("User create successfully: {}", JsonTransferUtil.objectToJson(walletResponse));
+                    return ResponseEntity.ok(walletResponse);
+                })
                 .onErrorResume(e -> {
                     log.error("Error creating user: {}", e.getMessage());
-                    return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                            .body("Error creating user"));
+                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                            .body(new WalletResponse()));
+                });
+    }
+
+    @PostMapping(value = "/wallet", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<WalletResponse>> createUserWallet(@RequestBody UserRequest userRequest) {
+        log.info("-> Init create user and wallet RQ: {}", JsonTransferUtil.objectToJson(userRequest));
+        return userService.createUserAndWallet(Mono.just(userRequest))
+                .map(walletResponse -> {
+                    log.info("User create and walletsuccessfully: {}", JsonTransferUtil.objectToJson(walletResponse));
+                    return ResponseEntity.ok(walletResponse);
+                })
+                .onErrorResume(e -> {
+                    log.error("Error creating user and wallet: {}", e.getMessage());
+                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                            .body(new WalletResponse()));
                 });
     }
 

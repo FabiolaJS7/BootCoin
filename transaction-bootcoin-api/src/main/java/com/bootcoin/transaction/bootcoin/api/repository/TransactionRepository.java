@@ -11,4 +11,6 @@ public interface TransactionRepository extends ReactiveMongoRepository<Transacti
     Flux<TransactionModel> findTransactionModelByWalletAccountFrom(String walletAccountFrom);
 
     Mono<TransactionModel> findTransactionModelByTransactionNumber(String transactionNumber);
+
+    Mono<TransactionModel> findTransactionModelById(String transactionId);
 }

@@ -20,6 +20,7 @@ import java.util.Map;
 public class KafkaConfig {
 
     public static final long THIRTY_SECONDS = 30;
+    public static final long FORTHY_SECONDS = 30;
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -34,19 +35,28 @@ public class KafkaConfig {
     }
 
     @Bean
-    public ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> userRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, userRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS)); // Aumenta el tiempo de espera
-        return template;
-    }
-
-    @Bean
     public ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate(
             ProducerFactory<String, String> producerFactory,
             ConcurrentMessageListenerContainer<String, String> transactionRepliesContainer) {
         ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, transactionRepliesContainer);
+        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
+        return template;
+    }
+
+    @Bean
+    public ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate(
+            ProducerFactory<String, String> producerFactory,
+            ConcurrentMessageListenerContainer<String, String> bootCoinUserRepliesContainer) {
+        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, bootCoinUserRepliesContainer);
+        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
+        return template;
+    }
+
+    @Bean
+    public ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate(
+            ProducerFactory<String, String> producerFactory,
+            ConcurrentMessageListenerContainer<String, String> walletRepliesContainer) {
+        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, walletRepliesContainer);
         template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
         return template;
     }
@@ -60,14 +70,6 @@ public class KafkaConfig {
     }
 
     @Bean
-    public ConcurrentMessageListenerContainer<String, String> userRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("user-response");
-        containerProperties.setGroupId("bootcoin-user-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
-    @Bean
     public ConcurrentMessageListenerContainer<String, String> transactionRepliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
         ContainerProperties containerProperties = new ContainerProperties("transaction-list-response");
@@ -75,6 +77,21 @@ public class KafkaConfig {
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }
 
+    @Bean
+    public ConcurrentMessageListenerContainer<String, String> bootCoinUserRepliesContainer(
+            ConsumerFactory<String, String> consumerFactory) {
+        ContainerProperties containerProperties = new ContainerProperties("user-response");
+        containerProperties.setGroupId("bootuser-group");
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
+    }
+
+    @Bean
+    public ConcurrentMessageListenerContainer<String, String> walletRepliesContainer(
+            ConsumerFactory<String, String> consumerFactory) {
+        ContainerProperties containerProperties = new ContainerProperties("wallet-response");
+        containerProperties.setGroupId("wallet-group");
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
+    }
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {

@@ -1,4 +1,4 @@
-package com.bootcoin.commons.user;
+package com.bootcoin.user.api.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

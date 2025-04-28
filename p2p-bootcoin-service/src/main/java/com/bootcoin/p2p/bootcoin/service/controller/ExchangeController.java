@@ -35,7 +35,7 @@ public class ExchangeController {
                     })
                     .onErrorResume(e -> {
                         log.error("Error exchange day: {}", e.getMessage());
-                        return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)
                                 .body(null));
                     });
         } else {

@@ -11,6 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class TransactionUpdateRequest {
 
+    private String transactionId;
     private String status;
-    private String transactionNumber;
 }

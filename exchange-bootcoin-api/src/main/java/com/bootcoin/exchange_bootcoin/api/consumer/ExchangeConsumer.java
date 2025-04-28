@@ -29,7 +29,7 @@ public class ExchangeConsumer {
 
     @KafkaListener(topics = "exchange-rate", groupId = "exchange-group")
     public void createExchange(String message) {
-        log.info("Exchange recibido: {}", message);
+        log.info("Exchange to create: {}", message);
         ExchangeRequest exchangeRequest= JsonTransferUtil.jsonToObject(message, ExchangeRequest.class);
 
         exchangeService.createExchange(Mono.just(exchangeRequest))

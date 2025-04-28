@@ -8,6 +8,7 @@ import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @Service
@@ -16,16 +17,19 @@ public class KafkaProducer {
 
     private final ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate;
     private final ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public KafkaProducer(ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate<String, String, String> userReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate,
                          KafkaTemplate<String, String> kafkaTemplate) {
         this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;
         this.transactionReplyingKafkaTemplate = transactionReplyingKafkaTemplate;
-        this.userReplyingKafkaTemplate = userReplyingKafkaTemplate;
+        this.bootCoinUserReplyingKafkaTemplate = bootCoinUserReplyingKafkaTemplate;
+        this.walletReplyingKafkaTemplate = walletReplyingKafkaTemplate;
         this.kafkaTemplate = kafkaTemplate;
     }
 
@@ -51,34 +55,11 @@ public class KafkaProducer {
         }
     }
 
-    public String sendAndReceiveUser(String message) {
-        try {
-            ProducerRecord<String, String> record = new ProducerRecord<>("user-request", message);
-            record.headers().add(KafkaHeaders.REPLY_TOPIC, "user-response".getBytes());
-            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
-
-            // Log del ProducerRecord
-            log.info("Sending user - Topic: {}, Key: {}, Value: {}, Headers: {}",
-                    record.topic(),
-                    record.key(),
-                    record.value(),
-                    record.headers());
-
-            return userReplyingKafkaTemplate.sendAndReceive(record)
-                    .toCompletableFuture()
-                    .thenApply(ConsumerRecord::value)
-                    .get();
-        } catch (Exception e) {
-            log.error("Error while sending and receiving message for user-request: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to send and receive message for user-request", e);
-        }
-    }
-
     public String sendAndReceiveTransaction(String message) {
         try {
             ProducerRecord<String, String> record = new ProducerRecord<>("transaction-list-request", message);
             record.headers().add(KafkaHeaders.REPLY_TOPIC, "transaction-list-response".getBytes());
-            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, new byte[2]);
 
             // Log del ProducerRecord
             log.info("Sending transaction list - Topic: {}, Key: {}, Value: {}, Headers: {}",
@@ -92,8 +73,48 @@ public class KafkaProducer {
                     .thenApply(ConsumerRecord::value)
                     .get();
         } catch (Exception e) {
-            log.error("Error while sending and receiving message for user-request: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to send and receive message for user-request", e);
+            log.error("Error while sending and receiving message for transaction-list-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for transaction-list-request", e);
+        }
+    }
+
+    public String sendAndReceiveBootCoinUser(String message) {
+        try {
+            ProducerRecord<String, String> record = new ProducerRecord<>("user-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "user-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+            // Log del ProducerRecord
+            log.info("Sending bootuser - Topic: {}, Key: {}, Value: {}, Headers: {}",
+                    record.topic(),
+                    record.key(),
+                    record.value(),
+                    record.headers());
+
+            return bootCoinUserReplyingKafkaTemplate.sendAndReceive(record)
+                    .toCompletableFuture()
+                    .thenApply(ConsumerRecord::value)
+                    .get();
+        } catch (Exception e) {
+            log.error("Error while sending and receiving message for bootuser-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for bootuser-request", e);
+        }
+    }
+
+    public String sendAndReceiveWallet(String message) {
+        try {
+            ProducerRecord<String, String> record = new ProducerRecord<>("wallet-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "wallet-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+
+            log.info("CorrelationId wallet: {}", new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));
+
+            return walletReplyingKafkaTemplate.sendAndReceive(record)
+                    .toCompletableFuture()
+                    .thenApply(ConsumerRecord::value)
+                    .get();
+        } catch (Exception e) {
+            log.error("Error while sending and receiving message for wallet-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for wallet-request", e);
         }
     }
 

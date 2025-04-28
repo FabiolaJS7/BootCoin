@@ -54,9 +54,10 @@ public class TransactionServiceImpl implements TransactionService{
     @Override
     public Mono<TransactionResponse> updateTransaction(Mono<TransactionUpdateRequest> transactionUpdateRequest) {
         return transactionUpdateRequest
-                .doOnNext(rq -> log.info("Init update transaction {}, {}", rq.getTransactionNumber(),
+                .doOnNext(rq -> log.info("Init update transaction {}, {}", rq.getTransactionId(),
                         JsonTransferUtil.objectToJson(rq)))
-                .flatMap(rq -> daoTransactionFactory.getTransactionRepository().findTransactionModelByTransactionNumber(rq.getTransactionNumber())
+                .flatMap(rq -> daoTransactionFactory.getTransactionRepository()
+                        .findTransactionModelById(rq.getTransactionId())
                         .flatMap(transactionModelFound -> {
                            return NumberRandomUtil.generateOrderAccount()
                                    .flatMap(s -> {

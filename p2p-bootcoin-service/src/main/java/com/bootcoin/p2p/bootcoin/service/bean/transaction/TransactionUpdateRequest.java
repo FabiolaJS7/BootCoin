@@ -12,5 +12,5 @@ import lombok.Setter;
 public class TransactionUpdateRequest {
 
     private String status;
-    private String transactionNumber;
+    private String transactionId;
 }
