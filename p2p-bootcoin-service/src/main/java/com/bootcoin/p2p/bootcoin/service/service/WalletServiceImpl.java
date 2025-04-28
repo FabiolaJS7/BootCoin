@@ -29,4 +29,17 @@ public class WalletServiceImpl implements WalletService {
                 .doOnNext(walletResponse -> log.info("Wallet created: {}",
                         JsonTransferUtil.objectToJson(walletResponse)));
     }
+
+    @Override
+    public Mono<WalletResponse> getWallet(Mono<WalletRequest> walletRequest) {
+        return walletRequest
+                .doOnNext(rq -> log.info("Init get wallet: {}", JsonTransferUtil.objectToJson(rq)))
+                .flatMap(rq -> {
+                    String s = kafkaProducer.sendAndReceiveWalletInformation(JsonTransferUtil.objectToJson(rq));
+                    log.info("Response from getting wallet: {}", s);
+                    return Mono.just(s)
+                            .map(s1 -> JsonTransferUtil.jsonToObject(s1, WalletResponse.class));
+                })
+                .doOnNext(walletResponse -> log.info("Wallet get: {}", walletResponse));
+    }
 }

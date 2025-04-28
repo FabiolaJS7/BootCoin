@@ -78,4 +78,14 @@ public class WalletServiceImpl implements WalletService {
                 .switchIfEmpty(Mono.just(new WalletResponse()))
                 .doOnError(throwable -> log.error("Wallet updated error {}", throwable.getMessage()));
     }
+
+    @Override
+    public Mono<WalletResponse> getWallet(String walletId) {
+        log.info("Init get wallet by wallet account {}", walletId);
+        return daoWalletFactory.getWalletRepository().findWalletModelByWalletAccount(walletId)
+                .map(WalletMapper.INSTANCE::getWalletResponseFromWalletModel)
+                .switchIfEmpty(Mono.just(new WalletResponse(null, "NOT EXISTS", null, null)))
+                .doOnSuccess(walletResponse -> log.info("Wallet get {}", JsonTransferUtil.objectToJson(walletResponse)))
+                .doOnError(throwable -> log.error("Wallet get error {}", throwable.getMessage()));
+    }
 }

@@ -18,17 +18,20 @@ public class KafkaProducer {
     private final ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate;
     private final ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate;
     private final ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate;
+    private final ReplyingKafkaTemplate<String, String, String> walletUserReplyingKafkaTemplate;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public KafkaProducer(ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate,
                          ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate,
+                         ReplyingKafkaTemplate<String, String, String> walletUserReplyingKafkaTemplate,
                          KafkaTemplate<String, String> kafkaTemplate) {
         this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;
         this.transactionReplyingKafkaTemplate = transactionReplyingKafkaTemplate;
         this.bootCoinUserReplyingKafkaTemplate = bootCoinUserReplyingKafkaTemplate;
         this.walletReplyingKafkaTemplate = walletReplyingKafkaTemplate;
+        this.walletUserReplyingKafkaTemplate = walletUserReplyingKafkaTemplate;
         this.kafkaTemplate = kafkaTemplate;
     }
 
@@ -108,6 +111,24 @@ public class KafkaProducer {
             log.info("CorrelationId wallet: {}", new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));
 
             return walletReplyingKafkaTemplate.sendAndReceive(record)
+                    .toCompletableFuture()
+                    .thenApply(ConsumerRecord::value)
+                    .get();
+        } catch (Exception e) {
+            log.error("Error while sending and receiving message for wallet-request: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to send and receive message for wallet-request", e);
+        }
+    }
+
+    public String sendAndReceiveWalletInformation(String message) {
+        try {
+            ProducerRecord<String, String> record = new ProducerRecord<>("wallet-user-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "wallet-user-response".getBytes());
+            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
+
+            log.info("CorrelationId wallet user: {}", new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));
+
+            return walletUserReplyingKafkaTemplate.sendAndReceive(record)
                     .toCompletableFuture()
                     .thenApply(ConsumerRecord::value)
                     .get();

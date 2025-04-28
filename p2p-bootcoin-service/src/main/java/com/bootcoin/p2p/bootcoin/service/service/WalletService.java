@@ -7,4 +7,5 @@ import reactor.core.publisher.Mono;
 public interface WalletService {
 
     Mono<WalletResponse> createWallet(Mono<WalletRequest> walletRequest);
+    Mono<WalletResponse> getWallet(Mono<WalletRequest> walletRequest);
 }

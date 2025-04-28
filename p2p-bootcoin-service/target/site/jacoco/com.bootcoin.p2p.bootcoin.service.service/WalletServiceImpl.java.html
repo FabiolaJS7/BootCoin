@@ -29,5 +29,18 @@ import reactor.core.publisher.Mono;
 <span class="nc" id="L29">                .doOnNext(walletResponse -&gt; log.info(&quot;Wallet created: {}&quot;,</span>
 <span class="nc" id="L30">                        JsonTransferUtil.objectToJson(walletResponse)));</span>
     }
+
+    @Override
+    public Mono&lt;WalletResponse&gt; getWallet(Mono&lt;WalletRequest&gt; walletRequest) {
+<span class="nc" id="L35">        return walletRequest</span>
+<span class="nc" id="L36">                .doOnNext(rq -&gt; log.info(&quot;Init get wallet: {}&quot;, JsonTransferUtil.objectToJson(rq)))</span>
+<span class="nc" id="L37">                .flatMap(rq -&gt; {</span>
+<span class="nc" id="L38">                    String s = kafkaProducer.sendAndReceiveWalletInformation(JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L39">                    log.info(&quot;Response from getting wallet: {}&quot;, s);</span>
+<span class="nc" id="L40">                    return Mono.just(s)</span>
+<span class="nc" id="L41">                            .map(s1 -&gt; JsonTransferUtil.jsonToObject(s1, WalletResponse.class));</span>
+                })
+<span class="nc" id="L43">                .doOnNext(walletResponse -&gt; log.info(&quot;Wallet get: {}&quot;, walletResponse));</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

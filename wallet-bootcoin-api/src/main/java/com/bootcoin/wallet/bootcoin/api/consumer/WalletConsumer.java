@@ -29,7 +29,7 @@ public class WalletConsumer {
     public void createWalletWithResponse(ConsumerRecord<String, String> message,
                              @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                              @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
-        log.info("Init request exchange day: {}, replyTopic: {}, correlationId: {}", message.value(),
+        log.info("Init create wallet: {}, replyTopic: {}, correlationId: {}", message.value(),
                 replyTopic, correlationId);
 
         WalletRequest walletRequest = JsonTransferUtil.jsonToObject(message.value(), WalletRequest.class);
@@ -68,6 +68,31 @@ public class WalletConsumer {
                     return Mono.just("created");
                 })
                 .doOnNext(s -> log.info("wallet created"))
+                .subscribe();
+
+    }
+
+    @KafkaListener(topics = "wallet-user-request", groupId = "wallet-group")
+    public void getWallet(ConsumerRecord<String, String> message,
+                                         @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
+                                         @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
+        log.info("Init get wallet : {}, replyTopic: {}, correlationId: {}", message.value(),
+                replyTopic, correlationId);
+
+        WalletRequest walletRequest = JsonTransferUtil.jsonToObject(message.value(), WalletRequest.class);
+
+        walletService.getWallet(walletRequest.getWalletAccount())
+                .flatMap(walletFound -> {
+                    log.info("Wallet found: {}", JsonTransferUtil.objectToJson(walletFound));
+
+                    ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
+                            JsonTransferUtil.objectToJson(walletFound));
+                    responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);
+                    responseRecord.headers().add("Content-Type", "application/json".getBytes());
+                    kafkaTemplate.send(responseRecord);
+                    return Mono.just("Mensaje enviado al topic " + "wallet-user-response");
+                })
+                .doOnNext(s -> log.info("Subscribe to bootcoin wallet {}", s))
                 .subscribe();
 
     }

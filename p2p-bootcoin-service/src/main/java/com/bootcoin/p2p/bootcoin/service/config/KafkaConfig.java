@@ -62,6 +62,15 @@ public class KafkaConfig {
     }
 
     @Bean
+    public ReplyingKafkaTemplate<String, String, String> walletUserReplyingKafkaTemplate(
+            ProducerFactory<String, String> producerFactory,
+            ConcurrentMessageListenerContainer<String, String> walletUserRepliesContainer) {
+        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, walletUserRepliesContainer);
+        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
+        return template;
+    }
+
+    @Bean
     public ConcurrentMessageListenerContainer<String, String> exchangeRepliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
         ContainerProperties containerProperties = new ContainerProperties("exchange-response");
@@ -89,6 +98,14 @@ public class KafkaConfig {
     public ConcurrentMessageListenerContainer<String, String> walletRepliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
         ContainerProperties containerProperties = new ContainerProperties("wallet-bootcoin-response");
+        containerProperties.setGroupId("wallet-group");
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
+    }
+
+    @Bean
+    public ConcurrentMessageListenerContainer<String, String> walletUserRepliesContainer(
+            ConsumerFactory<String, String> consumerFactory) {
+        ContainerProperties containerProperties = new ContainerProperties("wallet-user-response");
         containerProperties.setGroupId("wallet-group");
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }

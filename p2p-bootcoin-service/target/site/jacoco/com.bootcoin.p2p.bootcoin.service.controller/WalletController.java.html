@@ -36,5 +36,19 @@ import reactor.core.publisher.Mono;
 <span class="nc" id="L36">                            .body(null));</span>
                 });
     }
+
+    @PostMapping(value = (&quot;/information&quot;), consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono&lt;ResponseEntity&lt;WalletResponse&gt;&gt; getWallet(@RequestBody WalletRequest walletRequest) {
+<span class="nc" id="L42">        return walletService.getWallet(Mono.just(walletRequest))</span>
+<span class="nc" id="L43">                .map(walletResponse -&gt; {</span>
+<span class="nc" id="L44">                    log.info(&quot;Wallet get successfuly {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
+<span class="nc" id="L45">                    return ResponseEntity.ok(walletResponse);</span>
+                })
+<span class="nc" id="L47">                .onErrorResume(throwable -&gt; {</span>
+<span class="nc" id="L48">                    log.error(&quot;Error get wallet day: {}&quot;, throwable.getMessage());</span>
+<span class="nc" id="L49">                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)</span>
+<span class="nc" id="L50">                            .body(null));</span>
+                });
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

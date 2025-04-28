@@ -10,4 +10,5 @@ public interface WalletService {
     Mono<String> createWallet(String userId);
     Flux<WalletResponse> getWallets();
     Mono<WalletResponse> updateWallet(Mono<WalletUpdateRequest> walletUpdateRequest);
+    Mono<WalletResponse> getWallet(String walletId);
 }

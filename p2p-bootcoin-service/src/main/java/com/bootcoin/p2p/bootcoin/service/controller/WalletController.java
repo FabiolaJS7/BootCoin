@@ -36,4 +36,18 @@ public class WalletController {
                             .body(null));
                 });
     }
+
+    @PostMapping(value = ("/information"), consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<WalletResponse>> getWallet(@RequestBody WalletRequest walletRequest) {
+        return walletService.getWallet(Mono.just(walletRequest))
+                .map(walletResponse -> {
+                    log.info("Wallet get successfuly {}", JsonTransferUtil.objectToJson(walletResponse));
+                    return ResponseEntity.ok(walletResponse);
+                })
+                .onErrorResume(throwable -> {
+                    log.error("Error get wallet day: {}", throwable.getMessage());
+                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                            .body(null));
+                });
+    }
 }
