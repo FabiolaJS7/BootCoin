@@ -42,25 +42,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Mono<WalletResponse> createUserAndWallet(Mono<UserRequest> userRequest) {
-        log.info("-> Init create user and wallet RQ: {}", JsonTransferUtil.objectToJson(userRequest));
+    public Mono<UserResponse> createUserAndWallet(Mono<UserRequest> userRequest) {
+
         return userRequest
                 .flatMap(rq -> {
+                    log.info("-> Init create user and wallet RQ: {}", JsonTransferUtil.objectToJson(rq));
+                    //create la wallet para el usuario
+                    WalletRequest walletRequest = new WalletRequest();
+                    String responseWallet = kafkaProducer.sendAndReceiveWallet(JsonTransferUtil.objectToJson(walletRequest));
+                    WalletResponse walletResponse = JsonTransferUtil.jsonToObject(responseWallet, WalletResponse.class);
+                    log.info("Response wallet api: {}", JsonTransferUtil.objectToJson(walletResponse));
+
                     // crea usuario
+                    rq.setWalletAccount(walletResponse.getWalletAccount());
                     String responseUser =  kafkaProducer.sendAndReceiveBootCoinUser(JsonTransferUtil.objectToJson(rq));
                     UserResponse userResponse = JsonTransferUtil.jsonToObject(responseUser, UserResponse.class);
                     log.info("Response user api: {}", JsonTransferUtil.objectToJson(userResponse));
 
-
-                    //create la wallet para el usuario
-                    WalletRequest walletRequest = new WalletRequest();
-                    walletRequest.setUserId(userResponse.getId());
-                    String responseWallet = kafkaProducer.sendAndReceiveWallet(JsonTransferUtil.objectToJson(walletRequest));
-                    WalletResponse walletResponse = JsonTransferUtil.jsonToObject(responseWallet, WalletResponse.class);
-                    log.info("Response wallet api: {}", JsonTransferUtil.objectToJson(walletResponse));
-                    return Mono.just(walletResponse);
+                    return Mono.just(userResponse);
                 })
-                .doOnSuccess(walletResponse -> log.info("-> User and wallet created RS: {}",
-                        JsonTransferUtil.objectToJson(walletResponse)));
+                .doOnSuccess(userResponse -> log.info("-> User and wallet created RS: {}",
+                        JsonTransferUtil.objectToJson(userResponse)));
     }
 }

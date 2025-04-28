@@ -38,7 +38,7 @@ public class UserConsumer {
                 .subscribe();
     }
 
-    @KafkaListener(topics = "user-request", groupId = "bootuser-group")
+    @KafkaListener(topics = "user-create-request", groupId = "bootuser-group")
     public void createUserWithResponse(ConsumerRecord<String, String> message,
                            @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                            @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {

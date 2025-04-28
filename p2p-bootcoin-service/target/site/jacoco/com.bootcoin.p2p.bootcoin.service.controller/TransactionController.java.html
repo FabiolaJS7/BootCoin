@@ -35,11 +35,12 @@ import reactor.core.publisher.Mono;
 <span class="nc" id="L35">                .then(Mono.fromCallable(() -&gt; new ResponseEntity&lt;&gt;(HttpStatus.CREATED)));</span>
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono&lt;ResponseEntity&lt;String&gt;&gt; createTransaction(@RequestBody TransactionRequest transactionRequest) {
-<span class="nc" id="L40">        log.info(&quot;-&gt; Create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
-<span class="nc" id="L41">        return transactionService.createTransaction(Mono.just(transactionRequest))</span>
-<span class="nc" id="L42">                .then(Mono.fromCallable(() -&gt; new ResponseEntity&lt;&gt;(HttpStatus.CREATED)));</span>
+    @PostMapping(value = &quot;{walletId}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono&lt;ResponseEntity&lt;String&gt;&gt; createTransaction(@PathVariable (&quot;walletId&quot;) String walletId,
+                                                          @RequestBody TransactionRequest transactionRequest) {
+<span class="nc" id="L41">        log.info(&quot;-&gt; Create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
+<span class="nc" id="L42">        return transactionService.createTransaction(Mono.just(transactionRequest), walletId)</span>
+<span class="nc" id="L43">                .then(Mono.fromCallable(() -&gt; new ResponseEntity&lt;&gt;(HttpStatus.CREATED)));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

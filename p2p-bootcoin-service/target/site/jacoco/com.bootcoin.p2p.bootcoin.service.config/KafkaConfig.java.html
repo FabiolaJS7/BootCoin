@@ -89,7 +89,7 @@ import java.util.Map;
     @Bean
     public ConcurrentMessageListenerContainer&lt;String, String&gt; bootCoinUserRepliesContainer(
             ConsumerFactory&lt;String, String&gt; consumerFactory) {
-<span class="fc" id="L92">        ContainerProperties containerProperties = new ContainerProperties(&quot;user-response&quot;);</span>
+<span class="fc" id="L92">        ContainerProperties containerProperties = new ContainerProperties(&quot;user-create-request&quot;);</span>
 <span class="fc" id="L93">        containerProperties.setGroupId(&quot;bootuser-group&quot;);</span>
 <span class="fc" id="L94">        return new ConcurrentMessageListenerContainer&lt;&gt;(consumerFactory, containerProperties);</span>
     }

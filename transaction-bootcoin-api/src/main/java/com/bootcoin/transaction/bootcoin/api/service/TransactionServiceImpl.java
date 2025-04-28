@@ -63,7 +63,11 @@ public class TransactionServiceImpl implements TransactionService {
                                    .flatMap(s -> {
                                        transactionModelFound.setStatus(rq.getStatus());
                                        transactionModelFound.setUpdatedAt(LocalDate.now());
-                                       transactionModelFound.setTransactionNumber(rq.getStatus().equalsIgnoreCase("ACCEPTED") ? s : null);
+                                       if (rq.getStatus().equalsIgnoreCase("ACCEPTED")) {
+                                           transactionModelFound.setTransactionNumber(s);
+                                           transactionModelFound.setPaymentForm(rq.getPaymentForm());
+                                           transactionModelFound.setPhoneOrAccount(rq.getPhoneOrAccount());
+                                       }
                                        return Mono.just(transactionModelFound)
                                                .flatMap(model -> daoTransactionFactory.getTransactionRepository().save(model))
                                                .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel);

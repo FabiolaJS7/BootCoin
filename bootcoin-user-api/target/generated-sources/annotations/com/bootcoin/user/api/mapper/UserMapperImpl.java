@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-28T09:51:01-0500",
+    date = "2025-04-28T12:40:20-0500",
     comments = "version: 1.6.0, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
 )
 public class UserMapperImpl implements UserMapper {
@@ -26,6 +26,7 @@ public class UserMapperImpl implements UserMapper {
         userModel.setIdentificationNumber( userRequest.getIdentificationNumber() );
         userModel.setPhoneNumber( userRequest.getPhoneNumber() );
         userModel.setEmail( userRequest.getEmail() );
+        userModel.setWalletAccount( userRequest.getWalletAccount() );
 
         return userModel;
     }
@@ -45,6 +46,7 @@ public class UserMapperImpl implements UserMapper {
         userResponse.setIdentificationNumber( userModel.getIdentificationNumber() );
         userResponse.setPhoneNumber( userModel.getPhoneNumber() );
         userResponse.setEmail( userModel.getEmail() );
+        userResponse.setWalletAccount( userModel.getWalletAccount() );
 
         return userResponse;
     }

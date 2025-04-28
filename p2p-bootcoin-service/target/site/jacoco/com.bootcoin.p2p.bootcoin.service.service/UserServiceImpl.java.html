@@ -42,26 +42,27 @@ import reactor.core.publisher.Mono;
     }
 
     @Override
-    public Mono&lt;WalletResponse&gt; createUserAndWallet(Mono&lt;UserRequest&gt; userRequest) {
-<span class="nc" id="L46">        log.info(&quot;-&gt; Init create user and wallet RQ: {}&quot;, JsonTransferUtil.objectToJson(userRequest));</span>
+    public Mono&lt;UserResponse&gt; createUserAndWallet(Mono&lt;UserRequest&gt; userRequest) {
+
 <span class="nc" id="L47">        return userRequest</span>
 <span class="nc" id="L48">                .flatMap(rq -&gt; {</span>
-                    // crea usuario
-<span class="nc" id="L50">                    String responseUser =  kafkaProducer.sendAndReceiveBootCoinUser(JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L51">                    UserResponse userResponse = JsonTransferUtil.jsonToObject(responseUser, UserResponse.class);</span>
-<span class="nc" id="L52">                    log.info(&quot;Response user api: {}&quot;, JsonTransferUtil.objectToJson(userResponse));</span>
-
-
+<span class="nc" id="L49">                    log.info(&quot;-&gt; Init create user and wallet RQ: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
                     //create la wallet para el usuario
-<span class="nc" id="L56">                    WalletRequest walletRequest = new WalletRequest();</span>
-<span class="nc" id="L57">                    walletRequest.setUserId(userResponse.getId());</span>
-<span class="nc" id="L58">                    String responseWallet = kafkaProducer.sendAndReceiveWallet(JsonTransferUtil.objectToJson(walletRequest));</span>
-<span class="nc" id="L59">                    WalletResponse walletResponse = JsonTransferUtil.jsonToObject(responseWallet, WalletResponse.class);</span>
-<span class="nc" id="L60">                    log.info(&quot;Response wallet api: {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
-<span class="nc" id="L61">                    return Mono.just(walletResponse);</span>
+<span class="nc" id="L51">                    WalletRequest walletRequest = new WalletRequest();</span>
+<span class="nc" id="L52">                    String responseWallet = kafkaProducer.sendAndReceiveWallet(JsonTransferUtil.objectToJson(walletRequest));</span>
+<span class="nc" id="L53">                    WalletResponse walletResponse = JsonTransferUtil.jsonToObject(responseWallet, WalletResponse.class);</span>
+<span class="nc" id="L54">                    log.info(&quot;Response wallet api: {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
+
+                    // crea usuario
+<span class="nc" id="L57">                    rq.setWalletAccount(walletResponse.getWalletAccount());</span>
+<span class="nc" id="L58">                    String responseUser =  kafkaProducer.sendAndReceiveBootCoinUser(JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L59">                    UserResponse userResponse = JsonTransferUtil.jsonToObject(responseUser, UserResponse.class);</span>
+<span class="nc" id="L60">                    log.info(&quot;Response user api: {}&quot;, JsonTransferUtil.objectToJson(userResponse));</span>
+
+<span class="nc" id="L62">                    return Mono.just(userResponse);</span>
                 })
-<span class="nc" id="L63">                .doOnSuccess(walletResponse -&gt; log.info(&quot;-&gt; User and wallet created RS: {}&quot;,</span>
-<span class="nc" id="L64">                        JsonTransferUtil.objectToJson(walletResponse)));</span>
+<span class="nc" id="L64">                .doOnSuccess(userResponse -&gt; log.info(&quot;-&gt; User and wallet created RS: {}&quot;,</span>
+<span class="nc" id="L65">                        JsonTransferUtil.objectToJson(userResponse)));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -13,4 +13,6 @@ public class TransactionUpdateRequest {
 
     private String status;
     private String transactionId;
+    private String paymentForm; //YANKI, TRANSFER
+    private String phoneOrAccount; // CELULAR or CUENTA
 }

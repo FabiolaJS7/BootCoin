@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bootcoin.user.api.BootcoinUserApiApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.55 s -- in com.bootcoin.user.api.BootcoinUserApiApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.18 s -- in com.bootcoin.user.api.BootcoinUserApiApplicationTests

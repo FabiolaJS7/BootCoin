@@ -13,4 +13,6 @@ public class TransactionUpdateRequest {
 
     private String transactionId;
     private String status;
+    private String paymentForm;
+    private String phoneOrAccount;
 }

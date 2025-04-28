@@ -20,4 +20,6 @@ public class TransactionResponse {
     private String walletAccountFrom;
     private String walletAccountTo;
     private String movementType;
+    private String paymentForm;
+    private String phoneOrAccount;
 }

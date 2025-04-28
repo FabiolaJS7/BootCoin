@@ -18,4 +18,5 @@ public class UserResponse {
     private String identificationNumber;
     private String phoneNumber;
     private String email;
+    private String walletAccount;
 }

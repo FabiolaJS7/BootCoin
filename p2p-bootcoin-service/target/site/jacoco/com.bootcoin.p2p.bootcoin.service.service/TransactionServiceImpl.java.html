@@ -46,14 +46,15 @@ import java.util.List;
     }
 
     @Override
-    public Mono&lt;Void&gt; createTransaction(Mono&lt;TransactionRequest&gt; transactionRequest) {
+    public Mono&lt;Void&gt; createTransaction(Mono&lt;TransactionRequest&gt; transactionRequest, String walletFrom) {
 <span class="nc" id="L50">        log.info(&quot;-&gt; Init create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
 <span class="nc" id="L51">        return transactionRequest</span>
 <span class="nc" id="L52">                .doOnNext(rq -&gt; {</span>
-<span class="nc" id="L53">                    kafkaProducer.sendMessage(&quot;transaction-create&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L54">                    log.info(&quot;Transaction create sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L55">                })</span>
-<span class="nc" id="L56">                .then();</span>
+<span class="nc" id="L53">                    rq.setWalletAccountFrom(walletFrom);</span>
+<span class="nc" id="L54">                    kafkaProducer.sendMessage(&quot;transaction-create&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L55">                    log.info(&quot;Transaction create sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L56">                })</span>
+<span class="nc" id="L57">                .then();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

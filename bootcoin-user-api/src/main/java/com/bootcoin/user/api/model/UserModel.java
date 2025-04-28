@@ -22,6 +22,7 @@ public class UserModel {
     private String identificationNumber;
     private String phoneNumber;
     private String email;
+    private String walletAccount;
     private LocalDate createdAt;
     private LocalDate updatedAt;
 }

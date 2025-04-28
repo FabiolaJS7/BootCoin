@@ -1,6 +1,7 @@
 package com.bootcoin.p2p.bootcoin.service.controller;
 
 import com.bootcoin.p2p.bootcoin.service.bean.user.UserRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletResponse;
 import com.bootcoin.p2p.bootcoin.service.service.UserService;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
@@ -39,7 +40,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/wallet", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<WalletResponse>> createUserWallet(@RequestBody UserRequest userRequest) {
+    public Mono<ResponseEntity<UserResponse>> createUserWallet(@RequestBody UserRequest userRequest) {
         log.info("-> Init create user and wallet RQ: {}", JsonTransferUtil.objectToJson(userRequest));
         return userService.createUserAndWallet(Mono.just(userRequest))
                 .map(walletResponse -> {
@@ -49,7 +50,7 @@ public class UserController {
                 .onErrorResume(e -> {
                     log.error("Error creating user and wallet: {}", e.getMessage());
                     return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                            .body(new WalletResponse()));
+                            .body(new UserResponse()));
                 });
     }
 

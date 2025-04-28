@@ -31,7 +31,7 @@ public class KafkaConfig {
     @Bean
     public ConcurrentMessageListenerContainer<String, String> repliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("bootuser-response");
+        ContainerProperties containerProperties = new ContainerProperties("user-create-response");
         containerProperties.setGroupId("bootuser-group");
 
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);

@@ -35,10 +35,11 @@ public class TransactionController {
                 .then(Mono.fromCallable(() -> new ResponseEntity<>(HttpStatus.CREATED)));
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<String>> createTransaction(@RequestBody TransactionRequest transactionRequest) {
+    @PostMapping(value = "{walletId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<String>> createTransaction(@PathVariable ("walletId") String walletId,
+                                                          @RequestBody TransactionRequest transactionRequest) {
         log.info("-> Create transaction {}", JsonTransferUtil.objectToJson(transactionRequest));
-        return transactionService.createTransaction(Mono.just(transactionRequest))
+        return transactionService.createTransaction(Mono.just(transactionRequest), walletId)
                 .then(Mono.fromCallable(() -> new ResponseEntity<>(HttpStatus.CREATED)));
     }
 }

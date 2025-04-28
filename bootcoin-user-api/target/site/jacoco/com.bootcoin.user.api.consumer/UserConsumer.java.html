@@ -38,7 +38,7 @@ import reactor.core.publisher.Mono;
 <span class="nc" id="L38">                .subscribe();</span>
 <span class="nc" id="L39">    }</span>
 
-    @KafkaListener(topics = &quot;user-request&quot;, groupId = &quot;bootuser-group&quot;)
+    @KafkaListener(topics = &quot;user-create-request&quot;, groupId = &quot;bootuser-group&quot;)
     public void createUserWithResponse(ConsumerRecord&lt;String, String&gt; message,
                            @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                            @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {

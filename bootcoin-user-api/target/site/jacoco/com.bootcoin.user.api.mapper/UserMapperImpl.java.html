@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2025-04-28T09:51:01-0500&quot;,
+    date = &quot;2025-04-28T12:40:20-0500&quot;,
     comments = &quot;version: 1.6.0, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)&quot;
 )
 <span class="nc" id="L13">public class UserMapperImpl implements UserMapper {</span>
@@ -26,27 +26,29 @@ import javax.annotation.processing.Generated;
 <span class="nc" id="L26">        userModel.setIdentificationNumber( userRequest.getIdentificationNumber() );</span>
 <span class="nc" id="L27">        userModel.setPhoneNumber( userRequest.getPhoneNumber() );</span>
 <span class="nc" id="L28">        userModel.setEmail( userRequest.getEmail() );</span>
+<span class="nc" id="L29">        userModel.setWalletAccount( userRequest.getWalletAccount() );</span>
 
-<span class="nc" id="L30">        return userModel;</span>
+<span class="nc" id="L31">        return userModel;</span>
     }
 
     @Override
     public UserResponse getUserResponseFromUserModel(UserModel userModel) {
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if ( userModel == null ) {</span>
-<span class="nc" id="L36">            return null;</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if ( userModel == null ) {</span>
+<span class="nc" id="L37">            return null;</span>
         }
 
-<span class="nc" id="L39">        UserResponse userResponse = new UserResponse();</span>
+<span class="nc" id="L40">        UserResponse userResponse = new UserResponse();</span>
 
-<span class="nc" id="L41">        userResponse.setId( userModel.getId() );</span>
-<span class="nc" id="L42">        userResponse.setName( userModel.getName() );</span>
-<span class="nc" id="L43">        userResponse.setLastName( userModel.getLastName() );</span>
-<span class="nc" id="L44">        userResponse.setIdentificationType( userModel.getIdentificationType() );</span>
-<span class="nc" id="L45">        userResponse.setIdentificationNumber( userModel.getIdentificationNumber() );</span>
-<span class="nc" id="L46">        userResponse.setPhoneNumber( userModel.getPhoneNumber() );</span>
-<span class="nc" id="L47">        userResponse.setEmail( userModel.getEmail() );</span>
+<span class="nc" id="L42">        userResponse.setId( userModel.getId() );</span>
+<span class="nc" id="L43">        userResponse.setName( userModel.getName() );</span>
+<span class="nc" id="L44">        userResponse.setLastName( userModel.getLastName() );</span>
+<span class="nc" id="L45">        userResponse.setIdentificationType( userModel.getIdentificationType() );</span>
+<span class="nc" id="L46">        userResponse.setIdentificationNumber( userModel.getIdentificationNumber() );</span>
+<span class="nc" id="L47">        userResponse.setPhoneNumber( userModel.getPhoneNumber() );</span>
+<span class="nc" id="L48">        userResponse.setEmail( userModel.getEmail() );</span>
+<span class="nc" id="L49">        userResponse.setWalletAccount( userModel.getWalletAccount() );</span>
 
-<span class="nc" id="L49">        return userResponse;</span>
+<span class="nc" id="L51">        return userResponse;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -46,10 +46,11 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Mono<Void> createTransaction(Mono<TransactionRequest> transactionRequest) {
+    public Mono<Void> createTransaction(Mono<TransactionRequest> transactionRequest, String walletFrom) {
         log.info("-> Init create transaction {}", JsonTransferUtil.objectToJson(transactionRequest));
         return transactionRequest
                 .doOnNext(rq -> {
+                    rq.setWalletAccountFrom(walletFrom);
                     kafkaProducer.sendMessage("transaction-create", JsonTransferUtil.objectToJson(rq));
                     log.info("Transaction create sent: {}", JsonTransferUtil.objectToJson(rq));
                 })

@@ -82,8 +82,8 @@ public class KafkaProducer {
 
     public String sendAndReceiveBootCoinUser(String message) {
         try {
-            ProducerRecord<String, String> record = new ProducerRecord<>("user-request", message);
-            record.headers().add(KafkaHeaders.REPLY_TOPIC, "user-response".getBytes());
+            ProducerRecord<String, String> record = new ProducerRecord<>("user-create-request", message);
+            record.headers().add(KafkaHeaders.REPLY_TOPIC, "user-create-response".getBytes());
             record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());
             // Log del ProducerRecord
             log.info("Sending bootuser - Topic: {}, Key: {}, Value: {}, Headers: {}",

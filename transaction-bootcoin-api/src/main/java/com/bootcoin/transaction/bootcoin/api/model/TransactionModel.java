@@ -24,6 +24,8 @@ public class TransactionModel {
     private String walletAccountFrom;
     private String walletAccountTo;
     private String movementType;
+    private String paymentForm; // en caso sea ACCEPT
+    private String phoneOrAccount; // en caso sea ACCEPT
     private LocalDate createdAt;
     private LocalDate updatedAt;
 }

@@ -10,5 +10,5 @@ public interface TransactionService {
 
     Flux<TransactionResponse> getTransactionsByWallet(String walletId);
     Mono<Void> updateTransaction(Mono<TransactionUpdateRequest> transactionUpdateRequest);
-    Mono<Void> createTransaction(Mono<TransactionRequest> transactionRequest);
+    Mono<Void> createTransaction(Mono<TransactionRequest> transactionRequest, String walletFrom);
 }
