@@ -13,5 +13,5 @@ public class WalletRequest {
 
     private String walletAccount;
     private Double amountCoin;
-    private String userId;
+    private String phoneNumber;
 }

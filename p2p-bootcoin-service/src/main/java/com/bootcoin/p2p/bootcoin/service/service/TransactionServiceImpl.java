@@ -3,6 +3,7 @@ package com.bootcoin.p2p.bootcoin.service.service;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionRequest;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionUpdateRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,12 @@ public class TransactionServiceImpl implements TransactionService {
     public Flux<TransactionResponse> getTransactionsByWallet(String walletId) {
         log.info("-> Init transactions by walletId: {}", walletId);
 
-        String response = kafkaProducer.sendAndReceiveTransaction(walletId);
+        String response = kafkaProducer.sendAndReceive(
+                "transaction-list-request",
+                "transaction-list-response",
+                walletId,
+                "transactionReplyingKafkaTemplate"
+        );
         log.info("-> Arrived response: {}", response);
 
         List<TransactionResponse> transactionResponses = Arrays.asList(JsonTransferUtil.jsonToObject(response,
@@ -39,6 +45,27 @@ public class TransactionServiceImpl implements TransactionService {
         log.info("-> Init transaction update: {}", JsonTransferUtil.objectToJson(transactionUpdateRequest));
         return transactionUpdateRequest
                 .doOnNext(rq -> {
+
+                    String transactionById = kafkaProducer.sendAndReceive(
+                            "transaction-by-id-request",
+                            "transaction-by-id-response",
+                            rq.getTransactionId(),
+                            "transactionByIdReplyingKafkaTemplate"
+                    );
+                    TransactionResponse transactionResponse = JsonTransferUtil.jsonToObject(transactionById,
+                            TransactionResponse.class);
+                    log.info("transactionById {}", JsonTransferUtil.objectToJson(transactionResponse));
+
+                    String userByWalletAccount = kafkaProducer.sendAndReceive(
+                            "user-by-wallet-request",
+                            "user-by-wallet-response",
+                            transactionResponse.getWalletAccountTo(),
+                            "userByWalletReplyingKafkaTemplate"
+                    );
+                    UserResponse userResponseByWallet = JsonTransferUtil.jsonToObject(userByWalletAccount,
+                            UserResponse.class);
+                    log.info("userResponseByWallet {}", JsonTransferUtil.objectToJson(userResponseByWallet));
+
                     kafkaProducer.sendMessage("transaction-update", JsonTransferUtil.objectToJson(rq));
                     log.info("Transaction update sent: {}", JsonTransferUtil.objectToJson(rq));
                 })

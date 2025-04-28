@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "680fe9de47e75870485729c5"
+  },
+  "walletAccount": "5028294-7980606-9067652",
+  "amountCoin": 0,
+  "userId": "11111111",
+  "createdAt": {
+    "$date": "2025-04-28T05:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-28T05:00:00.000Z"
+  },
+  "_class": "com.bootcoin.wallet.bootcoin.api.model.WalletModel"
+}]

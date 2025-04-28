@@ -25,7 +25,7 @@ public class WalletConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "wallet-bootcoin-request", groupId = "wallet-group")
+    @KafkaListener(topics = "wallet-bootcoin-request", groupId = "bootcoin-group")
     public void createWalletWithResponse(ConsumerRecord<String, String> message,
                              @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                              @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
@@ -34,10 +34,10 @@ public class WalletConsumer {
 
         WalletRequest walletRequest = JsonTransferUtil.jsonToObject(message.value(), WalletRequest.class);
 
-        walletService.createWallet(walletRequest.getUserId())
+        walletService.createWallet(walletRequest.getPhoneNumber())
                 .flatMap(s -> {
                     WalletResponse walletResponse = new WalletResponse();
-                    walletResponse.setUserId(walletRequest.getUserId());
+                    walletResponse.setPhoneNumber(walletRequest.getPhoneNumber());
                     walletResponse.setWalletAccount(s);
                     log.info("Wallet created: {}", JsonTransferUtil.objectToJson(walletResponse));
 
@@ -53,26 +53,8 @@ public class WalletConsumer {
 
     }
 
-    @KafkaListener(topics = "wallet-only-create", groupId = "wallet-group")
-    public void createWallet(String message) {
-        log.info("Wallet to create: {}", message);
 
-        WalletRequest walletRequest = JsonTransferUtil.jsonToObject(message, WalletRequest.class);
-
-        walletService.createWallet(walletRequest.getUserId())
-                .flatMap(s -> {
-                    WalletResponse walletResponse = new WalletResponse();
-                    walletResponse.setUserId(walletRequest.getUserId());
-                    walletResponse.setWalletAccount(s);
-                    log.info("Wallet created: {}", JsonTransferUtil.objectToJson(walletResponse));
-                    return Mono.just("created");
-                })
-                .doOnNext(s -> log.info("wallet created"))
-                .subscribe();
-
-    }
-
-    @KafkaListener(topics = "wallet-user-request", groupId = "wallet-group")
+    @KafkaListener(topics = "wallet-user-request", groupId = "bootcoin-group")
     public void getWallet(ConsumerRecord<String, String> message,
                                          @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                                          @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {

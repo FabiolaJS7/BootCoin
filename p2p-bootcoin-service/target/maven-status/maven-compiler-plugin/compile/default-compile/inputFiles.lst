@@ -8,6 +8,7 @@ C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\sr
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletRequest.java
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletResponse.java
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletUpdateRequest.java
+C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\bean\WalletUserResponse.java
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\config\KafkaConfig.java
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\ExchangeController.java
 C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\src\main\java\com\bootcoin\p2p\bootcoin\service\controller\TransactionController.java

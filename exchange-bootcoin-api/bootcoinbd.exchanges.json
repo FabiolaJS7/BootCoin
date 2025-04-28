@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "680c5d79a8bc4f5a8f1280e4"
+  },
+  "day": {
+    "$date": "2025-04-26T05:00:00.000Z"
+  },
+  "priceSell": 10,
+  "priceBuy": 11,
+  "createdAt": {
+    "$date": "2025-04-26T05:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-26T05:00:00.000Z"
+  },
+  "_class": "com.bootcoin.exchange_bootcoin.api.model.ExchangeModel"
+},
+{
+  "_id": {
+    "$oid": "680cee90c0072e0860f05af8"
+  },
+  "day": {
+    "$date": "2025-04-25T05:00:00.000Z"
+  },
+  "priceSell": 20,
+  "priceBuy": 11,
+  "createdAt": {
+    "$date": "2025-04-26T05:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-26T05:00:00.000Z"
+  },
+  "_class": "com.bootcoin.exchange_bootcoin.api.model.ExchangeModel"
+},
+{
+  "_id": {
+    "$oid": "680dd2d8d42bcc6dcaca76b5"
+  },
+  "day": {
+    "$date": "2025-04-27T05:00:00.000Z"
+  },
+  "priceSell": 30,
+  "priceBuy": 11,
+  "createdAt": {
+    "$date": "2025-04-27T05:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T05:00:00.000Z"
+  },
+  "_class": "com.bootcoin.exchange_bootcoin.api.model.ExchangeModel"
+},
+{
+  "_id": {
+    "$oid": "680fe09e6ea9580dea253c4a"
+  },
+  "day": {
+    "$date": "2025-04-28T05:00:00.000Z"
+  },
+  "priceSell": 30,
+  "priceBuy": 11,
+  "createdAt": {
+    "$date": "2025-04-28T05:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-28T05:00:00.000Z"
+  },
+  "_class": "com.bootcoin.exchange_bootcoin.api.model.ExchangeModel"
+}]

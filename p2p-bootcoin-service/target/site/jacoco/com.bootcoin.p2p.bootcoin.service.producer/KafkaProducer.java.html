@@ -8,145 +8,54 @@ import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
-<span class="fc" id="L14">@Slf4j</span>
+<span class="fc" id="L16">@Slf4j</span>
 public class KafkaProducer {
 
-    private final ReplyingKafkaTemplate&lt;String, String, String&gt; exchangeReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate&lt;String, String, String&gt; transactionReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate&lt;String, String, String&gt; bootCoinUserReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate&lt;String, String, String&gt; walletReplyingKafkaTemplate;
-    private final ReplyingKafkaTemplate&lt;String, String, String&gt; walletUserReplyingKafkaTemplate;
     private final KafkaTemplate&lt;String, String&gt; kafkaTemplate;
+    private final Map&lt;String, ReplyingKafkaTemplate&lt;String, String, String&gt;&gt; replyingKafkaTemplates;
 
-    public KafkaProducer(ReplyingKafkaTemplate&lt;String, String, String&gt; exchangeReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate&lt;String, String, String&gt; transactionReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate&lt;String, String, String&gt; bootCoinUserReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate&lt;String, String, String&gt; walletReplyingKafkaTemplate,
-                         ReplyingKafkaTemplate&lt;String, String, String&gt; walletUserReplyingKafkaTemplate,
-<span class="fc" id="L29">                         KafkaTemplate&lt;String, String&gt; kafkaTemplate) {</span>
-<span class="fc" id="L30">        this.exchangeReplyingKafkaTemplate = exchangeReplyingKafkaTemplate;</span>
-<span class="fc" id="L31">        this.transactionReplyingKafkaTemplate = transactionReplyingKafkaTemplate;</span>
-<span class="fc" id="L32">        this.bootCoinUserReplyingKafkaTemplate = bootCoinUserReplyingKafkaTemplate;</span>
-<span class="fc" id="L33">        this.walletReplyingKafkaTemplate = walletReplyingKafkaTemplate;</span>
-<span class="fc" id="L34">        this.walletUserReplyingKafkaTemplate = walletUserReplyingKafkaTemplate;</span>
-<span class="fc" id="L35">        this.kafkaTemplate = kafkaTemplate;</span>
-<span class="fc" id="L36">    }</span>
+    public KafkaProducer(KafkaTemplate&lt;String, String&gt; kafkaTemplate,
+<span class="fc" id="L23">                         Map&lt;String, ReplyingKafkaTemplate&lt;String, String, String&gt;&gt; replyingKafkaTemplates) {</span>
+<span class="fc" id="L24">        this.kafkaTemplate = kafkaTemplate;</span>
+<span class="fc" id="L25">        this.replyingKafkaTemplates = replyingKafkaTemplates;</span>
+<span class="fc" id="L26">    }</span>
 
-    public String sendAndReceiveExchange(String message) {
+    public String sendAndReceive(String topic, String replyTopic, String message, String templateKey) {
         try {
-<span class="nc" id="L40">            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;exchange-request&quot;, message);</span>
-<span class="nc" id="L41">            record.headers().add(KafkaHeaders.REPLY_TOPIC, &quot;exchange-response&quot;.getBytes());</span>
-<span class="nc" id="L42">            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());</span>
+<span class="nc" id="L30">            ProducerRecord&lt;String, String&gt; record = createProducerRecord(topic, replyTopic, message);</span>
+<span class="nc" id="L31">            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());</span>
+<span class="nc" id="L32">            log.info(&quot;Sending message - Topic: {}, ReplyTopic: {}, Headers: {}&quot;, topic, replyTopic, record.headers());</span>
 
-<span class="nc" id="L44">            log.info(&quot;Sending exchange - Topic: {}, Key: {}, Value: {}, Headers: {}&quot;,</span>
-<span class="nc" id="L45">                    record.topic(),</span>
-<span class="nc" id="L46">                    record.key(),</span>
-<span class="nc" id="L47">                    record.value(),</span>
-<span class="nc" id="L48">                    record.headers());</span>
-
-<span class="nc" id="L50">            return exchangeReplyingKafkaTemplate.sendAndReceive(record)</span>
-<span class="nc" id="L51">                    .toCompletableFuture()</span>
-<span class="nc" id="L52">                    .thenApply(ConsumerRecord::value)</span>
-<span class="nc" id="L53">                    .get();</span>
-<span class="nc" id="L54">        } catch (Exception e) {</span>
-<span class="nc" id="L55">            log.error(&quot;Error while sending and receiving message for exchange-request: {}&quot;, e.getMessage(), e);</span>
-<span class="nc" id="L56">            throw new RuntimeException(&quot;Failed to send and receive message for exchange-request&quot;, e);</span>
+<span class="nc" id="L34">            return replyingKafkaTemplates.get(templateKey).sendAndReceive(record)</span>
+<span class="nc" id="L35">                    .toCompletableFuture()</span>
+<span class="nc" id="L36">                    .thenApply(ConsumerRecord::value)</span>
+<span class="nc" id="L37">                    .get();</span>
+<span class="nc" id="L38">        } catch (Exception e) {</span>
+<span class="nc" id="L39">            log.error(&quot;Error while sending and receiving message for topic {}: {}&quot;, topic, e.getMessage(), e);</span>
+<span class="nc" id="L40">            throw new RuntimeException(&quot;Failed to send and receive message for topic &quot; + topic, e);</span>
         }
     }
-
-    public String sendAndReceiveTransaction(String message) {
-        try {
-<span class="nc" id="L62">            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;transaction-list-request&quot;, message);</span>
-<span class="nc" id="L63">            record.headers().add(KafkaHeaders.REPLY_TOPIC, &quot;transaction-list-response&quot;.getBytes());</span>
-<span class="nc" id="L64">            record.headers().add(KafkaHeaders.CORRELATION_ID, new byte[2]);</span>
-
-            // Log del ProducerRecord
-<span class="nc" id="L67">            log.info(&quot;Sending transaction list - Topic: {}, Key: {}, Value: {}, Headers: {}&quot;,</span>
-<span class="nc" id="L68">                    record.topic(),</span>
-<span class="nc" id="L69">                    record.key(),</span>
-<span class="nc" id="L70">                    record.value(),</span>
-<span class="nc" id="L71">                    record.headers());</span>
-
-<span class="nc" id="L73">            return transactionReplyingKafkaTemplate.sendAndReceive(record)</span>
-<span class="nc" id="L74">                    .toCompletableFuture()</span>
-<span class="nc" id="L75">                    .thenApply(ConsumerRecord::value)</span>
-<span class="nc" id="L76">                    .get();</span>
-<span class="nc" id="L77">        } catch (Exception e) {</span>
-<span class="nc" id="L78">            log.error(&quot;Error while sending and receiving message for transaction-list-request: {}&quot;, e.getMessage(), e);</span>
-<span class="nc" id="L79">            throw new RuntimeException(&quot;Failed to send and receive message for transaction-list-request&quot;, e);</span>
-        }
-    }
-
-    public String sendAndReceiveBootCoinUser(String message) {
-        try {
-<span class="nc" id="L85">            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;user-create-request&quot;, message);</span>
-<span class="nc" id="L86">            record.headers().add(KafkaHeaders.REPLY_TOPIC, &quot;user-create-response&quot;.getBytes());</span>
-<span class="nc" id="L87">            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());</span>
-            // Log del ProducerRecord
-<span class="nc" id="L89">            log.info(&quot;Sending bootuser - Topic: {}, Key: {}, Value: {}, Headers: {}&quot;,</span>
-<span class="nc" id="L90">                    record.topic(),</span>
-<span class="nc" id="L91">                    record.key(),</span>
-<span class="nc" id="L92">                    record.value(),</span>
-<span class="nc" id="L93">                    record.headers());</span>
-
-<span class="nc" id="L95">            return bootCoinUserReplyingKafkaTemplate.sendAndReceive(record)</span>
-<span class="nc" id="L96">                    .toCompletableFuture()</span>
-<span class="nc" id="L97">                    .thenApply(ConsumerRecord::value)</span>
-<span class="nc" id="L98">                    .get();</span>
-<span class="nc" id="L99">        } catch (Exception e) {</span>
-<span class="nc" id="L100">            log.error(&quot;Error while sending and receiving message for bootuser-request: {}&quot;, e.getMessage(), e);</span>
-<span class="nc" id="L101">            throw new RuntimeException(&quot;Failed to send and receive message for bootuser-request&quot;, e);</span>
-        }
-    }
-
-    public String sendAndReceiveWallet(String message) {
-        try {
-<span class="nc" id="L107">            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;wallet-bootcoin-request&quot;, message);</span>
-<span class="nc" id="L108">            record.headers().add(KafkaHeaders.REPLY_TOPIC, &quot;wallet-bootcoin-response&quot;.getBytes());</span>
-<span class="nc" id="L109">            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());</span>
-
-<span class="nc" id="L111">            log.info(&quot;CorrelationId wallet: {}&quot;, new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));</span>
-
-<span class="nc" id="L113">            return walletReplyingKafkaTemplate.sendAndReceive(record)</span>
-<span class="nc" id="L114">                    .toCompletableFuture()</span>
-<span class="nc" id="L115">                    .thenApply(ConsumerRecord::value)</span>
-<span class="nc" id="L116">                    .get();</span>
-<span class="nc" id="L117">        } catch (Exception e) {</span>
-<span class="nc" id="L118">            log.error(&quot;Error while sending and receiving message for wallet-request: {}&quot;, e.getMessage(), e);</span>
-<span class="nc" id="L119">            throw new RuntimeException(&quot;Failed to send and receive message for wallet-request&quot;, e);</span>
-        }
-    }
-
-    public String sendAndReceiveWalletInformation(String message) {
-        try {
-<span class="nc" id="L125">            ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(&quot;wallet-user-request&quot;, message);</span>
-<span class="nc" id="L126">            record.headers().add(KafkaHeaders.REPLY_TOPIC, &quot;wallet-user-response&quot;.getBytes());</span>
-<span class="nc" id="L127">            record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes());</span>
-
-<span class="nc" id="L129">            log.info(&quot;CorrelationId wallet user: {}&quot;, new String(record.headers().lastHeader(KafkaHeaders.CORRELATION_ID).value()));</span>
-
-<span class="nc" id="L131">            return walletUserReplyingKafkaTemplate.sendAndReceive(record)</span>
-<span class="nc" id="L132">                    .toCompletableFuture()</span>
-<span class="nc" id="L133">                    .thenApply(ConsumerRecord::value)</span>
-<span class="nc" id="L134">                    .get();</span>
-<span class="nc" id="L135">        } catch (Exception e) {</span>
-<span class="nc" id="L136">            log.error(&quot;Error while sending and receiving message for wallet-request: {}&quot;, e.getMessage(), e);</span>
-<span class="nc" id="L137">            throw new RuntimeException(&quot;Failed to send and receive message for wallet-request&quot;, e);</span>
-        }
-    }
-
 
     public void sendMessage(String topic, String message) {
         try {
-<span class="nc" id="L144">            kafkaTemplate.send(topic, message);</span>
-<span class="nc" id="L145">            log.info(&quot;Message sent to topic {}: {}&quot;, topic, message);</span>
-<span class="nc" id="L146">        } catch (Exception e) {</span>
-<span class="nc" id="L147">            log.error(&quot;Error while sending message to topic {}: {}&quot;, topic, e.getMessage(), e);</span>
-<span class="nc" id="L148">            throw new RuntimeException(&quot;Failed to send message to topic &quot; + topic, e);</span>
-<span class="nc" id="L149">        }</span>
-<span class="nc" id="L150">    }</span>
+<span class="nc" id="L46">            kafkaTemplate.send(topic, message);</span>
+<span class="nc" id="L47">            log.info(&quot;Message sent to topic {}: {}&quot;, topic, message);</span>
+<span class="nc" id="L48">        } catch (Exception e) {</span>
+<span class="nc" id="L49">            log.error(&quot;Error while sending message to topic {}: {}&quot;, topic, e.getMessage(), e);</span>
+<span class="nc" id="L50">            throw new RuntimeException(&quot;Failed to send message to topic &quot; + topic, e);</span>
+<span class="nc" id="L51">        }</span>
+<span class="nc" id="L52">    }</span>
+
+    private ProducerRecord&lt;String, String&gt; createProducerRecord(String topic, String replyTopic, String message) {
+<span class="nc" id="L55">        ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(topic, message);</span>
+<span class="nc" id="L56">        record.headers().add(KafkaHeaders.REPLY_TOPIC, replyTopic.getBytes(StandardCharsets.UTF_8));</span>
+<span class="nc" id="L57">        record.headers().add(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8));</span>
+<span class="nc" id="L58">        return record;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

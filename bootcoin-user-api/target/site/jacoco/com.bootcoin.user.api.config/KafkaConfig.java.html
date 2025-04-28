@@ -31,41 +31,43 @@ import java.util.Map;
     @Bean
     public ConcurrentMessageListenerContainer&lt;String, String&gt; repliesContainer(
             ConsumerFactory&lt;String, String&gt; consumerFactory) {
-<span class="fc" id="L34">        ContainerProperties containerProperties = new ContainerProperties(&quot;user-create-response&quot;);</span>
-<span class="fc" id="L35">        containerProperties.setGroupId(&quot;bootuser-group&quot;);</span>
+<span class="fc" id="L34">        ContainerProperties containerProperties = new ContainerProperties(&quot;user-create-response&quot;,</span>
+                &quot;user-by-wallet-request&quot;);
+<span class="fc" id="L36">        containerProperties.setGroupId(&quot;bootcoin-group&quot;);</span>
 
-<span class="fc" id="L37">        return new ConcurrentMessageListenerContainer&lt;&gt;(consumerFactory, containerProperties);</span>
+<span class="fc" id="L38">        return new ConcurrentMessageListenerContainer&lt;&gt;(consumerFactory, containerProperties);</span>
     }
 
     @Bean
     public ProducerFactory&lt;String, String&gt; producerFactory() {
-<span class="fc" id="L42">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L43">        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
-<span class="fc" id="L44">        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
-<span class="fc" id="L45">        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
-<span class="fc" id="L46">        return new DefaultKafkaProducerFactory&lt;&gt;(configProps);</span>
+<span class="fc" id="L43">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L44">        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
+<span class="fc" id="L45">        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
+<span class="fc" id="L46">        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);</span>
+<span class="fc" id="L47">        return new DefaultKafkaProducerFactory&lt;&gt;(configProps);</span>
     }
 
     @Bean
     public ConsumerFactory&lt;String, String&gt; consumerFactory() {
-<span class="fc" id="L51">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L52">        configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
-<span class="fc" id="L53">        configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
-<span class="fc" id="L54">        configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
-<span class="fc" id="L55">        return new DefaultKafkaConsumerFactory&lt;&gt;(configProps);</span>
+<span class="fc" id="L52">        Map&lt;String, Object&gt; configProps = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L53">        configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);</span>
+<span class="fc" id="L54">        configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
+<span class="fc" id="L55">        configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);</span>
+<span class="fc" id="L56">        configProps.put(ConsumerConfig.GROUP_ID_CONFIG, &quot;bootcoin-group&quot;);</span>
+<span class="fc" id="L57">        return new DefaultKafkaConsumerFactory&lt;&gt;(configProps);</span>
     }
 
     @Bean
     public KafkaTemplate&lt;String, String&gt; kafkaTemplate() {
-<span class="fc" id="L60">        return new KafkaTemplate&lt;&gt;(producerFactory());</span>
+<span class="fc" id="L62">        return new KafkaTemplate&lt;&gt;(producerFactory());</span>
     }
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory&lt;String, String&gt; kafkaListenerContainerFactory() {
-<span class="fc" id="L65">        ConcurrentKafkaListenerContainerFactory&lt;String, String&gt; factory =</span>
+<span class="fc" id="L67">        ConcurrentKafkaListenerContainerFactory&lt;String, String&gt; factory =</span>
                 new ConcurrentKafkaListenerContainerFactory&lt;&gt;();
-<span class="fc" id="L67">        factory.setConsumerFactory(consumerFactory());</span>
-<span class="fc" id="L68">        return factory;</span>
+<span class="fc" id="L69">        factory.setConsumerFactory(consumerFactory());</span>
+<span class="fc" id="L70">        return factory;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

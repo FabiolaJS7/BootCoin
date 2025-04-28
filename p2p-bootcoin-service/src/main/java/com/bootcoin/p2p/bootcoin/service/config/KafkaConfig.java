@@ -19,96 +19,10 @@ import java.util.Map;
 @Configuration
 public class KafkaConfig {
 
-    public static final long THIRTY_SECONDS = 30;
-    public static final long FORTHY_SECONDS = 30;
+    private static final long DEFAULT_REPLY_TIMEOUT_SECONDS = 30;
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
-
-    @Bean
-    public ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> exchangeRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, exchangeRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS)); // Aumenta el tiempo de espera
-        return template;
-    }
-
-    @Bean
-    public ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> transactionRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, transactionRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
-        return template;
-    }
-
-    @Bean
-    public ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> bootCoinUserRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, bootCoinUserRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
-        return template;
-    }
-
-    @Bean
-    public ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> walletRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, walletRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
-        return template;
-    }
-
-    @Bean
-    public ReplyingKafkaTemplate<String, String, String> walletUserReplyingKafkaTemplate(
-            ProducerFactory<String, String> producerFactory,
-            ConcurrentMessageListenerContainer<String, String> walletUserRepliesContainer) {
-        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, walletUserRepliesContainer);
-        template.setDefaultReplyTimeout(Duration.ofSeconds(THIRTY_SECONDS));
-        return template;
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> exchangeRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("exchange-response");
-        containerProperties.setGroupId("exchange-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> transactionRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("transaction-list-response");
-        containerProperties.setGroupId("transaction-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> bootCoinUserRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("user-create-request");
-        containerProperties.setGroupId("bootuser-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> walletRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("wallet-bootcoin-response");
-        containerProperties.setGroupId("wallet-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
-
-    @Bean
-    public ConcurrentMessageListenerContainer<String, String> walletUserRepliesContainer(
-            ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("wallet-user-response");
-        containerProperties.setGroupId("wallet-group");
-        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
-    }
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
@@ -131,5 +45,42 @@ public class KafkaConfig {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
+    }
+
+    @Bean
+    public ReplyingKafkaTemplate<String, String, String> replyingKafkaTemplate(
+            ProducerFactory<String, String> producerFactory,
+            ConcurrentMessageListenerContainer<String, String> repliesContainer) {
+        ReplyingKafkaTemplate<String, String, String> template = new ReplyingKafkaTemplate<>(producerFactory, repliesContainer);
+        template.setDefaultReplyTimeout(Duration.ofSeconds(DEFAULT_REPLY_TIMEOUT_SECONDS));
+        return template;
+    }
+
+    @Bean
+    public ConcurrentMessageListenerContainer<String, String> repliesContainer(
+            ConsumerFactory<String, String> consumerFactory,
+            @Value("${kafka.reply.topics}") String[] replyTopics,
+            @Value("${kafka.reply.group-id}") String groupId) {
+        ContainerProperties containerProperties = new ContainerProperties(replyTopics);
+        containerProperties.setGroupId(groupId);
+        return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
+    }
+
+    @Bean
+    public Map<String, ReplyingKafkaTemplate<String, String, String>> replyingKafkaTemplates(
+            ReplyingKafkaTemplate<String, String, String> exchangeReplyingKafkaTemplate,
+            ReplyingKafkaTemplate<String, String, String> transactionReplyingKafkaTemplate,
+            ReplyingKafkaTemplate<String, String, String> bootCoinUserReplyingKafkaTemplate,
+            ReplyingKafkaTemplate<String, String, String> walletReplyingKafkaTemplate,
+            ReplyingKafkaTemplate<String, String, String> userByWalletReplyingKafkaTemplate,
+            ReplyingKafkaTemplate<String, String, String> transactionByIdReplyingKafkaTemplate) {
+        Map<String, ReplyingKafkaTemplate<String, String, String>> templates = new HashMap<>();
+        templates.put("exchangeReplyingKafkaTemplate", exchangeReplyingKafkaTemplate);
+        templates.put("transactionReplyingKafkaTemplate", transactionReplyingKafkaTemplate);
+        templates.put("bootCoinUserReplyingKafkaTemplate", bootCoinUserReplyingKafkaTemplate);
+        templates.put("walletReplyingKafkaTemplate", walletReplyingKafkaTemplate);
+        templates.put("userByWalletReplyingKafkaTemplate", userByWalletReplyingKafkaTemplate);
+        templates.put("transactionByIdReplyingKafkaTemplate", transactionByIdReplyingKafkaTemplate);
+        return templates;
     }
 }

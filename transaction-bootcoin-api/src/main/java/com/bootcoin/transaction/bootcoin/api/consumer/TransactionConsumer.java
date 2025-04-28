@@ -24,7 +24,7 @@ public class TransactionConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "transaction-create", groupId = "transaction-group")
+    @KafkaListener(topics = "transaction-create", groupId = "bootcoin-group")
     public void createTransaction(String message) {
         log.info("Message to create transaction: {}", message);
         TransactionRequest transactionRequest = JsonTransferUtil.jsonToObject(message, TransactionRequest.class);
@@ -35,7 +35,7 @@ public class TransactionConsumer {
                 .subscribe();
     }
 
-    @KafkaListener(topics = "transaction-list-request", groupId = "transaction-group")
+    @KafkaListener(topics = "transaction-list-request", groupId = "bootcoin-group")
     public void getTransactionListByWallet(ConsumerRecord<String, String> message,
                                            @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                                            @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
@@ -60,7 +60,7 @@ public class TransactionConsumer {
 
     }
 
-    @KafkaListener(topics = "transaction-update", groupId = "transaction-group")
+    @KafkaListener(topics = "transaction-update", groupId = "bootcoin-group")
     public void updateTransactionStatus(String message) {
         log.info("Message to update status of transaction: {}", message);
 
@@ -71,5 +71,26 @@ public class TransactionConsumer {
                 .doOnNext(transaction -> log.info("Transaction status updated {}",
                         JsonTransferUtil.objectToJson(transaction)))
                 .subscribe();
+    }
+
+    @KafkaListener(topics = "transaction-by-id-request", groupId = "bootcoin-group")
+    public void getTransactionById(ConsumerRecord<String, String> message,
+                                           @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
+                                           @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
+        log.info("-> Get transaction list request of walletId: {}", message.value());
+        transactionService.getTransactionById(message.value())
+                .flatMap(response -> {
+                    log.info("Transactions found by id: {}, {}", message.value(),
+                            JsonTransferUtil.objectToJson(response));
+                    ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
+                            JsonTransferUtil.objectToJson(response));
+                    responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId); // Incluye el correlationId
+                    kafkaTemplate.send(responseRecord);
+                    return Mono.just(response);
+                })
+                .doOnNext(record -> log.info("Transactions found: {}",
+                        JsonTransferUtil.objectToJson(record)))
+                .subscribe();
+
     }
 }

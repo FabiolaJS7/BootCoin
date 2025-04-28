@@ -7093,3 +7093,1612 @@
 2025-04-28 12:35:45-918 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
 2025-04-28 12:35:45-938 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - deregister  status: 200 
 2025-04-28 12:35:45-939 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 13:21:11-338 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests]: P2pBootcoinServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 13:21:12-126 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplication for test class com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests 
+2025-04-28 13:21:17-955 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Starting P2pBootcoinServiceApplicationTests using Java 17.0.12 with PID 13708 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service) 
+2025-04-28 13:21:17-958 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - The following 1 profile is active: "dev" 
+2025-04-28 13:21:18-090 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:21:18-091 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:21:18-092 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@aa794a3 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 13:21:18-092 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:21:18-093 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:21:18-093 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@723b8eff uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc 
+2025-04-28 13:21:18-093 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:21:18-094 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:21:18-094 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@3987a1e8 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 13:21:21-538 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=98a68105-13bc-3f49-9102-5fb027b99df2 
+2025-04-28 13:21:25-572 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 13:21:27-386 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 13:21:27-525 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 13:21:27-789 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-exchange-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = exchange-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:21:28-003 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:21:28-594 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:21:28-604 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:21:28-605 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745864488588 
+2025-04-28 13:21:28-628 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Subscribed to topic(s): exchange-response 
+2025-04-28 13:21:28-677 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-transaction-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = transaction-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:21:28-679 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:21:28-710 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:21:28-711 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:21:28-711 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745864488710 
+2025-04-28 13:21:28-713 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Subscribed to topic(s): transaction-list-response 
+2025-04-28 13:21:28-718 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:21:28-720 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:21:28-738 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:21:28-739 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:21:28-739 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745864488738 
+2025-04-28 13:21:28-740 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Subscribed to topic(s): user-create-request 
+2025-04-28 13:21:28-747 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-wallet-group-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = wallet-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:21:28-748 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:21:28-766 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:21:28-767 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:21:28-767 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745864488766 
+2025-04-28 13:21:28-768 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Subscribed to topic(s): wallet-bootcoin-response 
+2025-04-28 13:21:28-776 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-wallet-group-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = wallet-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:21:28-777 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:21:28-804 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:21:28-804 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:21:28-804 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745864488803 
+2025-04-28 13:21:28-805 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Subscribed to topic(s): wallet-user-response 
+2025-04-28 13:21:29-008 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 13:21:29-091 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 13:21:29-103 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 13:21:29-143 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 13:21:29-144 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 13:21:29-144 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 13:21:29-145 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 13:21:29-145 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 13:21:29-146 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 13:21:29-146 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 13:21:31-535 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:31-535 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-538 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:31-540 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:31-540 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-541 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-541 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-541 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-541 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-541 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-542 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-541 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-543 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-543 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-543 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-704 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-704 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:31-705 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-705 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-705 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-705 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-707 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-707 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-708 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-709 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:31-712 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-713 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-715 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:31-716 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-716 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-817 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-838 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-839 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-843 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:31-844 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-845 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-888 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:31-889 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-889 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-890 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:31-890 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-891 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:31-894 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:31-895 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:31-895 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-027 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:32-028 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-028 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-091 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:32-092 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-093 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-111 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:32-113 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-113 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-114 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:32-115 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-116 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-121 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:32-123 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-124 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-470 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:32-470 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-472 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-529 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:32-531 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-533 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-577 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:32-578 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-578 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-589 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:32-589 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-591 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-603 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:32-608 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:32-609 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:32-616 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 13:21:32-622 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 13:21:32-713 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 13:21:32-723 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745864492722 with initial instances count: 4 
+2025-04-28 13:21:32-758 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application P2P-BOOTCOIN-SERVICE with eureka with status UP 
+2025-04-28 13:21:32-763 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745864492763, current=UP, previous=STARTING] 
+2025-04-28 13:21:32-776 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 13:21:32-901 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Started P2pBootcoinServiceApplicationTests in 19.598 seconds (process running for 27.754) 
+2025-04-28 13:21:32-967 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 13:21:33-215 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application P2P-BOOTCOIN-SERVICE with eureka with status DOWN 
+2025-04-28 13:21:33-216 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745864493216, current=DOWN, previous=UP] 
+2025-04-28 13:21:33-217 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 13:21:33-235 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 13:21:33-238 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:33-239 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:33-239 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:33-275 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:33-276 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:33-277 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:33-340 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:33-341 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:33-341 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:33-399 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:33-400 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:33-400 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:33-435 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:33-437 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:33-437 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-711 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:34-711 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:21:34-711 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:34-712 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-713 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:34-714 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-734 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:21:34-740 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:34-741 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-709 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:21:34-768 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:34-769 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-800 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-801 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-801 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:21:34-807 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-807 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-818 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:21:34-821 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:21:34-827 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:21:34-828 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:21:34-828 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:21:34-829 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:21:34-829 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:21:34-859 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-exchange-group-1 unregistered 
+2025-04-28 13:21:34-861 [exchangeRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - exchange-group: Consumer stopped 
+2025-04-28 13:21:34-976 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-976 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-976 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:21:34-977 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-978 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-979 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:21:34-979 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:21:34-980 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:21:34-980 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:21:34-985 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-transaction-group-2 unregistered 
+2025-04-28 13:21:34-986 [transactionRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - transaction-group: Consumer stopped 
+2025-04-28 13:21:34-992 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-992 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-993 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:21:34-993 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-993 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:34-994 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:21:34-995 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:21:34-995 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:21:34-995 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:21:34-999 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-3 unregistered 
+2025-04-28 13:21:35-000 [bootCoinUserRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 13:21:35-028 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-029 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-029 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:21:35-029 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-029 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-030 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:21:35-038 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:21:35-038 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:21:35-039 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:21:35-054 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-wallet-group-4 unregistered 
+2025-04-28 13:21:35-057 [walletRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - wallet-group: Consumer stopped 
+2025-04-28 13:21:35-070 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-070 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-070 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:21:35-072 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-072 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:21:35-073 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:21:35-073 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:21:35-073 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:21:35-073 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:21:35-077 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-wallet-group-5 unregistered 
+2025-04-28 13:21:35-078 [walletUserRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - wallet-group: Consumer stopped 
+2025-04-28 13:21:35-175 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 13:21:38-190 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 13:21:38-212 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - deregister  status: 200 
+2025-04-28 13:21:38-213 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 13:35:39-072 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests]: P2pBootcoinServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 13:35:42-094 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplication for test class com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests 
+2025-04-28 13:35:55-616 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Starting P2pBootcoinServiceApplicationTests using Java 17.0.12 with PID 18104 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service) 
+2025-04-28 13:35:55-619 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - The following 1 profile is active: "dev" 
+2025-04-28 13:35:56-197 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:35:56-198 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:35:56-199 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@aa794a3 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 13:35:56-201 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:35:56-202 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:35:56-202 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@723b8eff uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc 
+2025-04-28 13:35:56-203 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 13:35:56-203 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 13:35:56-203 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@3987a1e8 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 13:36:01-803 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=98a68105-13bc-3f49-9102-5fb027b99df2 
+2025-04-28 13:36:05-985 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 13:36:09-291 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 13:36:09-593 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 13:36:10-377 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-exchange-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = exchange-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:36:10-855 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:36:12-288 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:36:12-300 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:36:12-301 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745865372269 
+2025-04-28 13:36:12-318 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Subscribed to topic(s): exchange-response 
+2025-04-28 13:36:12-477 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-transaction-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = transaction-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:36:12-482 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:36:12-519 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:36:12-520 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:36:12-520 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745865372518 
+2025-04-28 13:36:12-521 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Subscribed to topic(s): transaction-list-response 
+2025-04-28 13:36:12-590 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootuser-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootuser-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:36:12-592 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:36:12-628 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:36:12-629 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:36:12-630 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745865372628 
+2025-04-28 13:36:12-631 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Subscribed to topic(s): user-create-request 
+2025-04-28 13:36:13-247 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-wallet-group-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = wallet-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:36:13-249 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:36:13-583 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:36:13-584 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:36:13-585 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745865373583 
+2025-04-28 13:36:13-586 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Subscribed to topic(s): wallet-bootcoin-response 
+2025-04-28 13:36:13-938 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-wallet-group-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = wallet-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 13:36:13-947 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 13:36:14-029 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 13:36:14-030 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 13:36:14-031 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745865374028 
+2025-04-28 13:36:14-032 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Subscribed to topic(s): wallet-user-response 
+2025-04-28 13:36:15-104 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 13:36:15-371 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 13:36:15-390 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 13:36:15-492 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 13:36:15-493 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 13:36:15-493 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 13:36:15-494 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 13:36:15-495 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 13:36:15-495 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 13:36:15-495 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 13:36:16-419 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:16-420 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:16-421 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-421 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-423 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:16-429 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-429 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-429 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-443 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-444 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-444 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-444 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-444 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-444 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-447 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-558 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:16-559 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:16-559 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-561 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-561 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-564 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-564 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-563 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-565 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-574 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-575 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-575 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-630 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:16-631 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-633 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-708 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-711 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:16-711 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-713 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-709 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:16-712 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-718 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-718 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-719 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-727 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-728 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-729 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-755 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:16-756 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-758 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-895 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-896 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-896 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-940 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:16-940 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-941 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-957 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:16-960 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:16-961 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:16-961 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-960 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-962 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-961 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:16-963 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:16-964 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-336 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:17-342 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:17-347 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-360 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:17-361 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:17-362 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-374 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:17-377 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:17-387 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-394 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:17-395 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:17-394 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:17-405 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-406 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:17-406 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:17-743 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 13:36:17-750 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 13:36:17-757 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 13:36:17-762 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745865377761 with initial instances count: 5 
+2025-04-28 13:36:17-771 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application P2P-BOOTCOIN-SERVICE with eureka with status UP 
+2025-04-28 13:36:17-776 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745865377774, current=UP, previous=STARTING] 
+2025-04-28 13:36:17-785 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 13:36:17-922 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Started P2pBootcoinServiceApplicationTests in 31.504 seconds (process running for 46.317) 
+2025-04-28 13:36:18-047 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:18-048 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-048 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:18-051 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 13:36:18-114 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:18-116 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-117 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:18-259 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:18-261 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-262 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:18-283 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:18-284 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-284 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:18-295 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application P2P-BOOTCOIN-SERVICE with eureka with status DOWN 
+2025-04-28 13:36:18-296 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745865378296, current=DOWN, previous=UP] 
+2025-04-28 13:36:18-297 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 13:36:18-296 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:18-301 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-301 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:18-349 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 13:36:18-933 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
+2025-04-28 13:36:18-935 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:18-935 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:19-118 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
+2025-04-28 13:36:19-119 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:19-121 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:19-253 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:19-253 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:19-254 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:19-280 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
+2025-04-28 13:36:19-281 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:19-281 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:19-323 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
+2025-04-28 13:36:19-324 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
+2025-04-28 13:36:19-324 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
+2025-04-28 13:36:19-893 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-893 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-894 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:36:19-898 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-899 [exchangeRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-909 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:36:19-910 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:36:19-911 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:36:19-912 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:36:19-921 [exchangeRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-exchange-group-1 unregistered 
+2025-04-28 13:36:19-922 [exchangeRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - exchange-group: Consumer stopped 
+2025-04-28 13:36:19-926 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-927 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-927 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:36:19-927 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-928 [transactionRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-929 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:36:19-929 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:36:19-930 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:36:19-930 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:36:19-935 [transactionRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-transaction-group-2 unregistered 
+2025-04-28 13:36:19-936 [transactionRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - transaction-group: Consumer stopped 
+2025-04-28 13:36:19-938 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-939 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-939 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:36:19-939 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-940 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-942 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:36:19-943 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:36:19-943 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:36:19-943 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:36:19-947 [bootCoinUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootuser-group-3 unregistered 
+2025-04-28 13:36:19-947 [bootCoinUserRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootuser-group: Consumer stopped 
+2025-04-28 13:36:19-949 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-949 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-949 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:36:19-950 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-950 [walletRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-950 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:36:19-950 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:36:19-951 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:36:19-951 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:36:19-955 [walletRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-wallet-group-4 unregistered 
+2025-04-28 13:36:19-955 [walletRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - wallet-group: Consumer stopped 
+2025-04-28 13:36:19-957 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-957 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-958 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 13:36:19-958 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-959 [walletUserRepliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 13:36:19-960 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 13:36:19-961 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 13:36:19-961 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 13:36:19-962 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 13:36:19-967 [walletUserRepliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-wallet-group-5 unregistered 
+2025-04-28 13:36:19-967 [walletUserRepliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - wallet-group: Consumer stopped 
+2025-04-28 13:36:20-048 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 13:36:23-061 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 13:36:23-120 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - deregister  status: 200 
+2025-04-28 13:36:23-120 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 16:45:25-547 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests]: P2pBootcoinServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 16:45:25-933 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplication for test class com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests 
+2025-04-28 16:45:29-137 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Starting P2pBootcoinServiceApplicationTests using Java 17.0.12 with PID 13308 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service) 
+2025-04-28 16:45:29-138 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - The following 1 profile is active: "dev" 
+2025-04-28 16:45:29-197 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29-197 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29-198 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@aa794a3 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 16:45:29-198 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29-199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29-199 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@723b8eff uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc 
+2025-04-28 16:45:29-199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29-199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29-199 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@3987a1e8 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 16:45:30-929 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=f4eeab04-c26e-3828-9f0a-51dfba6a0cbc 
+2025-04-28 16:45:33-103 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 16:45:34-252 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 16:45:34-360 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 16:45:34-568 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 16:45:34-732 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 16:45:35-190 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 16:45:35-194 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 16:45:35-194 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745876735187 
+2025-04-28 16:45:35-209 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): exchange-response, transaction-list-response, user-create-response, wallet-bootcoin-response, user-by-wallet-response, transaction-by-id-response 
+2025-04-28 16:45:35-357 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 16:45:35-430 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 16:45:35-443 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 16:45:35-466 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 16:45:35-467 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 16:45:36-234 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 16:45:36-239 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 16:45:36-245 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 16:45:36-249 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745876736248 with initial instances count: 4 
+2025-04-28 16:45:36-255 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application P2P-BOOTCOIN-SERVICE with eureka with status UP 
+2025-04-28 16:45:36-257 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745876736257, current=UP, previous=STARTING] 
+2025-04-28 16:45:36-261 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 16:45:36-292 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests - Started P2pBootcoinServiceApplicationTests in 9.744 seconds (process running for 13.384) 
+2025-04-28 16:45:36-408 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 16:45:36-453 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application P2P-BOOTCOIN-SERVICE with eureka with status DOWN 
+2025-04-28 16:45:36-454 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745876736454, current=DOWN, previous=UP] 
+2025-04-28 16:45:36-454 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 16:45:36-466 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - registration status: 204 
+2025-04-28 16:45:36-983 [repliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Error while fetching metadata with correlation id 2 : {user-by-wallet-response=LEADER_NOT_AVAILABLE} 
+2025-04-28 16:45:36-986 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 16:45:36-987 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 16:45:36-987 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 16:45:36-987 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 16:45:36-988 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 16:45:36-989 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 16:45:36-994 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 16:45:36-994 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 16:45:36-994 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 16:45:36-994 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 16:45:37-001 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-1 unregistered 
+2025-04-28 16:45:37-002 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 16:45:37-033 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 16:45:40-039 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 16:45:40-058 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803 - deregister  status: 200 
+2025-04-28 16:45:40-058 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 

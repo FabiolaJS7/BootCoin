@@ -1,0 +1,1384 @@
+2025-04-28 15:18:10-243 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Starting BootcoinUserApiApplication using Java 17.0.12 with PID 29160 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin) 
+2025-04-28 15:18:10-246 [main] INFO  c.b.u.api.BootcoinUserApiApplication - The following 1 profile is active: "dev" 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:18:10-288 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@27d57a2c uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:18:10-288 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@1dc2de84 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:18:10-288 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:18:10-288 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@6a0659ac uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:18:14-393 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 15:18:15-226 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 809 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 15:18:15-544 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a97b0ba3-6792-3e87-854b-0cd6b5ab81f8 
+2025-04-28 15:18:16-280 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@6ad3fbe4, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@17189618], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@983050b, com.mongodb.Jep395RecordCodecProvider@6aadb092, com.mongodb.KotlinCodecProvider@1f547af8]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4caf875c], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 15:18:16-397 [cluster-ClusterId{value='680fe2888f7ba830bd4280a4', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48171500, minRoundTripTimeNanos=0} 
+2025-04-28 15:18:17-172 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 15:18:19-236 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 15:18:19-901 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 15:18:19-965 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 15:18:20-229 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:18:20-329 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:18:20-482 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:18:20-484 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:18:20-485 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745871500479 
+2025-04-28 15:18:20-492 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): user-create-response 
+2025-04-28 15:18:20-542 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 15:18:20-591 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 15:18:20-599 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 15:18:20-624 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 15:18:20-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 15:18:21-462 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 15:18:21-466 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 15:18:21-471 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 15:18:21-474 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745871501473 with initial instances count: 3 
+2025-04-28 15:18:21-481 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 15:18:21-482 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745871501482, current=UP, previous=STARTING] 
+2025-04-28 15:18:21-485 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:18:21-519 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:18:21-520 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:18:21-528 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:21-558 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26 
+2025-04-28 15:18:21-558 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:21-565 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:18:21-604 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8817 (http) 
+2025-04-28 15:18:21-606 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8817 
+2025-04-28 15:18:22-045 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:18:22-046 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:18:22-055 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:18:22-056 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:18:22-056 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745871502055 
+2025-04-28 15:18:22-056 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Subscribed to topic(s): user-create-request 
+2025-04-28 15:18:22-080 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Error while fetching metadata with correlation id 2 : {user-create-request=LEADER_NOT_AVAILABLE} 
+2025-04-28 15:18:22-080 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:18:22-081 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:18:22-082 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:22-089 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Started BootcoinUserApiApplication in 14.245 seconds (process running for 16.157) 
+2025-04-28 15:18:22-090 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc 
+2025-04-28 15:18:22-090 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:22-169 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=8, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:22-170 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=8, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:22-641 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=8, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:22-641 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=8, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:22-645 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:18:22-645 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[]) 
+2025-04-28 15:18:22-646 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions:  
+2025-04-28 15:18:22-647 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [] 
+2025-04-28 15:18:22-649 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:18:22-653 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Found no committed offset for partition user-create-request-0 
+2025-04-28 15:18:22-656 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Found no committed offset for partition user-create-request-0 
+2025-04-28 15:18:22-664 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting offset for partition user-create-request-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}}. 
+2025-04-28 15:18:22-669 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:18:46-235 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:18:46-235 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:18:46-238 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions  
+2025-04-28 15:18:46-238 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:18:46-239 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [] 
+2025-04-28 15:18:46-239 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:18:46-241 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:46-241 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:46-248 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=9, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:46-248 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=9, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:46-279 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 9: {consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc=Assignment(partitions=[user-create-request-0])} 
+2025-04-28 15:18:46-286 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=9, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:46-286 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=9, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:46-286 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:18:46-286 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:18:46-286 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:18:46-287 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:18:46-294 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:18:46-294 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:18:46-294 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:18:46-294 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:18:58-264 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:18:58-264 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:18:58-265 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:18:58-265 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:18:58-265 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:18:58-265 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:18:58-265 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:58-265 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:18:58-268 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=10, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:58-268 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=10, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:58-378 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 10: {consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-1-da530121-8275-4794-b3eb-d18121f58e08=Assignment(partitions=[transaction-list-response-0, exchange-response-0, wallet-user-response-0]), consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc=Assignment(partitions=[user-create-request-0])} 
+2025-04-28 15:18:58-381 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=10, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:18:58-381 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=10, memberId='consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26', protocol='range'} 
+2025-04-28 15:18:58-382 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:18:58-382 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:18:58-382 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:18:58-382 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:18:58-386 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:18:58-386 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:18:58-386 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:18:58-386 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:21:55-543 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 15:21:55-544 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745871715544, current=DOWN, previous=UP] 
+2025-04-28 15:21:55-544 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:21:55-552 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:21:55-571 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:21:55-572 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:21:55-572 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Member consumer-bootcoin-group-1-c37f1dd7-14b2-468d-92ef-a7c1371d8e26 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:21:55-574 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-574 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-574 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:21:55-578 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-578 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-688 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:21:55-689 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:21:55-689 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:21:55-689 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:21:55-692 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=11, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:21:55-692 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Finished assignment for group at generation 11: {consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc=Assignment(partitions=[user-create-request-0])} 
+2025-04-28 15:21:55-696 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=11, memberId='consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc', protocol='range'} 
+2025-04-28 15:21:55-697 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:21:55-697 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:21:55-700 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:21:55-700 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:21:55-860 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:21:55-860 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:21:55-861 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:21:55-861 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:21:55-871 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-1 unregistered 
+2025-04-28 15:21:55-872 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:21:55-876 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:21:55-877 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:21:55-877 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Member consumer-bootcoin-group-2-b7ae51f4-a4fb-4825-b33c-0bf7f8343bbc sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:21:55-877 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-877 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-877 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:21:55-878 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-28 15:21:55-878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:21:55-888 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-28 15:21:56-360 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:21:56-360 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:21:56-360 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:21:56-360 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:21:56-363 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-2 unregistered 
+2025-04-28 15:21:56-363 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:22:00-061 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 15:22:03-076 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 15:22:03-094 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 15:22:03-096 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 15:22:16-196 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Starting BootcoinUserApiApplication using Java 17.0.12 with PID 26500 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin) 
+2025-04-28 15:22:16-199 [main] INFO  c.b.u.api.BootcoinUserApiApplication - The following 1 profile is active: "dev" 
+2025-04-28 15:22:16-251 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:22:16-251 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:22:16-251 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@3eee3e2b uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:22:16-251 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:22:16-251 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:22:16-252 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@369c9bb uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 15:22:16-252 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:22:16-252 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:22:16-252 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@76d05cc9 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:22:17-888 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 15:22:18-346 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 448 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 15:22:18-694 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a97b0ba3-6792-3e87-854b-0cd6b5ab81f8 
+2025-04-28 15:22:19-756 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@6ad3fbe4, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@17189618], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@983050b, com.mongodb.Jep395RecordCodecProvider@6aadb092, com.mongodb.KotlinCodecProvider@1f547af8]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4caf875c], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 15:22:19-911 [cluster-ClusterId{value='680fe37bd552920d84ae8db1', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62501900, minRoundTripTimeNanos=0} 
+2025-04-28 15:22:21-008 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 15:22:22-009 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 15:22:22-748 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 15:22:22-837 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 15:22:23-072 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:22:23-147 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:22:23-248 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:22:23-249 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:22:23-249 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745871743246 
+2025-04-28 15:22:23-253 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): user-create-response 
+2025-04-28 15:22:23-280 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 15:22:23-305 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 15:22:23-309 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 15:22:23-319 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 15:22:23-320 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 15:22:23-646 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 15:22:23-649 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 15:22:23-652 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 15:22:23-654 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745871743654 with initial instances count: 1 
+2025-04-28 15:22:23-658 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 15:22:23-660 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745871743660, current=UP, previous=STARTING] 
+2025-04-28 15:22:23-662 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:22:23-741 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:22:23-746 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:22:23-747 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:22:23-757 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:23-793 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631 
+2025-04-28 15:22:23-794 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:23-799 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8817 (http) 
+2025-04-28 15:22:23-801 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=13, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:23-802 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8817 
+2025-04-28 15:22:23-814 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 13: {consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631=Assignment(partitions=[user-create-response-0])} 
+2025-04-28 15:22:23-828 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=13, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:23-829 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:22:23-833 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:22:23-884 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:22:23-889 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:22:24-599 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:22:24-600 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:22:24-609 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:22:24-609 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:22:24-609 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745871744609 
+2025-04-28 15:22:24-609 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Subscribed to topic(s): user-create-request 
+2025-04-28 15:22:24-621 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:22:24-623 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:22:24-624 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:24-630 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37 
+2025-04-28 15:22:24-631 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:24-637 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Started BootcoinUserApiApplication in 10.602 seconds (process running for 12.126) 
+2025-04-28 15:22:26-811 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:22:26-812 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:22:26-814 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:22:26-814 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:26-818 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=14, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:26-818 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=14, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:26-979 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 14: {consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37=Assignment(partitions=[user-create-request-0])} 
+2025-04-28 15:22:26-985 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=14, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:26-985 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=14, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:26-986 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:22:26-986 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:22:26-986 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:22:26-986 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:22:27-028 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:22:27-029 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:22:27-029 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:22:27-030 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:22:41-859 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:22:41-859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:22:41-859 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:22:41-859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:22:41-859 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:22:41-859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:22:41-859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:41-859 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:41-863 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=15, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:41-863 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=15, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:42-013 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=15, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:42-014 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException) 
+2025-04-28 15:22:42-014 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:42-201 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 15: {consumer-bootcoin-group-2-3d5fad53-86de-4f50-82e4-e5ecbd4335b6=Assignment(partitions=[wallet-bootcoin-request-0]), consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-3-04aba17e-6367-427f-a13f-f58361b48ab7=Assignment(partitions=[wallet-user-request-0]), consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37=Assignment(partitions=[user-create-request-0]), consumer-bootcoin-group-1-50136454-0064-4048-a39f-5490756511c1=Assignment(partitions=[wallet-bootcoin-response-0])} 
+2025-04-28 15:22:42-205 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=15, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:42-205 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException) 
+2025-04-28 15:22:42-205 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:22:42-208 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=16, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:42-208 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=16, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:42-218 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 16: {consumer-bootcoin-group-2-3d5fad53-86de-4f50-82e4-e5ecbd4335b6=Assignment(partitions=[wallet-bootcoin-request-0]), consumer-bootcoin-group-1-dd48fd2a-1834-4267-8eb7-e9428de0b53c=Assignment(partitions=[transaction-list-response-0, exchange-response-0, wallet-user-response-0]), consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-3-04aba17e-6367-427f-a13f-f58361b48ab7=Assignment(partitions=[wallet-user-request-0]), consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37=Assignment(partitions=[user-create-request-0]), consumer-bootcoin-group-1-50136454-0064-4048-a39f-5490756511c1=Assignment(partitions=[wallet-bootcoin-response-0])} 
+2025-04-28 15:22:42-224 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=16, memberId='consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631', protocol='range'} 
+2025-04-28 15:22:42-225 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:22:42-225 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:22:42-226 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=16, memberId='consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37', protocol='range'} 
+2025-04-28 15:22:42-226 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:22:42-227 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:22:42-232 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:22:42-232 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:22:42-233 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:22:42-233 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:25:08-372 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 15:25:08-373 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745871908373, current=DOWN, previous=UP] 
+2025-04-28 15:25:08-373 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:25:08-389 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:25:08-389 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:25:08-389 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:25:08-390 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Member consumer-bootcoin-group-1-54161e00-60f5-4fa0-83c7-7dcaf836d631 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:25:08-390 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-390 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-390 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:25:08-394 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-394 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-660 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:25:08-660 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:25:08-660 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:25:08-660 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:25:08-666 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-1 unregistered 
+2025-04-28 15:25:08-667 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:25:08-670 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:25:08-670 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:25:08-670 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Member consumer-bootcoin-group-2-b4729014-bded-45ad-9e44-0de4222baa37 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:25:08-670 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-671 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-671 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:25:08-671 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-28 15:25:08-671 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-671 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:25:08-681 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-28 15:25:09-160 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:25:09-160 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:25:09-160 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:25:09-160 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:25:09-163 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-2 unregistered 
+2025-04-28 15:25:09-164 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:25:12-846 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 15:25:15-856 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 15:25:15-875 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 15:25:15-876 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 15:27:34-081 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Starting BootcoinUserApiApplication using Java 17.0.12 with PID 5432 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin) 
+2025-04-28 15:27:34-084 [main] INFO  c.b.u.api.BootcoinUserApiApplication - The following 1 profile is active: "dev" 
+2025-04-28 15:27:34-126 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:27:34-127 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:27:34-127 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@35088e87 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:27:34-127 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:27:34-127 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:27:34-127 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@46866946 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 15:27:34-127 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:27:34-127 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:27:34-127 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@44de0113 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:27:35-424 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 15:27:35-851 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 418 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 15:27:36-209 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a97b0ba3-6792-3e87-854b-0cd6b5ab81f8 
+2025-04-28 15:27:37-081 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@17a77a7e, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@7c840fe3], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@59014efe, com.mongodb.Jep395RecordCodecProvider@5f5923ef, com.mongodb.KotlinCodecProvider@7381d6f0]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@2f262474], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 15:27:37-215 [cluster-ClusterId{value='680fe4b80d56b143ecb1c52b', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62031300, minRoundTripTimeNanos=0} 
+2025-04-28 15:27:37-970 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 15:27:38-858 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 15:27:39-506 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 15:27:39-574 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 15:27:39-719 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:27:39-774 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:27:39-861 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:27:39-862 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:27:39-862 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745872059858 
+2025-04-28 15:27:39-866 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): user-create-response 
+2025-04-28 15:27:39-897 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 15:27:39-927 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 15:27:39-932 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 15:27:39-943 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 15:27:39-944 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 15:27:40-299 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 15:27:40-302 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 15:27:40-305 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 15:27:40-306 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745872060306 with initial instances count: 2 
+2025-04-28 15:27:40-310 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 15:27:40-310 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745872060310, current=UP, previous=STARTING] 
+2025-04-28 15:27:40-313 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:27:40-345 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:27:40-346 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:27:40-350 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:40-373 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:27:40-375 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b 
+2025-04-28 15:27:40-376 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:40-396 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8817 (http) 
+2025-04-28 15:27:40-398 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8817 
+2025-04-28 15:27:40-723 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:27:40-724 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:27:40-735 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:27:40-735 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:27:40-735 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745872060735 
+2025-04-28 15:27:40-736 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Subscribed to topic(s): user-create-request 
+2025-04-28 15:27:40-754 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:27:40-754 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:27:40-756 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:40-762 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479 
+2025-04-28 15:27:40-762 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:40-768 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Started BootcoinUserApiApplication in 8.622 seconds (process running for 9.896) 
+2025-04-28 15:27:41-757 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=19, memberId='consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b', protocol='range'} 
+2025-04-28 15:27:41-759 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=19, memberId='consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479', protocol='range'} 
+2025-04-28 15:27:41-873 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=19, memberId='consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b', protocol='range'} 
+2025-04-28 15:27:41-873 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=19, memberId='consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479', protocol='range'} 
+2025-04-28 15:27:41-878 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:27:41-878 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:27:41-882 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:27:41-882 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:27:41-895 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:27:41-895 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:27:41-896 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:27:41-896 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:27:44-768 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:27:44-768 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:27:44-769 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:27:44-769 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:27:44-770 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:27:44-770 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:27:44-771 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:44-771 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:27:44-774 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=20, memberId='consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b', protocol='range'} 
+2025-04-28 15:27:44-774 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=20, memberId='consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479', protocol='range'} 
+2025-04-28 15:27:44-905 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=20, memberId='consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b', protocol='range'} 
+2025-04-28 15:27:44-905 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=20, memberId='consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479', protocol='range'} 
+2025-04-28 15:27:44-906 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:27:44-906 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:27:44-906 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:27:44-906 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:27:44-913 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:27:44-913 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:27:44-914 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:27:44-914 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:32:39-948 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 15:33:11-093 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 15:33:11-095 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745872391094, current=DOWN, previous=UP] 
+2025-04-28 15:33:11-095 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:33:11-108 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:33:11-109 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:33:11-109 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:33:11-110 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Member consumer-bootcoin-group-1-19b2cb04-c375-4e51-9248-a12ea2b90c7b sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:33:11-112 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-112 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-112 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:33:11-117 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-118 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-243 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:33:11-243 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:33:11-243 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:33:11-243 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:33:11-253 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-1 unregistered 
+2025-04-28 15:33:11-254 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:33:11-257 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Member consumer-bootcoin-group-2-193e7bee-6900-4b79-a0c8-66068ebc5479 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-258 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:33:11-261 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-28 15:33:11-271 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-28 15:33:11-746 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:33:11-747 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:33:11-747 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:33:11-747 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:33:11-751 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-2 unregistered 
+2025-04-28 15:33:11-751 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:33:15-462 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 15:33:18-465 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 15:33:18-486 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 15:33:18-489 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-28 15:34:10-671 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Starting BootcoinUserApiApplication using Java 17.0.12 with PID 29372 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\bootcoin-user-api\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin) 
+2025-04-28 15:34:10-673 [main] INFO  c.b.u.api.BootcoinUserApiApplication - The following 1 profile is active: "dev" 
+2025-04-28 15:34:10-707 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:34:10-707 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:34:10-707 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@486bc9a4 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:34:10-708 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:34:10-708 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:34:10-708 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@44de0113 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/dev": config-server-bc 
+2025-04-28 15:34:10-708 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 15:34:10-708 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 15:34:10-708 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@236134a1 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/bootcoin-user-api/default": config-server-bc 
+2025-04-28 15:34:11-613 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-28 15:34:11-864 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 246 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-28 15:34:12-097 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a97b0ba3-6792-3e87-854b-0cd6b5ab81f8 
+2025-04-28 15:34:12-737 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@7c840fe3, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@59014efe], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5f5923ef, com.mongodb.Jep395RecordCodecProvider@7381d6f0, com.mongodb.KotlinCodecProvider@2f262474]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@7c03f9d0], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-28 15:34:12-849 [cluster-ClusterId{value='680fe644427d9e40c2cb1945', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=53655000, minRoundTripTimeNanos=0} 
+2025-04-28 15:34:13-905 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath. 
+2025-04-28 15:34:15-311 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 15:34:16-020 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-28 15:34:16-064 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 15:34:16-208 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:34:16-275 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:34:16-392 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:34:16-394 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:34:16-394 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745872456391 
+2025-04-28 15:34:16-398 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): user-create-response 
+2025-04-28 15:34:16-425 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-28 15:34:16-451 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-28 15:34:16-455 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-28 15:34:16-465 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-28 15:34:16-465 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-28 15:34:16-465 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-28 15:34:16-465 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-28 15:34:16-465 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-28 15:34:16-466 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-28 15:34:16-466 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-28 15:34:16-770 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-28 15:34:16-772 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-28 15:34:16-774 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 15:34:16-776 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1745872456776 with initial instances count: 1 
+2025-04-28 15:34:16-778 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOTCOIN-USER-API with eureka with status UP 
+2025-04-28 15:34:16-779 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745872456779, current=UP, previous=STARTING] 
+2025-04-28 15:34:16-782 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:34:16-829 [repliesContainer-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:34:16-831 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:34:16-832 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:34:16-834 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:16-854 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8 
+2025-04-28 15:34:16-855 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:16-855 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8817 (http) 
+2025-04-28 15:34:16-857 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8817 
+2025-04-28 15:34:16-860 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=22, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:16-870 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 22: {consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8=Assignment(partitions=[user-create-response-0])} 
+2025-04-28 15:34:16-878 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=22, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:16-878 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:34:16-882 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:34:16-895 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:34:16-898 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:34:17-120 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bootcoin-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bootcoin-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ 
+2025-04-28 15:34:17-122 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector 
+2025-04-28 15:34:17-129 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1 
+2025-04-28 15:34:17-129 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 15:34:17-129 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1745872457128 
+2025-04-28 15:34:17-129 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Subscribed to topic(s): user-create-request 
+2025-04-28 15:34:17-138 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Cluster ID: pQNgvDGCTc6DWdlYtyeAyg 
+2025-04-28 15:34:17-139 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Discovered group coordinator localhost:29092 (id: 2147482646 rack: null) 
+2025-04-28 15:34:17-140 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:17-145 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: need to re-join with the given member-id: consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c 
+2025-04-28 15:34:17-145 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:17-152 [main] INFO  c.b.u.api.BootcoinUserApiApplication - Started BootcoinUserApiApplication in 8.342 seconds (process running for 9.669) 
+2025-04-28 15:34:19-866 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:34:19-868 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:34:19-868 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:34:19-868 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:19-871 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=23, memberId='consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c', protocol='range'} 
+2025-04-28 15:34:19-871 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=23, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:19-969 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 23: {consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8=Assignment(partitions=[user-create-response-0]), consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c=Assignment(partitions=[user-create-request-0])} 
+2025-04-28 15:34:19-974 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=23, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:19-974 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=23, memberId='consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c', protocol='range'} 
+2025-04-28 15:34:19-974 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-response-0]) 
+2025-04-28 15:34:19-974 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions: user-create-response-0 
+2025-04-28 15:34:19-975 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:34:19-975 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:34:19-979 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:34:19-979 [repliesContainer-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-response-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:34:19-980 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:34:19-980 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-response-0] 
+2025-04-28 15:34:52-967 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:34:52-967 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: group is already rebalancing 
+2025-04-28 15:34:52-967 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:34:52-968 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Revoke previously assigned partitions user-create-response-0 
+2025-04-28 15:34:52-968 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-response-0] 
+2025-04-28 15:34:52-968 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:34:52-968 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:52-968 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] (Re-)joining group 
+2025-04-28 15:34:52-972 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=24, memberId='consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c', protocol='range'} 
+2025-04-28 15:34:52-972 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully joined group with generation Generation{generationId=24, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:53-239 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Finished assignment for group at generation 24: {consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8=Assignment(partitions=[]), consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c=Assignment(partitions=[user-create-request-0]), consumer-bootcoin-group-1-1f58fa69-7b33-4411-9b9f-a8a2e07e4cd1=Assignment(partitions=[user-create-response-0, transaction-list-response-0, exchange-response-0, wallet-bootcoin-response-0])} 
+2025-04-28 15:34:53-243 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=24, memberId='consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8', protocol='range'} 
+2025-04-28 15:34:53-243 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Successfully synced group in generation Generation{generationId=24, memberId='consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c', protocol='range'} 
+2025-04-28 15:34:53-243 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[user-create-request-0]) 
+2025-04-28 15:34:53-243 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Notifying assignor about the new Assignment(partitions=[]) 
+2025-04-28 15:34:53-243 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Adding newly assigned partitions: user-create-request-0 
+2025-04-28 15:34:53-243 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Adding newly assigned partitions:  
+2025-04-28 15:34:53-244 [repliesContainer-0-C-1] INFO  o.s.k.l.ConcurrentMessageListenerContainer - bootcoin-group: partitions assigned: [] 
+2025-04-28 15:34:53-249 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition user-create-request-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1001 rack: null)], epoch=0}} 
+2025-04-28 15:34:53-249 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions assigned: [user-create-request-0] 
+2025-04-28 15:34:54-500 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application BOOTCOIN-USER-API with eureka with status DOWN 
+2025-04-28 15:34:54-500 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1745872494500, current=DOWN, previous=UP] 
+2025-04-28 15:34:54-501 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817: registering service... 
+2025-04-28 15:34:54-508 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Member consumer-bootcoin-group-1-3c5453fd-e7e7-4098-9a5a-77192ecc43a8 sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:34:54-509 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-509 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-509 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:34:54-511 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-512 [repliesContainer-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-519 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - registration status: 204 
+2025-04-28 15:34:54-520 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:34:54-520 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:34:54-520 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:34:54-521 [repliesContainer-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:34:54-526 [repliesContainer-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-1 unregistered 
+2025-04-28 15:34:54-527 [repliesContainer-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Revoke previously assigned partitions user-create-request-0 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: partitions revoked: [user-create-request-0] 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Member consumer-bootcoin-group-2-c4bec9c2-7427-4beb-ae71-05e30ac39c9c sending LeaveGroup request to coordinator localhost:29092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-529 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Unsubscribed all topics or patterns and assigned partitions 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Resetting generation and member id due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-529 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-bootcoin-group-2, groupId=bootcoin-group] Request joining group due to: consumer pro-actively leaving the group 
+2025-04-28 15:34:54-534 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-28 15:34:54-758 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed 
+2025-04-28 15:34:54-758 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter 
+2025-04-28 15:34:54-759 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter 
+2025-04-28 15:34:54-759 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed 
+2025-04-28 15:34:54-762 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-bootcoin-group-2 unregistered 
+2025-04-28 15:34:54-763 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - bootcoin-group: Consumer stopped 
+2025-04-28 15:34:58-694 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-28 15:35:01-708 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-28 15:35:01-727 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOTCOIN-USER-API/bootcoin-user-api:8817 - deregister  status: 200 
+2025-04-28 15:35:01-727 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 

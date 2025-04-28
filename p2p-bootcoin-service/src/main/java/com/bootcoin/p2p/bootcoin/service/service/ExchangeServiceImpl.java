@@ -21,7 +21,12 @@ public class ExchangeServiceImpl implements ExchangeService {
         log.info("-> Init exchange day RQ: {}", JsonTransferUtil.objectToJson(exchangeRequest));
         return exchangeRequest
                 .flatMap(rq -> {
-                    String s = kafkaProducer.sendAndReceiveExchange(JsonTransferUtil.objectToJson(rq));
+                    String s = kafkaProducer.sendAndReceive(
+                            "exchange-request",
+                            "exchange-response",
+                            JsonTransferUtil.objectToJson(rq),
+                            "exchangeReplyingKafkaTemplate"
+                    );
                     log.info("Response from exchange: {}", s);
                     return Mono.just(s);
                 })

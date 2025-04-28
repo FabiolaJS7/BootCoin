@@ -36,5 +36,14 @@ import java.time.LocalDate;
 <span class="nc" id="L36">                .doOnSuccess(userResponse -&gt; log.info(&quot;User created {}&quot;, JsonTransferUtil.objectToJson(userResponse)))</span>
 <span class="nc" id="L37">                .doOnError(throwable -&gt; log.error(&quot;User creation failed {}&quot;, throwable.getMessage()));</span>
     }
+
+    @Override
+    public Mono&lt;UserResponse&gt; userByWalletAccount(String walletAccount) {
+<span class="nc" id="L42">        return daoUserFactory.getUserRepository().findUserModelByWalletAccount(walletAccount)</span>
+<span class="nc" id="L43">                .map(UserMapper.INSTANCE::getUserResponseFromUserModel)</span>
+<span class="nc" id="L44">                .doOnSuccess(userResponse -&gt; log.info(&quot;Getting user by wallet account {}&quot;,</span>
+<span class="nc" id="L45">                        JsonTransferUtil.objectToJson(userResponse)))</span>
+<span class="nc" id="L46">                .doOnError(throwable -&gt; log.error(&quot;User by wallet account failed {}&quot;, throwable.getMessage()));</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,10 +1,10 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 bootcoin-user-api,com.bootcoin.user.api.mapper,UserMapperImpl,83,0,4,0,24,0,5,0,3,0
 bootcoin-user-api,com.bootcoin.user.api.mapper,UserMapper,5,0,0,0,1,0,1,0,1,0
-bootcoin-user-api,com.bootcoin.user.api.consumer,UserConsumer,115,7,0,0,23,2,6,2,6,2
+bootcoin-user-api,com.bootcoin.user.api.consumer,UserConsumer,168,7,0,0,30,2,6,2,6,2
 bootcoin-user-api,com.bootcoin.user.api.util,JsonTransferUtil,89,0,0,0,27,0,5,0,5,0
-bootcoin-user-api,com.bootcoin.user.api.service,UserServiceImpl,69,7,0,0,13,2,7,2,7,2
+bootcoin-user-api,com.bootcoin.user.api.service,UserServiceImpl,97,7,0,0,18,2,10,2,10,2
 bootcoin-user-api,com.bootcoin.user.api.producer,KafkaProducer,3,0,0,0,1,0,1,0,1,0
-bootcoin-user-api,com.bootcoin.user.api.config,KafkaConfig,0,94,0,0,0,19,0,7,0,7
+bootcoin-user-api,com.bootcoin.user.api.config,KafkaConfig,0,103,0,0,0,20,0,7,0,7
 bootcoin-user-api,com.bootcoin.user.api.repository,DaoUserFactory,3,3,0,0,1,1,1,1,1,1
 bootcoin-user-api,com.bootcoin.user.api,BootcoinUserApiApplication,5,3,0,0,2,1,1,1,1,1

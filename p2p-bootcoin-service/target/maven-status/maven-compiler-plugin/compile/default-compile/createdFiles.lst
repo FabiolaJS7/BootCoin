@@ -8,6 +8,7 @@ com\bootcoin\p2p\bootcoin\service\util\JsonTransferUtil.class
 com\bootcoin\p2p\bootcoin\service\bean\wallet\WalletUpdateRequest.class
 com\bootcoin\p2p\bootcoin\service\controller\ExchangeController.class
 com\bootcoin\p2p\bootcoin\service\service\TransactionService.class
+com\bootcoin\p2p\bootcoin\service\bean\WalletUserResponse.class
 com\bootcoin\p2p\bootcoin\service\config\KafkaConfig.class
 com\bootcoin\p2p\bootcoin\service\controller\WalletController.class
 com\bootcoin\p2p\bootcoin\service\controller\UserController.class

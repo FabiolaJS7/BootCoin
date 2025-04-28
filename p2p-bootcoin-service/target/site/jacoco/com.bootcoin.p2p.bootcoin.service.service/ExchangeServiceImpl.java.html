@@ -21,26 +21,31 @@ import reactor.core.publisher.Mono;
 <span class="nc" id="L21">        log.info(&quot;-&gt; Init exchange day RQ: {}&quot;, JsonTransferUtil.objectToJson(exchangeRequest));</span>
 <span class="nc" id="L22">        return exchangeRequest</span>
 <span class="nc" id="L23">                .flatMap(rq -&gt; {</span>
-<span class="nc" id="L24">                    String s = kafkaProducer.sendAndReceiveExchange(JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L25">                    log.info(&quot;Response from exchange: {}&quot;, s);</span>
-<span class="nc" id="L26">                    return Mono.just(s);</span>
+<span class="nc" id="L24">                    String s = kafkaProducer.sendAndReceive(</span>
+                            &quot;exchange-request&quot;,
+                            &quot;exchange-response&quot;,
+<span class="nc" id="L27">                            JsonTransferUtil.objectToJson(rq),</span>
+                            &quot;exchangeReplyingKafkaTemplate&quot;
+                    );
+<span class="nc" id="L30">                    log.info(&quot;Response from exchange: {}&quot;, s);</span>
+<span class="nc" id="L31">                    return Mono.just(s);</span>
                 })
-<span class="nc" id="L28">                .map(s -&gt; JsonTransferUtil.jsonToObject(s, ExchangeResponse.class))</span>
-<span class="nc" id="L29">                .doOnSuccess(exchangeResponse -&gt; log.info(&quot;-&gt; Exchange day RS: {}&quot;,</span>
-<span class="nc" id="L30">                        JsonTransferUtil.objectToJson(exchangeResponse)));</span>
+<span class="nc" id="L33">                .map(s -&gt; JsonTransferUtil.jsonToObject(s, ExchangeResponse.class))</span>
+<span class="nc" id="L34">                .doOnSuccess(exchangeResponse -&gt; log.info(&quot;-&gt; Exchange day RS: {}&quot;,</span>
+<span class="nc" id="L35">                        JsonTransferUtil.objectToJson(exchangeResponse)));</span>
     }
 
     @Override
     public Mono&lt;Void&gt; createExchangeRate(Mono&lt;ExchangeRequest&gt; exchangeRequest) {
-<span class="nc" id="L35">        log.info(&quot;-&gt; Init create exchange rate RQ: {}&quot;, JsonTransferUtil.objectToJson(exchangeRequest));</span>
-<span class="nc" id="L36">        return exchangeRequest</span>
-<span class="nc" id="L37">                .flatMap(rq -&gt; {</span>
-<span class="nc" id="L38">                    kafkaProducer.sendMessage(&quot;exchange-rate&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L39">                    log.info(&quot;Response from createExchangeRate: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L40">                    return Mono.just(&quot;Exchange rate created&quot;);</span>
+<span class="nc" id="L40">        log.info(&quot;-&gt; Init create exchange rate RQ: {}&quot;, JsonTransferUtil.objectToJson(exchangeRequest));</span>
+<span class="nc" id="L41">        return exchangeRequest</span>
+<span class="nc" id="L42">                .flatMap(rq -&gt; {</span>
+<span class="nc" id="L43">                    kafkaProducer.sendMessage(&quot;exchange-rate&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L44">                    log.info(&quot;Response from createExchangeRate: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L45">                    return Mono.just(&quot;Exchange rate created&quot;);</span>
                 })
-<span class="nc" id="L42">                .doOnSuccess(s -&gt; log.info(s))</span>
-<span class="nc" id="L43">                .then();</span>
+<span class="nc" id="L47">                .doOnSuccess(s -&gt; log.info(s))</span>
+<span class="nc" id="L48">                .then();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

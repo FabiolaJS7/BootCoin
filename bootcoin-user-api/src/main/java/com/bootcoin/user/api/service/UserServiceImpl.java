@@ -36,4 +36,13 @@ public class UserServiceImpl implements UserService {
                 .doOnSuccess(userResponse -> log.info("User created {}", JsonTransferUtil.objectToJson(userResponse)))
                 .doOnError(throwable -> log.error("User creation failed {}", throwable.getMessage()));
     }
+
+    @Override
+    public Mono<UserResponse> userByWalletAccount(String walletAccount) {
+        return daoUserFactory.getUserRepository().findUserModelByWalletAccount(walletAccount)
+                .map(UserMapper.INSTANCE::getUserResponseFromUserModel)
+                .doOnSuccess(userResponse -> log.info("Getting user by wallet account {}",
+                        JsonTransferUtil.objectToJson(userResponse)))
+                .doOnError(throwable -> log.error("User by wallet account failed {}", throwable.getMessage()));
+    }
 }

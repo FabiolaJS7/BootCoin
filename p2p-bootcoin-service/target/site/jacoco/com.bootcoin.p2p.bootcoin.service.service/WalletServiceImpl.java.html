@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WalletServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">p2p-bootcoin-service</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.p2p.bootcoin.service.service</a> &gt; <span class="el_source">WalletServiceImpl.java</span></div><h1>WalletServiceImpl.java</h1><pre class="source lang-java linenums">package com.bootcoin.p2p.bootcoin.service.service;
 
+import com.bootcoin.p2p.bootcoin.service.bean.WalletUserResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletRequest;
-import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletResponse;
 import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -16,31 +16,21 @@ import reactor.core.publisher.Mono;
     @Autowired
     KafkaProducer kafkaProducer;
 
-    @Override
-    public Mono&lt;WalletResponse&gt; createWallet(Mono&lt;WalletRequest&gt; walletRequest) {
-<span class="nc" id="L21">        log.info(&quot;-&gt; Init create wallet: {}&quot;, JsonTransferUtil.objectToJson(walletRequest));</span>
-<span class="nc" id="L22">        return walletRequest</span>
-<span class="nc" id="L23">                .flatMap(rq -&gt; {</span>
-<span class="nc" id="L24">                    String s = kafkaProducer.sendAndReceiveWallet(JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L25">                    log.info(&quot;Response from exchange: {}&quot;, s);</span>
-<span class="nc" id="L26">                    return Mono.just(s)</span>
-<span class="nc" id="L27">                            .map(s1 -&gt; JsonTransferUtil.jsonToObject(s1, WalletResponse.class));</span>
-                })
-<span class="nc" id="L29">                .doOnNext(walletResponse -&gt; log.info(&quot;Wallet created: {}&quot;,</span>
-<span class="nc" id="L30">                        JsonTransferUtil.objectToJson(walletResponse)));</span>
-    }
 
     @Override
-    public Mono&lt;WalletResponse&gt; getWallet(Mono&lt;WalletRequest&gt; walletRequest) {
-<span class="nc" id="L35">        return walletRequest</span>
-<span class="nc" id="L36">                .doOnNext(rq -&gt; log.info(&quot;Init get wallet: {}&quot;, JsonTransferUtil.objectToJson(rq)))</span>
-<span class="nc" id="L37">                .flatMap(rq -&gt; {</span>
-<span class="nc" id="L38">                    String s = kafkaProducer.sendAndReceiveWalletInformation(JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L39">                    log.info(&quot;Response from getting wallet: {}&quot;, s);</span>
-<span class="nc" id="L40">                    return Mono.just(s)</span>
-<span class="nc" id="L41">                            .map(s1 -&gt; JsonTransferUtil.jsonToObject(s1, WalletResponse.class));</span>
+    public Mono&lt;WalletUserResponse&gt; getWallet(Mono&lt;WalletRequest&gt; walletRequest) {
+<span class="nc" id="L22">        return walletRequest</span>
+<span class="nc" id="L23">                .doOnNext(rq -&gt; log.info(&quot;Init get wallet: {}&quot;, JsonTransferUtil.objectToJson(rq)))</span>
+<span class="nc" id="L24">                .flatMap(rq -&gt; {</span>
+                    //String s = kafkaProducer.sendAndReceiveWalletInformation(JsonTransferUtil.objectToJson(rq));
+<span class="nc" id="L26">                    log.info(&quot;Response from getting wallet: {}&quot;);</span>
+
+                    //String user = kafkaProducer.sendAndReceiveWalletInformation(JsonTransferUtil.objectToJson(rq));
+<span class="nc" id="L29">                    WalletUserResponse walletUserResponse = new WalletUserResponse();</span>
+<span class="nc" id="L30">                    return Mono.just(walletUserResponse);</span>
+                           // .map(s1 -&gt; JsonTransferUtil.jsonToObject(s1, WalletResponse.class));
                 })
-<span class="nc" id="L43">                .doOnNext(walletResponse -&gt; log.info(&quot;Wallet get: {}&quot;, walletResponse));</span>
+<span class="nc" id="L33">                .doOnNext(walletResponse -&gt; log.info(&quot;Wallet get: {}&quot;, walletResponse));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -38,7 +38,7 @@ class WalletServiceImplTest {
     @Test
     void createWallet() {
         WalletRequest walletRequest = new WalletRequest();
-        walletRequest.setUserId("USER-01");
+        walletRequest.setPhoneNumber("USER-01");
 
         WalletModel walletModel = new WalletModel();
         walletModel.setWalletAccount("ACCOUNTID-01");
@@ -48,7 +48,7 @@ class WalletServiceImplTest {
         Mockito.when(daoWalletFactory.getWalletRepository()).thenReturn(walletRepository);
         Mockito.when(walletRepository.save(any(WalletModel.class))).thenReturn(Mono.just(walletModel));
 
-        Mono<String> walletResponse = walletService.createWallet(walletRequest.getUserId());
+        Mono<String> walletResponse = walletService.createWallet(walletRequest.getPhoneNumber());
 
         StepVerifier.create(walletResponse)
                 .expectNextMatches(response -> !response.isEmpty())

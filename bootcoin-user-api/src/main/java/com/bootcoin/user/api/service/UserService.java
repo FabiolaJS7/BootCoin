@@ -7,4 +7,5 @@ import reactor.core.publisher.Mono;
 public interface UserService {
 
     Mono<UserResponse> createUser(Mono<UserRequest> userRequest);
+    Mono<UserResponse> userByWalletAccount(String walletAccount);
 }

@@ -31,8 +31,9 @@ public class KafkaConfig {
     @Bean
     public ConcurrentMessageListenerContainer<String, String> repliesContainer(
             ConsumerFactory<String, String> consumerFactory) {
-        ContainerProperties containerProperties = new ContainerProperties("wallet-response");
-        containerProperties.setGroupId("wallet-group");
+        ContainerProperties containerProperties = new ContainerProperties("wallet-bootcoin-response",
+                "wallet-user-response");
+        containerProperties.setGroupId("bootcoin-group");
 
         return new ConcurrentMessageListenerContainer<>(consumerFactory, containerProperties);
     }
@@ -52,6 +53,7 @@ public class KafkaConfig {
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        configProps.put(ConsumerConfig.GROUP_ID_CONFIG, "bootcoin-group");
         return new DefaultKafkaConsumerFactory<>(configProps);
     }
 

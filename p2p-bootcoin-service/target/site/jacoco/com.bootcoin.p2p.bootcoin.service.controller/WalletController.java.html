@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WalletController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">p2p-bootcoin-service</a> &gt; <a href="index.source.html" class="el_package">com.bootcoin.p2p.bootcoin.service.controller</a> &gt; <span class="el_source">WalletController.java</span></div><h1>WalletController.java</h1><pre class="source lang-java linenums">package com.bootcoin.p2p.bootcoin.service.controller;
 
+import com.bootcoin.p2p.bootcoin.service.bean.WalletUserResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletRequest;
-import com.bootcoin.p2p.bootcoin.service.bean.wallet.WalletResponse;
 import com.bootcoin.p2p.bootcoin.service.service.WalletService;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -23,31 +23,17 @@ import reactor.core.publisher.Mono;
     @Autowired
     WalletService walletService;
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono&lt;ResponseEntity&lt;WalletResponse&gt;&gt; createWallet(@RequestBody WalletRequest walletRequest) {
-<span class="nc" id="L28">        return walletService.createWallet(Mono.just(walletRequest))</span>
+    @PostMapping(value = (&quot;/information&quot;), consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono&lt;ResponseEntity&lt;WalletUserResponse&gt;&gt; getWallet(@RequestBody WalletRequest walletRequest) {
+<span class="nc" id="L28">        return walletService.getWallet(Mono.just(walletRequest))</span>
 <span class="nc" id="L29">                .map(walletResponse -&gt; {</span>
-<span class="nc" id="L30">                    log.info(&quot;Wallet created successfuly {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
+<span class="nc" id="L30">                    log.info(&quot;Wallet get successfuly {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
 <span class="nc" id="L31">                    return ResponseEntity.ok(walletResponse);</span>
                 })
-<span class="nc" id="L33">                .onErrorResume(e -&gt; {</span>
-<span class="nc" id="L34">                    log.error(&quot;Error wallet day: {}&quot;, e.getMessage());</span>
+<span class="nc" id="L33">                .onErrorResume(throwable -&gt; {</span>
+<span class="nc" id="L34">                    log.error(&quot;Error get wallet day: {}&quot;, throwable.getMessage());</span>
 <span class="nc" id="L35">                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)</span>
 <span class="nc" id="L36">                            .body(null));</span>
-                });
-    }
-
-    @PostMapping(value = (&quot;/information&quot;), consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono&lt;ResponseEntity&lt;WalletResponse&gt;&gt; getWallet(@RequestBody WalletRequest walletRequest) {
-<span class="nc" id="L42">        return walletService.getWallet(Mono.just(walletRequest))</span>
-<span class="nc" id="L43">                .map(walletResponse -&gt; {</span>
-<span class="nc" id="L44">                    log.info(&quot;Wallet get successfuly {}&quot;, JsonTransferUtil.objectToJson(walletResponse));</span>
-<span class="nc" id="L45">                    return ResponseEntity.ok(walletResponse);</span>
-                })
-<span class="nc" id="L47">                .onErrorResume(throwable -&gt; {</span>
-<span class="nc" id="L48">                    log.error(&quot;Error get wallet day: {}&quot;, throwable.getMessage());</span>
-<span class="nc" id="L49">                    return Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST)</span>
-<span class="nc" id="L50">                            .body(null));</span>
                 });
     }
 }

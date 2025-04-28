@@ -18,46 +18,54 @@ import reactor.core.publisher.Mono;
 <span class="fc" id="L18">@Slf4j</span>
 <span class="fc" id="L19">public class UserConsumer {</span>
 
-    private static final String USER_RESPONSE = &quot;bootuser-response&quot;;
-
-
     @Autowired
     UserService userService;
 
     @Autowired
     KafkaTemplate&lt;String, String&gt; kafkaTemplate;
 
-    @KafkaListener(topics = &quot;bootuser-request&quot;, groupId = &quot;bootuser-group&quot;)
-    public void createUser(String message) {
-<span class="nc" id="L32">        log.info(&quot;-&gt; Init create user: {}&quot;, message);</span>
-<span class="nc" id="L33">        UserRequest userRequest = JsonTransferUtil.jsonToObject(message, UserRequest.class);</span>
-<span class="nc" id="L34">        userService.createUser(Mono.just(userRequest))</span>
-<span class="nc" id="L35">                .doOnSuccess(userResponse -&gt; log.info(&quot;User create response: {}&quot;,</span>
-<span class="nc" id="L36">                        JsonTransferUtil.objectToJson(userResponse)))</span>
-<span class="nc" id="L37">                .doOnSuccess(userResponse -&gt; log.info(&quot;End create user&quot;))</span>
-<span class="nc" id="L38">                .subscribe();</span>
-<span class="nc" id="L39">    }</span>
-
-    @KafkaListener(topics = &quot;user-create-request&quot;, groupId = &quot;bootuser-group&quot;)
+    @KafkaListener(topics = &quot;user-create-request&quot;, groupId = &quot;bootcoin-group&quot;)
     public void createUserWithResponse(ConsumerRecord&lt;String, String&gt; message,
                            @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                            @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
-<span class="nc" id="L45">        log.info(&quot;-&gt; Init create user: {}, replyTopic: {}, correlationId: {}&quot;, message.value(), replyTopic, correlationId);</span>
+<span class="nc" id="L31">        log.info(&quot;-&gt; Init create user: {}, replyTopic: {}, correlationId: {}&quot;, message.value(), replyTopic, correlationId);</span>
 
-<span class="nc" id="L47">        UserRequest userRequest = JsonTransferUtil.jsonToObject(message.value(), UserRequest.class);</span>
-<span class="nc" id="L48">        userService.createUser(Mono.just(userRequest))</span>
-<span class="nc" id="L49">                .flatMap(userResponse -&gt; {</span>
-<span class="nc" id="L50">                    log.info(&quot;Sending as response {}&quot;, JsonTransferUtil.objectToJson(userResponse));</span>
-<span class="nc" id="L51">                    ProducerRecord&lt;String, String&gt; responseUser = new ProducerRecord&lt;&gt;(replyTopic,</span>
-<span class="nc" id="L52">                            JsonTransferUtil.objectToJson(userResponse));</span>
-<span class="nc" id="L53">                    responseUser.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);</span>
-<span class="nc" id="L54">                    responseUser.headers().add(&quot;Content-Type&quot;, &quot;application/json&quot;.getBytes());</span>
-<span class="nc" id="L55">                    kafkaTemplate.send(responseUser);</span>
-<span class="nc" id="L56">                    return Mono.just(&quot;Message sent to topic &quot; + replyTopic);</span>
+<span class="nc" id="L33">        UserRequest userRequest = JsonTransferUtil.jsonToObject(message.value(), UserRequest.class);</span>
+<span class="nc" id="L34">        userService.createUser(Mono.just(userRequest))</span>
+<span class="nc" id="L35">                .flatMap(userResponse -&gt; {</span>
+<span class="nc" id="L36">                    log.info(&quot;Sending as response {}&quot;, JsonTransferUtil.objectToJson(userResponse));</span>
+<span class="nc" id="L37">                    ProducerRecord&lt;String, String&gt; responseUser = new ProducerRecord&lt;&gt;(replyTopic,</span>
+<span class="nc" id="L38">                            JsonTransferUtil.objectToJson(userResponse));</span>
+<span class="nc" id="L39">                    responseUser.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);</span>
+<span class="nc" id="L40">                    responseUser.headers().add(&quot;Content-Type&quot;, &quot;application/json&quot;.getBytes());</span>
+<span class="nc" id="L41">                    kafkaTemplate.send(responseUser);</span>
+<span class="nc" id="L42">                    return Mono.just(&quot;Message sent to topic &quot; + replyTopic);</span>
                 })
-<span class="nc" id="L58">                .doOnNext(log::info)</span>
-<span class="nc" id="L59">                .doOnSuccess(userResponse -&gt; log.info(&quot;End create user&quot;))</span>
-<span class="nc" id="L60">                .subscribe();</span>
-<span class="nc" id="L61">    }</span>
+<span class="nc" id="L44">                .doOnNext(log::info)</span>
+<span class="nc" id="L45">                .doOnSuccess(userResponse -&gt; log.info(&quot;End create user&quot;))</span>
+<span class="nc" id="L46">                .subscribe();</span>
+<span class="nc" id="L47">    }</span>
+
+    @KafkaListener(topics = &quot;user-by-wallet-request&quot;, groupId = &quot;bootcoin-group&quot;)
+    public void getUserByWalletAccount(ConsumerRecord&lt;String, String&gt; message,
+                                       @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
+                                       @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
+<span class="nc" id="L53">        log.info(&quot;-&gt; Init get user by wallet: {}, replyTopic: {}, correlationId: {}&quot;, message.value(), replyTopic, correlationId);</span>
+
+<span class="nc" id="L55">        UserRequest userRequest = JsonTransferUtil.jsonToObject(message.value(), UserRequest.class);</span>
+<span class="nc" id="L56">        userService.userByWalletAccount(userRequest.getWalletAccount())</span>
+<span class="nc" id="L57">                .flatMap(userResponse -&gt; {</span>
+<span class="nc" id="L58">                    log.info(&quot;Sending as response {}&quot;, JsonTransferUtil.objectToJson(userResponse));</span>
+<span class="nc" id="L59">                    ProducerRecord&lt;String, String&gt; responseUser = new ProducerRecord&lt;&gt;(replyTopic,</span>
+<span class="nc" id="L60">                            JsonTransferUtil.objectToJson(userResponse));</span>
+<span class="nc" id="L61">                    responseUser.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);</span>
+<span class="nc" id="L62">                    responseUser.headers().add(&quot;Content-Type&quot;, &quot;application/json&quot;.getBytes());</span>
+<span class="nc" id="L63">                    kafkaTemplate.send(responseUser);</span>
+<span class="nc" id="L64">                    return Mono.just(&quot;Message sent to topic &quot; + replyTopic);</span>
+                })
+<span class="nc" id="L66">                .doOnNext(log::info)</span>
+<span class="nc" id="L67">                .doOnSuccess(userResponse -&gt; log.info(&quot;End create user&quot;))</span>
+<span class="nc" id="L68">                .subscribe();</span>
+<span class="nc" id="L69">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

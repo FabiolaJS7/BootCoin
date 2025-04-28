@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests" time="20.575" tests="1" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests" time="11.702" tests="1" errors="0" skipped="1" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PE"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\mgarcsar\AppData\Local\Temp\surefire17659773849649580622\surefirebooter-20250428123513658_3.jar C:\Users\mgarcsar\AppData\Local\Temp\surefire17659773849649580622 2025-04-28T12-35-12_436-jvmRun1 surefire-20250428123513658_1tmp surefire_0-20250428123513658_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\mgarcsar\AppData\Local\Temp\surefire13775443752611993226\surefirebooter-20250428164522596_3.jar C:\Users\mgarcsar\AppData\Local\Temp\surefire13775443752611993226 2025-04-28T16-45-22_242-jvmRun1 surefire-20250428164522596_1tmp surefire_0-20250428164522596_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\target\test-classes;C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service\target\classes;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.4.5\spring-boot-starter-actuator-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.5\spring-boot-starter-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot\3.4.5\spring-boot-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.5\spring-boot-autoconfigure-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.5\spring-boot-starter-logging-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\mgarcsar\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\mgarcsar\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\mgarcsar\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\mgarcsar\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\mgarcsar\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\mgarcsar\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.4.5\spring-boot-actuator-autoconfigure-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-actuator\3.4.5\spring-boot-actuator-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\io\micrometer\micrometer-observation\1.14.6\micrometer-observation-1.14.6.jar;C:\Users\mgarcsar\.m2\repository\io\micrometer\micrometer-commons\1.14.6\micrometer-commons-1.14.6.jar;C:\Users\mgarcsar\.m2\repository\io\micrometer\micrometer-jakarta9\1.14.6\micrometer-jakarta9-1.14.6.jar;C:\Users\mgarcsar\.m2\repository\io\micrometer\micrometer-core\1.14.6\micrometer-core-1.14.6.jar;C:\Users\mgarcsar\.m2\repository\org\hdrhistogram\HdrHistogram\2.2.2\HdrHistogram-2.2.2.jar;C:\Users\mgarcsar\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-webflux\3.4.5\spring-boot-starter-webflux-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.4.5\spring-boot-starter-json-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.3\jackson-datatype-jdk8-2.18.3.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.3\jackson-module-parameter-names-2.18.3.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-reactor-netty\3.4.5\spring-boot-starter-reactor-netty-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.2.5\reactor-netty-http-1.2.5.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-codec-http\4.1.119.Final\netty-codec-http-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-common\4.1.119.Final\netty-common-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-buffer\4.1.119.Final\netty-buffer-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-transport\4.1.119.Final\netty-transport-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-codec\4.1.119.Final\netty-codec-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-handler\4.1.119.Final\netty-handler-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-codec-http2\4.1.119.Final\netty-codec-http2-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-resolver-dns\4.1.119.Final\netty-resolver-dns-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-resolver\4.1.119.Final\netty-resolver-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-codec-dns\4.1.119.Final\netty-codec-dns-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.119.Final\netty-resolver-dns-native-macos-4.1.119.Final-osx-x86_64.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.119.Final\netty-resolver-dns-classes-macos-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-transport-native-epoll\4.1.119.Final\netty-transport-native-epoll-4.1.119.Final-linux-x86_64.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.119.Final\netty-transport-native-unix-common-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.119.Final\netty-transport-classes-epoll-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.2.5\reactor-netty-core-1.2.5.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-handler-proxy\4.1.119.Final\netty-handler-proxy-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\io\netty\netty-codec-socks\4.1.119.Final\netty-codec-socks-4.1.119.Final.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-web\6.2.6\spring-web-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-beans\6.2.6\spring-beans-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-webflux\6.2.6\spring-webflux-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-starter-config\4.2.1\spring-cloud-starter-config-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-starter\4.2.1\spring-cloud-starter-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-context\4.2.1\spring-cloud-context-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\security\spring-security-crypto\6.4.5\spring-security-crypto-6.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-commons\4.2.1\spring-cloud-commons-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.78.1\bcprov-jdk18on-1.78.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-config-client\4.2.1\spring-cloud-config-client-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.4.3\httpclient5-5.4.3.jar;C:\Users\mgarcsar\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.3.4\httpcore5-5.3.4.jar;C:\Users\mgarcsar\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.3.4\httpcore5-h2-5.3.4.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.3\jackson-databind-2.18.3.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-starter-netflix-eureka-client\4.2.1\spring-cloud-starter-netflix-eureka-client-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-netflix-eureka-client\4.2.1\spring-cloud-netflix-eureka-client-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\com\netflix\eureka\eureka-client\2.0.4\eureka-client-2.0.4.jar;C:\Users\mgarcsar\.m2\repository\com\thoughtworks\xstream\xstream\1.4.20\xstream-1.4.20.jar;C:\Users\mgarcsar\.m2\repository\io\github\x-stream\mxparser\1.2.2\mxparser-1.2.2.jar;C:\Users\mgarcsar\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\mgarcsar\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar;C:\Users\mgarcsar\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\mgarcsar\.m2\repository\com\netflix\spectator\spectator-api\1.7.3\spectator-api-1.7.3.jar;C:\Users\mgarcsar\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\mgarcsar\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\mgarcsar\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\mgarcsar\.m2\repository\commons-codec\commons-codec\1.17.2\commons-codec-1.17.2.jar;C:\Users\mgarcsar\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\mgarcsar\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\mgarcsar\.m2\repository\com\netflix\netflix-commons\netflix-eventbus\0.3.0\netflix-eventbus-0.3.0.jar;C:\Users\mgarcsar\.m2\repository\com\netflix\netflix-commons\netflix-infix\0.3.0\netflix-infix-0.3.0.jar;C:\Users\mgarcsar\.m2\repository\commons-jxpath\commons-jxpath\1.3\commons-jxpath-1.3.jar;C:\Users\mgarcsar\.m2\repository\joda-time\joda-time\2.3\joda-time-2.3.jar;C:\Users\mgarcsar\.m2\repository\org\antlr\antlr-runtime\3.4\antlr-runtime-3.4.jar;C:\Users\mgarcsar\.m2\repository\org\antlr\stringtemplate\3.2.1\stringtemplate-3.2.1.jar;C:\Users\mgarcsar\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\mgarcsar\.m2\repository\com\google\guava\guava\14.0.1\guava-14.0.1.jar;C:\Users\mgarcsar\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\mgarcsar\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\mgarcsar\.m2\repository\com\netflix\servo\servo-core\0.5.3\servo-core-0.5.3.jar;C:\Users\mgarcsar\.m2\repository\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;C:\Users\mgarcsar\.m2\repository\javax\annotation\javax.annotation-api\1.2\javax.annotation-api-1.2.jar;C:\Users\mgarcsar\.m2\repository\org\codehaus\jettison\jettison\1.5.4\jettison-1.5.4.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-starter-loadbalancer\4.2.1\spring-cloud-starter-loadbalancer-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\cloud\spring-cloud-loadbalancer\4.2.1\spring-cloud-loadbalancer-4.2.1.jar;C:\Users\mgarcsar\.m2\repository\io\projectreactor\addons\reactor-extra\3.5.2\reactor-extra-3.5.2.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-cache\3.4.5\spring-boot-starter-cache-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-context-support\6.2.6\spring-context-support-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\com\stoyanr\evictor\1.0.0\evictor-1.0.0.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\kafka\spring-kafka\3.3.5\spring-kafka-3.3.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-context\6.2.6\spring-context-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-aop\6.2.6\spring-aop-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-expression\6.2.6\spring-expression-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-messaging\6.2.6\spring-messaging-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-tx\6.2.6\spring-tx-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\retry\spring-retry\2.0.11\spring-retry-2.0.11.jar;C:\Users\mgarcsar\.m2\repository\org\apache\kafka\kafka-clients\3.8.1\kafka-clients-3.8.1.jar;C:\Users\mgarcsar\.m2\repository\com\github\luben\zstd-jni\1.5.6-4\zstd-jni-1.5.6-4.jar;C:\Users\mgarcsar\.m2\repository\org\lz4\lz4-java\1.8.0\lz4-java-1.8.0.jar;C:\Users\mgarcsar\.m2\repository\org\xerial\snappy\snappy-java\1.1.10.5\snappy-java-1.1.10.5.jar;C:\Users\mgarcsar\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.4.5\spring-boot-starter-test-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-test\3.4.5\spring-boot-test-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.4.5\spring-boot-test-autoconfigure-3.4.5.jar;C:\Users\mgarcsar\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\mgarcsar\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\mgarcsar\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\mgarcsar\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\mgarcsar\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\mgarcsar\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\mgarcsar\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\mgarcsar\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;C:\Users\mgarcsar\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\mgarcsar\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\mgarcsar\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.4\junit-jupiter-5.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.4\junit-jupiter-api-5.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\mgarcsar\.m2\repository\org\junit\platform\junit-platform-commons\1.11.4\junit-platform-commons-1.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\mgarcsar\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.4\junit-jupiter-params-5.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.4\junit-jupiter-engine-5.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\junit\platform\junit-platform-engine\1.11.4\junit-platform-engine-1.11.4.jar;C:\Users\mgarcsar\.m2\repository\org\mockito\mockito-core\5.14.2\mockito-core-5.14.2.jar;C:\Users\mgarcsar\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar;C:\Users\mgarcsar\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\mgarcsar\.m2\repository\org\mockito\mockito-junit-jupiter\5.14.2\mockito-junit-jupiter-5.14.2.jar;C:\Users\mgarcsar\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\mgarcsar\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-core\6.2.6\spring-core-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-jcl\6.2.6\spring-jcl-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\springframework\spring-test\6.2.6\spring-test-6.2.6.jar;C:\Users\mgarcsar\.m2\repository\org\xmlunit\xmlunit-core\2.10.0\xmlunit-core-2.10.0.jar;C:\Users\mgarcsar\.m2\repository\io\projectreactor\reactor-test\3.7.5\reactor-test-3.7.5.jar;C:\Users\mgarcsar\.m2\repository\io\projectreactor\reactor-core\3.7.5\reactor-core-3.7.5.jar;C:\Users\mgarcsar\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.3\jackson-annotations-2.18.3.jar;C:\Users\mgarcsar\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.3\jackson-core-2.18.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="windows-1252"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\mgarcsar\AppData\Local\Temp\surefire17659773849649580622\surefirebooter-20250428123513658_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mgarcsar\AppData\Local\Temp\surefire13775443752611993226\surefirebooter-20250428164522596_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -50,7 +50,7 @@
     <property name="user.dir" value="C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="7940"/>
+    <property name="PID" value="13308"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
     <property name="native.encoding" value="Cp1252"/>
@@ -64,8 +64,8 @@
   </properties>
   <testcase name="contextLoads" classname="com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests" time="0.0">
     <skipped message="void com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests.contextLoads() is @Disabled"/>
-    <system-out><![CDATA[2025-04-28 12:35:22.660 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils -Could not detect default configuration classes for test class [com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests]: P2pBootcoinServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
-2025-04-28 12:35:23.238 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper -Found @SpringBootConfiguration com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplication for test class com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests 
+    <system-out><![CDATA[2025-04-28 16:45:25.547 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils -Could not detect default configuration classes for test class [com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests]: P2pBootcoinServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-28 16:45:25.933 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper -Found @SpringBootConfiguration com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplication for test class com.bootcoin.p2p.bootcoin.service.P2pBootcoinServiceApplicationTests 
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -76,22 +76,22 @@
 
  :: Spring Boot ::                (v3.4.5)
 
-2025-04-28 12:35:28.468 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -Starting P2pBootcoinServiceApplicationTests using Java 17.0.12 with PID 7940 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service) 
-2025-04-28 12:35:28.470 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -The following 1 profile is active: "dev" 
-2025-04-28 12:35:28.591 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
-2025-04-28 12:35:28.592 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
-2025-04-28 12:35:28.592 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@aa794a3 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
-2025-04-28 12:35:28.592 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
-2025-04-28 12:35:28.592 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc. Will be trying the next url if available 
-2025-04-28 12:35:28.593 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@723b8eff uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc 
-2025-04-28 12:35:28.593 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
-2025-04-28 12:35:28.593 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
-2025-04-28 12:35:28.593 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@3987a1e8 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
-2025-04-28 12:35:31.263 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=98a68105-13bc-3f49-9102-5fb027b99df2 
-2025-04-28 12:35:36.077 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver -Exposing 2 endpoints beneath base path '/actuator' 
-2025-04-28 12:35:37.589 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration -Eureka HTTP Client uses RestTemplate. 
-2025-04-28 12:35:37.716 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger -Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
-2025-04-28 12:35:37.932 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
+2025-04-28 16:45:29.137 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -Starting P2pBootcoinServiceApplicationTests using Java 17.0.12 with PID 13308 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\BootCoin\p2p-bootcoin-service) 
+2025-04-28 16:45:29.138 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -The following 1 profile is active: "dev" 
+2025-04-28 16:45:29.197 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29.197 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29.198 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@aa794a3 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 16:45:29.198 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29.199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29.199 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@723b8eff uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/dev": config-server-bc 
+2025-04-28 16:45:29.199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Fetching config from server at : http://config-server-bc:8888 
+2025-04-28 16:45:29.199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader -Exception on Url - http://config-server-bc:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc. Will be trying the next url if available 
+2025-04-28 16:45:29.199 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader -Could not locate PropertySource ([ConfigServerConfigDataResource@3987a1e8 uris = array<String>['http://config-server-bc:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://config-server-bc:8888/p2p-bootcoin-service/default": config-server-bc 
+2025-04-28 16:45:30.929 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=f4eeab04-c26e-3828-9f0a-51dfba6a0cbc 
+2025-04-28 16:45:33.103 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver -Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-28 16:45:34.252 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration -Eureka HTTP Client uses RestTemplate. 
+2025-04-28 16:45:34.360 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger -Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-28 16:45:34.568 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.include.jmx.reporter = true
@@ -99,7 +99,7 @@
 	bootstrap.servers = [localhost:29092]
 	check.crcs = true
 	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-exchange-group-1
+	client.id = consumer-bootcoin-group-1
 	client.rack = 
 	connections.max.idle.ms = 540000
 	default.api.timeout.ms = 60000
@@ -109,7 +109,7 @@
 	fetch.max.bytes = 52428800
 	fetch.max.wait.ms = 500
 	fetch.min.bytes = 1
-	group.id = exchange-group
+	group.id = bootcoin-group
 	group.instance.id = null
 	group.protocol = classic
 	group.remote.assignor = null
@@ -190,496 +190,29 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
  
-2025-04-28 12:35:38.118 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
-2025-04-28 12:35:38.938 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
-2025-04-28 12:35:38.944 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
-2025-04-28 12:35:38.944 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745861738928 
-2025-04-28 12:35:38.955 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Subscribed to topic(s): exchange-response 
-2025-04-28 12:35:39.069 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [localhost:29092]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-transaction-group-2
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	enable.metrics.push = true
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = transaction-group
-	group.instance.id = null
-	group.protocol = classic
-	group.remote.assignor = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.max.ms = 1000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
- 
-2025-04-28 12:35:39.070 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
-2025-04-28 12:35:39.087 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
-2025-04-28 12:35:39.087 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
-2025-04-28 12:35:39.088 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745861739087 
-2025-04-28 12:35:39.088 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Subscribed to topic(s): transaction-list-response 
-2025-04-28 12:35:39.107 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [localhost:29092]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-bootuser-group-3
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	enable.metrics.push = true
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = bootuser-group
-	group.instance.id = null
-	group.protocol = classic
-	group.remote.assignor = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.max.ms = 1000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
- 
-2025-04-28 12:35:39.108 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
-2025-04-28 12:35:39.157 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
-2025-04-28 12:35:39.159 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
-2025-04-28 12:35:39.160 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745861739157 
-2025-04-28 12:35:39.161 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Subscribed to topic(s): user-create-request 
-2025-04-28 12:35:39.179 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [localhost:29092]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-wallet-group-4
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	enable.metrics.push = true
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = wallet-group
-	group.instance.id = null
-	group.protocol = classic
-	group.remote.assignor = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.max.ms = 1000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
- 
-2025-04-28 12:35:39.181 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
-2025-04-28 12:35:39.203 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
-2025-04-28 12:35:39.203 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
-2025-04-28 12:35:39.204 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745861739203 
-2025-04-28 12:35:39.205 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Subscribed to topic(s): wallet-bootcoin-response 
-2025-04-28 12:35:39.343 [main] INFO  o.a.k.c.consumer.ConsumerConfig -ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [localhost:29092]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-wallet-group-5
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	enable.metrics.push = true
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = wallet-group
-	group.instance.id = null
-	group.protocol = classic
-	group.remote.assignor = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.max.ms = 1000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
- 
-2025-04-28 12:35:39.345 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
-2025-04-28 12:35:39.369 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
-2025-04-28 12:35:39.369 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
-2025-04-28 12:35:39.369 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745861739369 
-2025-04-28 12:35:39.370 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Subscribed to topic(s): wallet-user-response 
-2025-04-28 12:35:39.789 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING 
-2025-04-28 12:35:39.862 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1 
-2025-04-28 12:35:39.872 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true 
-2025-04-28 12:35:39.904 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true 
-2025-04-28 12:35:39.905 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server 
-2025-04-28 12:35:41.295 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
-2025-04-28 12:35:41.295 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.296 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
-2025-04-28 12:35:41.296 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.301 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
-2025-04-28 12:35:41.301 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.301 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.301 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.302 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.301 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.302 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.303 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.305 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.305 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.306 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.400 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
-2025-04-28 12:35:41.401 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.401 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.433 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.433 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.433 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.448 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.449 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
-2025-04-28 12:35:41.449 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.449 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.449 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.450 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.453 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
-2025-04-28 12:35:41.454 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.456 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.559 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
-2025-04-28 12:35:41.561 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.561 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.576 [walletUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.577 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.577 [walletUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-5, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.588 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.589 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.589 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.612 [exchangeRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Node -1 disconnected. 
-2025-04-28 12:35:41.613 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.613 [exchangeRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-exchange-group-1, groupId=exchange-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.616 [bootCoinUserRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Node -1 disconnected. 
-2025-04-28 12:35:41.617 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.618 [bootCoinUserRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-bootuser-group-3, groupId=bootuser-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.715 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200 
-2025-04-28 12:35:41.731 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30 
-2025-04-28 12:35:41.743 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4 
-2025-04-28 12:35:41.752 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1745861741751 with initial instances count: 5 
-2025-04-28 12:35:41.757 [transactionRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected. 
-2025-04-28 12:35:41.757 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.757 [transactionRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.777 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry -Registering application P2P-BOOTCOIN-SERVICE with eureka with status UP 
-2025-04-28 12:35:41.779 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1745861741779, current=UP, previous=STARTING] 
-2025-04-28 12:35:41.787 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
-2025-04-28 12:35:41.822 [walletRepliesContainer-0-C-1] INFO  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Node -1 disconnected. 
-2025-04-28 12:35:41.822 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Node may not be available. 
-2025-04-28 12:35:41.822 [walletRepliesContainer-0-C-1] WARN  o.apache.kafka.clients.NetworkClient -[Consumer clientId=consumer-wallet-group-4, groupId=wallet-group] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected 
-2025-04-28 12:35:41.837 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -Started P2pBootcoinServiceApplicationTests in 17.091 seconds (process running for 25.949) 
+2025-04-28 16:45:34.732 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector -initializing Kafka metrics collector 
+2025-04-28 16:45:35.190 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka version: 3.8.1 
+2025-04-28 16:45:35.194 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka commitId: 70d6ff42debf7e17 
+2025-04-28 16:45:35.194 [main] INFO  o.a.kafka.common.utils.AppInfoParser -Kafka startTimeMs: 1745876735187 
+2025-04-28 16:45:35.209 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer -[Consumer clientId=consumer-bootcoin-group-1, groupId=bootcoin-group] Subscribed to topic(s): exchange-response, transaction-list-response, user-create-response, wallet-bootcoin-response, user-by-wallet-response, transaction-by-id-response 
+2025-04-28 16:45:35.357 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING 
+2025-04-28 16:45:35.430 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1 
+2025-04-28 16:45:35.443 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration 
+2025-04-28 16:45:35.466 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true 
+2025-04-28 16:45:35.467 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server 
+2025-04-28 16:45:36.234 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200 
+2025-04-28 16:45:36.239 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30 
+2025-04-28 16:45:36.245 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-28 16:45:36.249 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1745876736248 with initial instances count: 4 
+2025-04-28 16:45:36.255 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry -Registering application P2P-BOOTCOIN-SERVICE with eureka with status UP 
+2025-04-28 16:45:36.257 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1745876736257, current=UP, previous=STARTING] 
+2025-04-28 16:45:36.261 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_P2P-BOOTCOIN-SERVICE/p2p-bootcoin-service:8803: registering service... 
+2025-04-28 16:45:36.292 [main] INFO  c.b.p.b.s.P2pBootcoinServiceApplicationTests -Started P2pBootcoinServiceApplicationTests in 9.744 seconds (process running for 13.384) 
 ]]></system-out>
   </testcase>
 </testsuite>

@@ -27,7 +27,7 @@ public class ExchangeConsumer {
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-    @KafkaListener(topics = "exchange-rate", groupId = "exchange-group")
+    @KafkaListener(topics = "exchange-rate", groupId = "bootcoin-group")
     public void createExchange(String message) {
         log.info("Exchange to create: {}", message);
         ExchangeRequest exchangeRequest = JsonTransferUtil.jsonToObject(message, ExchangeRequest.class);
@@ -39,7 +39,7 @@ public class ExchangeConsumer {
 
     }
 
-    @KafkaListener(topics = "exchange-request", groupId = "exchange-group")
+    @KafkaListener(topics = "exchange-request", groupId = "bootcoin-group")
     public void getExchange(ConsumerRecord<String, String> message,
                         @Header(KafkaHeaders.REPLY_TOPIC) String replyTopic,
                         @Header(KafkaHeaders.CORRELATION_ID) byte[] correlationId) {
@@ -53,6 +53,7 @@ public class ExchangeConsumer {
                     ProducerRecord<String, String> responseRecord = new ProducerRecord<>(replyTopic,
                             JsonTransferUtil.objectToJson(exchangeResponse));
                     responseRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId); // Incluye el correlationId
+                    responseRecord.headers().add("Content-Type", "application/json".getBytes());
                     kafkaTemplate.send(responseRecord);
                     return Mono.just("Mensaje enviado al topic " + EXCHANGE_RESPONSE);
                 })

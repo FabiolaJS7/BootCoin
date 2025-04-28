@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "680fcbc40acebf12c089a6c3"
+  },
+  "status": "PENDING",
+  "amountCoin": 100,
+  "amountMoney": 20,
+  "exchangeRate": 10,
+  "walletAccountFrom": "4010980-8632164-5833537",
+  "walletAccountTo": "6126109-2640721-7644582",
+  "movementType": "BUY",
+  "createdAt": {
+    "$date": "2025-04-28T00:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-28T00:00:00.000Z"
+  },
+  "_class": "com.bootcoin.transaction.bootcoin.api.model.TransactionModel"
+}]

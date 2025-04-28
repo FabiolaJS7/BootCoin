@@ -14,5 +14,5 @@ public class WalletResponse {
     private String id;
     private String walletAccount;
     private Double amountCoin;
-    private String userId;
+    private String phoneNumber;
 }

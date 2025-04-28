@@ -3,6 +3,7 @@
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionRequest;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionResponse;
 import com.bootcoin.p2p.bootcoin.service.bean.transaction.TransactionUpdateRequest;
+import com.bootcoin.p2p.bootcoin.service.bean.user.UserResponse;
 import com.bootcoin.p2p.bootcoin.service.producer.KafkaProducer;
 import com.bootcoin.p2p.bootcoin.service.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -15,46 +16,72 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-<span class="fc" id="L18">@Slf4j</span>
-<span class="fc" id="L19">public class TransactionServiceImpl implements TransactionService {</span>
+<span class="fc" id="L19">@Slf4j</span>
+<span class="fc" id="L20">public class TransactionServiceImpl implements TransactionService {</span>
 
     @Autowired
     KafkaProducer kafkaProducer;
 
     @Override
     public Flux&lt;TransactionResponse&gt; getTransactionsByWallet(String walletId) {
-<span class="nc" id="L26">        log.info(&quot;-&gt; Init transactions by walletId: {}&quot;, walletId);</span>
+<span class="nc" id="L27">        log.info(&quot;-&gt; Init transactions by walletId: {}&quot;, walletId);</span>
 
-<span class="nc" id="L28">        String response = kafkaProducer.sendAndReceiveTransaction(walletId);</span>
-<span class="nc" id="L29">        log.info(&quot;-&gt; Arrived response: {}&quot;, response);</span>
+<span class="nc" id="L29">        String response = kafkaProducer.sendAndReceive(</span>
+                &quot;transaction-list-request&quot;,
+                &quot;transaction-list-response&quot;,
+                walletId,
+                &quot;transactionReplyingKafkaTemplate&quot;
+        );
+<span class="nc" id="L35">        log.info(&quot;-&gt; Arrived response: {}&quot;, response);</span>
 
-<span class="nc" id="L31">        List&lt;TransactionResponse&gt; transactionResponses = Arrays.asList(JsonTransferUtil.jsonToObject(response,</span>
+<span class="nc" id="L37">        List&lt;TransactionResponse&gt; transactionResponses = Arrays.asList(JsonTransferUtil.jsonToObject(response,</span>
                 TransactionResponse[].class));
 
-<span class="nc" id="L34">        return Flux.fromIterable(transactionResponses);</span>
+<span class="nc" id="L40">        return Flux.fromIterable(transactionResponses);</span>
     }
 
     @Override
     public Mono&lt;Void&gt; updateTransaction(Mono&lt;TransactionUpdateRequest&gt; transactionUpdateRequest) {
-<span class="nc" id="L39">        log.info(&quot;-&gt; Init transaction update: {}&quot;, JsonTransferUtil.objectToJson(transactionUpdateRequest));</span>
-<span class="nc" id="L40">        return transactionUpdateRequest</span>
-<span class="nc" id="L41">                .doOnNext(rq -&gt; {</span>
-<span class="nc" id="L42">                    kafkaProducer.sendMessage(&quot;transaction-update&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L43">                    log.info(&quot;Transaction update sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L44">                })</span>
-<span class="nc" id="L45">                .then();</span>
+<span class="nc" id="L45">        log.info(&quot;-&gt; Init transaction update: {}&quot;, JsonTransferUtil.objectToJson(transactionUpdateRequest));</span>
+<span class="nc" id="L46">        return transactionUpdateRequest</span>
+<span class="nc" id="L47">                .doOnNext(rq -&gt; {</span>
+
+<span class="nc" id="L49">                    String transactionById = kafkaProducer.sendAndReceive(</span>
+                            &quot;transaction-by-id-request&quot;,
+                            &quot;transaction-by-id-response&quot;,
+<span class="nc" id="L52">                            rq.getTransactionId(),</span>
+                            &quot;transactionByIdReplyingKafkaTemplate&quot;
+                    );
+<span class="nc" id="L55">                    TransactionResponse transactionResponse = JsonTransferUtil.jsonToObject(transactionById,</span>
+                            TransactionResponse.class);
+<span class="nc" id="L57">                    log.info(&quot;transactionById {}&quot;, JsonTransferUtil.objectToJson(transactionResponse));</span>
+
+<span class="nc" id="L59">                    String userByWalletAccount = kafkaProducer.sendAndReceive(</span>
+                            &quot;user-by-wallet-request&quot;,
+                            &quot;user-by-wallet-response&quot;,
+<span class="nc" id="L62">                            transactionResponse.getWalletAccountTo(),</span>
+                            &quot;userByWalletReplyingKafkaTemplate&quot;
+                    );
+<span class="nc" id="L65">                    UserResponse userResponseByWallet = JsonTransferUtil.jsonToObject(userByWalletAccount,</span>
+                            UserResponse.class);
+<span class="nc" id="L67">                    log.info(&quot;userResponseByWallet {}&quot;, JsonTransferUtil.objectToJson(userResponseByWallet));</span>
+
+<span class="nc" id="L69">                    kafkaProducer.sendMessage(&quot;transaction-update&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L70">                    log.info(&quot;Transaction update sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L71">                })</span>
+<span class="nc" id="L72">                .then();</span>
     }
 
     @Override
     public Mono&lt;Void&gt; createTransaction(Mono&lt;TransactionRequest&gt; transactionRequest, String walletFrom) {
-<span class="nc" id="L50">        log.info(&quot;-&gt; Init create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
-<span class="nc" id="L51">        return transactionRequest</span>
-<span class="nc" id="L52">                .doOnNext(rq -&gt; {</span>
-<span class="nc" id="L53">                    rq.setWalletAccountFrom(walletFrom);</span>
-<span class="nc" id="L54">                    kafkaProducer.sendMessage(&quot;transaction-create&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L55">                    log.info(&quot;Transaction create sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
-<span class="nc" id="L56">                })</span>
-<span class="nc" id="L57">                .then();</span>
+<span class="nc" id="L77">        log.info(&quot;-&gt; Init create transaction {}&quot;, JsonTransferUtil.objectToJson(transactionRequest));</span>
+<span class="nc" id="L78">        return transactionRequest</span>
+<span class="nc" id="L79">                .doOnNext(rq -&gt; {</span>
+<span class="nc" id="L80">                    rq.setWalletAccountFrom(walletFrom);</span>
+<span class="nc" id="L81">                    kafkaProducer.sendMessage(&quot;transaction-create&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L82">                    log.info(&quot;Transaction create sent: {}&quot;, JsonTransferUtil.objectToJson(rq));</span>
+<span class="nc" id="L83">                })</span>
+<span class="nc" id="L84">                .then();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -78,4 +78,14 @@ public class TransactionServiceImpl implements TransactionService {
                         JsonTransferUtil.objectToJson(transactionResponse)))
                 .doOnError(throwable -> log.error("Error transactions updated {}", throwable.getMessage()));
     }
+
+    @Override
+    public Mono<TransactionResponse> getTransactionById(String transactionId) {
+        return daoTransactionFactory.getTransactionRepository().findTransactionModelById(transactionId)
+                .map(TransactionMapper.INSTANCE::getTransactionResponseFromTransactionModel)
+                .switchIfEmpty(Mono.just(new TransactionResponse()))
+                .doOnSuccess(transactionResponse -> log.info("Transactions updated {}",
+                        JsonTransferUtil.objectToJson(transactionResponse)))
+                .doOnError(throwable -> log.error("Error transactions updated {}", throwable.getMessage()));
+    }
 }
